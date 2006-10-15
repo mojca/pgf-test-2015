@@ -7,17 +7,22 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcoremath.code.tex,v 1.1.1.1 2005/06/29 12:14:04 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcoremath.code.tex,v 1.2 2006/10/11 15:22:25 tantau Exp $
 
 
 % Mathematical stuff
 
 
 % Internal registers
-\newcounter{pgf@counta}
-\newcounter{pgf@countb}
-\newcounter{pgf@countc}
-\newcounter{pgf@countd}
+\ifx\pgflatex@setcounter\@undefined
+  \def\pgflatex@setcounter{\setcounter}
+\fi
+
+\newcount\c@pgf@counta
+\newcount\c@pgf@countb
+\newcount\c@pgf@countc
+\newcount\c@pgf@countd
+
 
 % Internal setting function
 \def\pgf@setmath#1#2{\edef\pgf@temp{#2pt}\csname pgf@#1\endcsname=\pgf@temp}
