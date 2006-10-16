@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-common-pdf.def,v 1.5 2006/03/01 23:57:34 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-common-pdf.def,v 1.6 2006/10/11 15:22:26 tantau Exp $
 
 
 % Driver commands for pdf
@@ -39,7 +39,7 @@
 % Graphics state
 \def\pgfsys@setdash#1#2{%
   \pgfsysprotocol@literalbuffered{[}%
-  \@for\pgf@sys@temp:={#1}\do{\pgf@sys@bp{\pgf@sys@temp}}%
+  \pgfutil@for\pgf@sys@temp:={#1}\do{\pgf@sys@bp{\pgf@sys@temp}}%
   \pgfsysprotocol@literalbuffered{]}%
   \pgf@sys@bp{#2}\pgfsysprotocol@literal{d}}
 \def\pgfsys@setlinewidth#1{\pgf@sys@bp{#1}\pgfsysprotocol@literal{w}}
