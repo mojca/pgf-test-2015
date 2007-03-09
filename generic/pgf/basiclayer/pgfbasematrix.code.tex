@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfbasematrix.code.tex,v 1.9 2007/01/07 20:48:10 tantau Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfbasematrix.code.tex,v 1.10 2007/01/12 20:45:49 tantau Exp $
 
 
 \newif\ifpgfmatrix
@@ -301,7 +301,7 @@
       \ifx\pgf@temp\pgf@matrix@natural@text%
         \global\pgf@matrix@fixedfalse%
       \else%
-        \addtolength{#1}{#2}%
+        \pgfmathaddtolength{#1}{#2}%
       \fi%
     \fi%
   \fi%
@@ -406,7 +406,7 @@
   % Step 5: Horizontal gap
   %
   \ifnum\pgfmatrixcurrentcolumn>1\relax%
-    \setlength{\pgf@y}{\csname pgf@matrix@column@sep@\the\pgfmatrixcurrentcolumn\endcsname}%
+    \pgf@y=\csname pgf@matrix@column@sep@\the\pgfmatrixcurrentcolumn\endcsname\relax%
     \advance\pgf@picminx by-\pgf@y%
   \fi%
   % 

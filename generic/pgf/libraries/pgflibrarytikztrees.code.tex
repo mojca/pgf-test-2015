@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibrarytikztrees.code.tex,v 1.6 2006/10/11 10:03:03 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibrarytikztrees.code.tex,v 1.7 2006/10/11 15:22:26 tantau Exp $
 
 
 
@@ -49,7 +49,7 @@
   \advance\pgf@xa by\pgf@xc%
   \advance\pgf@ya by\pgf@yb%
   \advance\pgf@ya by\pgf@yc%
-  \edef\pgf@temp{\noexpand\pgftransformshift{\noexpand\pgfpoint{\the\pgf@xa}{\the\pgf@ya}}}%
+  \edef\pgf@temp{\noexpand\pgftransformshift{\noexpand\pgfqpoint{\the\pgf@xa}{\the\pgf@ya}}}%
   \pgf@temp%
 }
 
