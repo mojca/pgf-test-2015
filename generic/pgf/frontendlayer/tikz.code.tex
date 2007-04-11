@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz.code.tex,v 1.79 2007/02/26 11:04:32 tantau Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz.code.tex,v 1.80 2007/03/09 17:49:32 tantau Exp $
 
 
 % Always-present libraries:
@@ -203,7 +203,8 @@
 \tikzoption{xshift}{\tikz@addtransform{\pgftransformxshift{#1}}}
 \tikzoption{yshift}{\tikz@addtransform{\pgftransformyshift{#1}}}
 \tikzoption{cm}{\tikz@addtransform{\tikz@parse@cm#1\relax}}
-\tikzoption{reset cm}{\tikz@addtransform{\pgftransformreset}}
+\tikzoption{reset cm}[]{\tikz@addtransform{\pgftransformreset}}
+\tikzoption{shift only}[]{\tikz@addtransform{\pgftransformresetnontranslations}}
 
 \def\tikz@parse@cm#1,#2,#3,#4,{%
   \def\tikz@p@cm{{#1}{#2}{#3}{#4}}%
