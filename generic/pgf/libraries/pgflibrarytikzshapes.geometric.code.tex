@@ -9,10 +9,15 @@
 
 \ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibrarytikzshapes.code.tex,v 1.2 2006/10/11 15:22:26 tantau Exp $
 
-\usetikzlibrary{shapes.geometric}
-\usetikzlibrary{shapes.misc}
-\usetikzlibrary{shapes.symbols}
-\usetikzlibrary{shapes.arrows}
-\usetikzlibrary{shapes.multipart}
+
+\tikzoption{star points}{\pgfsetstarpoints{#1}}
+\tikzoption{star rotate}{\pgfsetstarrotate{#1}}
+\tikzoption{star point height}{\pgfsetstarpointheight{#1}}
+\tikzoption{star point ratio}{\pgfsetstarpointratio{#1}}
+
+\tikzoption{regular polygon sides}{\pgfsetpolygonsides{#1}}
+\tikzoption{regular polygon rotate}{\pgfsetpolygonrotate{#1}}
+
+\usepgflibrary{shapes.geometric}
 
 \endinput
