@@ -7,10 +7,11 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibrarytikzshapes.geometric.code.tex,v 1.7 2007/07/21 18:20:42 vibrovski Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibrarytikzshapes.geometric.code.tex,v 1.10 2007/08/20 12:48:40 vibrovski Exp $
 
-\pgfkeys{/tikz/shape border uses incircle/.is if=pgfshapeborderusesincircle}
-
+\pgfkeysifdefined{/tikz/shape border uses incircle}{}{%
+	\pgfkeys{/tikz/shape border uses incircle/.is if=pgfshapeborderusesincircle}}
+	
 \usepgflibrary{shapes.geometric}
 
 \endinput
