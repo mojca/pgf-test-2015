@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfm.def,v 1.13 2007/05/31 10:31:52 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfm.def,v 1.14 2007/06/07 07:41:11 tantau Exp $
 
 % Driver commands for dvipdfm
 
@@ -126,8 +126,16 @@
 
 \def\pgf@sys@atbeginpage#1{\AtBeginDvi{#1}}
 \AtBeginDocument{% hyperref hack
-  \ifx\HyPL@EveryPage\@undefined\def\HyPL@EveryPage{}\fi
-  \def\@begindvi{\unvbox\@begindvibox\HyPL@EveryPage}
+  \ifx\HyPL@EveryPage\@undefined%
+    \let\pgf@sys@continue@hyper=\pgfutil@empty%
+  \else%
+    \ifHy@implicit%
+      \let\pgf@sys@continue@hyper=\Hy@begindvi%
+    \else%
+      \let\pgf@sys@continue@hyper=\HyPL@EveryPage%
+    \fi%
+  \fi%
+  \def\@begindvi{\unvbox\@begindvibox\pgf@sys@continue@hyper}
 }
 
 
