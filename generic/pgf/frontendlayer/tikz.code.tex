@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz.code.tex,v 1.98 2007/10/29 15:27:31 tantau Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz.code.tex,v 1.99 2007/11/24 09:26:17 vibrovski Exp $
 
 
 % Always-present libraries:
@@ -1509,7 +1509,9 @@
           \pgfsyssoftpath@flushcurrentpath%
           \pgfsys@stroke%
         \pgfsys@endscope%
-        \pgf@add@arrows@as@needed
+        \ifpgf@drawarrows% set in pgfusepath...
+          \pgf@add@arrows@as@needed%
+        \fi%
       \endgroup%
     \fi%
   \fi%
