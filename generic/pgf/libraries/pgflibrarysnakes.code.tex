@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibrarysnakes.code.tex,v 1.17 2007/10/28 15:24:30 vibrovski Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibrarysnakes.code.tex,v 1.18 2007/11/24 09:26:17 vibrovski Exp $
 
 
 \newdimen\pgfsnakesegmentamplitude
@@ -19,6 +19,13 @@
 \pgfsnakesegmentlength=10pt
 \pgfsnakesegmentamplitude=2.5pt
 
+
+\pgfkeys{%
+  /pgf/segment amplitude/.code={\pgfmathsetlength{\pgfsnakesegmentamplitude}{#1}},
+  /pgf/segment length/.code={\pgfmathsetlength{\pgfsnakesegmentlength}{#1}},
+  /pgf/segment angle/.code={\pgfmathparse{#1}\let\pgfsnakesegmentangle=\pgfmathresult},
+  /pgf/segment aspect/.code={\pgfmathparse{#1}\let\pgfsnakesegmentaspect=\pgfmathresult},
+  /pgf/segment object length/.code={\pgfmathparse{#1}\edef\pgfsnakesegmentobjectlength{\pgfmathresult pt}}}
 
 
 % snake snake
