@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.20 2007/09/25 14:16:24 tantau Exp $
+% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.21 2007/11/10 09:16:33 vibrovski Exp $
 
 
 \providecommand\href[2]{\texttt{#1}}
@@ -528,16 +528,6 @@
   \def\endtheindex{\onecolumn}
 \def\noindexing{\let\index=\@gobble}
 
-
-\newcommand\patternindex[1]{
-  \index{#1@\protect\texttt{#1} pattern}%
-  \index{Patterns!#1@\protect\texttt{#1}}
-  \texttt{#1}& 
-  \begin{tikzpicture}
-    \path[draw=black!50,very thin,pattern=#1,rounded corners]
-    (0pt,0pt) rectangle (1cm,1.5em);
-  \end{tikzpicture}
-}
 
 
 \newcommand\symarrow[1]{
