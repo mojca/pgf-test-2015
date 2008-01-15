@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfbaselayers.code.tex,v 1.4 2006/10/11 15:22:25 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex,v 1.11 2007/09/24 19:13:34 tantau Exp $
 
 
 % Creates a new pgf layer
@@ -70,6 +70,9 @@
       \hss
     \egroup%
 }
+
+\let\startpgfonlayer=\pgfonlayer
+\let\stoppgfonlayer=\endpgfonlayer
 
 
 
