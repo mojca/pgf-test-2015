@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfm.def,v 1.18 2007/12/17 14:52:31 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfmx.def,v 1.1 2008/02/05 10:57:46 tantau Exp $
 
 % Driver commands for dvipdfm
 
@@ -18,9 +18,10 @@
 \input pgfsys-common-pdf-via-dvi.def
 
 %
-% dvipdfm-specific stuff:
+% dvipdfmx-specific stuff:
 %
 
+\def\pgfsys@invoke#1{\special{pdf:literal direct #1 }}
 
 
 %
