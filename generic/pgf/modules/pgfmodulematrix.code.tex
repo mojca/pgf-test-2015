@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex,v 1.11 2007/09/24 19:13:34 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmodulematrix.code.tex,v 1.1 2008/01/15 10:27:34 tantau Exp $
 
 \usepgfmodule{shapes}
 
@@ -159,6 +159,7 @@
     \PackageError{pgf}{You cannot nest pgfmatrix environments, yet}{}
   \fi%
   \bgroup%  
+    \everycr{}%
     #6%
     \def\pgf@matrix@par@shape{#1}%
     \def\pgf@matrix@par@anchor{#2}%
