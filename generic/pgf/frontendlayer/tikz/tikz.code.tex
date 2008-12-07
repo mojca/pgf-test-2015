@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.55 2008/11/23 16:07:47 ludewich Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.56 2008/11/24 18:31:22 tantau Exp $
 
 
 % Always-present libraries:
@@ -903,7 +903,13 @@
 
 \tikzoption{only marks}[]{\let\tikz@plot@handler\pgfplothandlerdiscard}
 
-\tikzoption{mark}{\def\tikz@plot@mark{#1}}
+\tikzoption{mark}{
+	\def\tikz@plot@mark{#1}%
+	\def\tikz@temp{none}%
+	\ifx\tikz@temp\tikz@plot@mark
+		\let\tikz@plot@mark=\pgfutil@empty
+	\fi
+}
 \tikzset{
 	every mark/.style={},
 	mark options/.style={%
