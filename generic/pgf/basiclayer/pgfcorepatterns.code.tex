@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorepatterns.code.tex,v 1.1 2008/01/15 10:27:34 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorepatterns.code.tex,v 1.2 2008/03/19 20:24:49 vibrovski Exp $
 
 % Creates a new uncolored pattern
 %
@@ -118,7 +118,7 @@
 	\expandafter\pgf@marshal\expandafter{\pgf@pattern@tempvars}{#2}{#3}{#4}{#5}{2}%
 }
 
-\long\def\pgf@declarepatterninherently@mutable#1#2#3#4#5#6{%
+\long\def\pgf@declarepatterninherentlycolored@mutable#1#2#3#4#5#6{%
 	\def\pgf@marshal{\pgf@declarepatternmutable{#1}}%	
 	\expandafter\pgf@marshal\expandafter{\pgf@pattern@tempvars}{#2}{#3}{#4}{#5}{3}%
 }
