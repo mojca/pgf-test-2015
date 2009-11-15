@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduleplot.code.tex,v 1.2 2008/09/27 18:54:33 ludewich Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduleplot.code.tex,v 1.3 2009/09/15 07:49:23 ludewich Exp $
 
 
 % PGF's plotting interface works as follows:
@@ -285,7 +285,7 @@
 {
   \catcode`\%=12
   \catcode`\"=12
-  \xdef\pgf@gnuplot@head{set terminal table; set output \noexpand\pgf@plottablefile@quoted; set format "%.5f"}
+  \xdef\pgf@gnuplot@head{set table \noexpand\pgf@plottablefile@quoted; set format "%.5f"}
 }
 
 \let\pgf@plotwrite=\w@pgf@writea
