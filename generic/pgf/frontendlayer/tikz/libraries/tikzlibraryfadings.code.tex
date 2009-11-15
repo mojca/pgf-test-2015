@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibrarytikzfadings.code.tex,v 1.2 2007/12/20 10:56:53 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex,v 1.1 2008/01/09 17:57:16 tantau Exp $
 
 \usepgflibrary{fadings}
 
@@ -28,8 +28,9 @@
   \endgroup%
 }
 
-\let\starttikzfadingfrompicture=\tikzfadingfrompicture
-\let\stopttikzfadingfrompicture=\endtikzfadingfrompicture
+% This makes it easier to maintain compatibility with the external lib:
+\def\starttikzfadingfrompicture{\tikzfadingfrompicture}
+\def\stopttikzfadingfrompicture{\endtikzfadingfrompicture}
 
 \def\tikzfading[#1]{%
   {%
