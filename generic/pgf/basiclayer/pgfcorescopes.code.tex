@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorescopes.code.tex,v 1.30 2010/06/30 10:25:08 ludewich Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorescopes.code.tex,v 1.31 2010/06/30 13:06:37 ludewich Exp $
 
 % Globals
 
@@ -356,6 +356,12 @@
 \def\pgfsetbaseline#1{\pgfsetbaselinepointlater{\pgfpoint{0pt}{#1}}}
 \pgfsetbaseline{\pgf@picminy}
 
+% controls how the image externalization implements trim:
+\newif\ifpgf@trim@lowlevel
+\pgfkeys{
+	/pgf/trim lowlevel/.is if=pgf@trim@lowlevel,
+	/pgf/trim lowlevel/.default=true,
+}
 
 % Same as the y-baseline for horizontal alignment.
 % The effect is different, though: it is some kind of trimming which
