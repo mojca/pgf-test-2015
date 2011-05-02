@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-node.lua,v 1.6 2011/05/02 02:19:30 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-node.lua,v 1.7 2011/05/02 02:20:36 jannis-pohlmann Exp $
 
 -- This file defines a node class, used in the graph representation.
 
@@ -161,7 +161,7 @@ end
 -- @return True if self is equal to object.
 function Node:__eq(object)
    Sys:logMessage('LAY: node eq function called')
-   return self.name == object.name;
+   return self.name == object.name
 end
 
 --- Returns a formated string representation of the node.
