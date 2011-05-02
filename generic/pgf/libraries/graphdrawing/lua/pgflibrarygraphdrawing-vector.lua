@@ -7,9 +7,9 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header:$
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-vector.lua,v 1.1 2011/05/02 00:59:33 jannis-pohlmann Exp $
 
---pgf.module('pgf.graphdrawing')
+pgf.module('pgf.graphdrawing')
 
 
 
