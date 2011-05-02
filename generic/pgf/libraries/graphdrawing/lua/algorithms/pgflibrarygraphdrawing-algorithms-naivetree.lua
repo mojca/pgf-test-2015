@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/algorithms/pgflibrarygraphdrawing-algorithms-naivetree.lua,v 1.1 2011/05/02 01:47:09 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/algorithms/pgflibrarygraphdrawing-algorithms-naivetree.lua,v 1.2 2011/05/02 02:05:07 jannis-pohlmann Exp $
 
 -- This is about the most naive implementation of a tree drawing algorithm.
 
@@ -88,7 +88,7 @@ function preorderTraversal(graph)
     for edge in table.value_iter(node.edges) do
       local child = edge:getNeighbour(node)
       if not visited[child] then
-        --Sys:logMessage('naivetree: child ' .. string.gsub(child.name, '.*@(.*)', '%1'))
+        --Sys:log('naivetree: child ' .. string.gsub(child.name, '.*@(.*)', '%1'))
         table.insert(children, child)
       end
     end
