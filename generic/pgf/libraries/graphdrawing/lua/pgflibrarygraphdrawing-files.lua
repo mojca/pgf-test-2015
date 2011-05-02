@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-files.lua,v 1.5 2011/05/02 02:00:55 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-files.lua,v 1.6 2011/05/02 02:29:12 jannis-pohlmann Exp $
 
 -- This file defines a list of initial files to load.
 
@@ -24,6 +24,7 @@ local files = {
    "algorithms-localsearchgraph",
    "interface",
    "iter-helpers",
+   "orientation",
    "positioning-helpers",
    "table-helpers",
    "texboxregister",
