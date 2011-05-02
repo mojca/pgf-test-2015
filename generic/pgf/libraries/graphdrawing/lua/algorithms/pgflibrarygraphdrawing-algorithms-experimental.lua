@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header:$
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/algorithms/pgflibrarygraphdrawing-algorithms-experimental.lua,v 1.1 2011/05/02 02:34:04 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -18,4 +18,5 @@ function drawGraphAlgorithm_experimental(graph)
   drawGraphAlgorithm_spring(graph)
 
   orientation.adjust(graph)
+  componentpacking.pack(graph)
 end
