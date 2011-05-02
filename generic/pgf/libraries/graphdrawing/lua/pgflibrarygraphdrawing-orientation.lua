@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-orientation.lua,v 1.3 2011/05/02 02:47:03 jannis-pohlmann Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-orientation.lua,v 1.4 2011/05/02 02:52:29 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -43,7 +43,7 @@ function orientation.rotate(graph)
     return string.sub(node.name, string.len('not yet positioned@') + 1)
   end
 
-  local axis_node1, axis_node2, desired_angle, flip = orientation.parse(graph)
+  local axis_node1, axis_node2, desired_angle, flip = orientation.parse_orientation(graph)
 
   local angle = 0
   local gaxis_vector = nil
@@ -148,7 +148,7 @@ end
 --
 -- @return TODO
 --
-function orientation.parse(graph)
+function orientation.parse_orientation(graph)
   local function stripParentheses(name)
     return name:gsub('[%(%)]', '')
   end
