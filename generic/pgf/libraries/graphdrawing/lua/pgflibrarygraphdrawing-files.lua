@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header:$
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-files.lua,v 1.2 2011/04/20 17:50:27 matthiasschulz Exp $
 
 -- This file defines a list of initial files to load.
 
@@ -26,7 +26,8 @@ local files = {
    "texboxregister",
    "test-position",
    "test-path",
-   "test-box"
+   "test-box",
+   "vector",
 }
 
 return files
