@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-node.lua,v 1.5 2011/05/02 02:18:28 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-node.lua,v 1.6 2011/05/02 02:19:30 jannis-pohlmann Exp $
 
 -- This file defines a node class, used in the graph representation.
 
@@ -84,9 +84,11 @@ function Node:removeEdge(edge)
    table.remove_values(self.edges, function (other) return other == edge end)
 end
 
---- Computes the number of neighbour nodes.
--- @return Number of neighbours.
-function Node:degree()
+--- Counts the adjacent edges of the node.
+--
+-- @return The number of adjacent edges of the node.
+--
+function Node:getDegree()
 	return table.count_pairs(self.edges)
 end
 
