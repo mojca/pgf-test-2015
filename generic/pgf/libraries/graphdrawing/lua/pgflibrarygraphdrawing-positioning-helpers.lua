@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-positioning-helpers.lua,v 1.2 2011/05/02 02:40:18 jannis-pohlmann Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-positioning-helpers.lua,v 1.3 2011/05/02 02:47:03 jannis-pohlmann Exp $
 
 --- This file contains a number of helper functions for tables, including
 --- functions to create key and value iterators, copy tables, map table
@@ -44,8 +44,7 @@ end
 
 
 function positioning.circle(graph, distance)
-  local count = table.count_pairs(graph.nodes)
-  local alpha = (2 * math.pi) / count
+  local alpha = (2 * math.pi) / #graph.nodes
   local radius = distance / (2 * math.sin(alpha / 2))
   local i = 0
 
