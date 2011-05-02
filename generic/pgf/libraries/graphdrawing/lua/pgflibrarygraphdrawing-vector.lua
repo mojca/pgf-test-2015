@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-vector.lua,v 1.3 2011/05/02 01:49:54 jannis-pohlmann Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-vector.lua,v 1.4 2011/05/02 02:02:08 jannis-pohlmann Exp $
 
 --- This file contains a class for defining arbitrary vectors and
 --- perform operations on them.
@@ -63,7 +63,7 @@ end
 
 
 function Vector:set(index, value)
-  self.elements[i] = value
+  self.elements[index] = value
 end
 
 
