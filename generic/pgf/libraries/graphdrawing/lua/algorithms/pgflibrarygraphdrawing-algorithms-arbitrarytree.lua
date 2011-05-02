@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/algorithms/pgflibrarygraphdrawing-algorithms-arbitrarytree.lua,v 1.3 2011/05/02 02:20:36 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/algorithms/pgflibrarygraphdrawing-algorithms-arbitrarytree.lua,v 1.4 2011/05/02 02:31:01 jannis-pohlmann Exp $
 
 -- This file contains an algorithm for drawing arbitrary shaped trees.
 
@@ -112,7 +112,7 @@ function treePositioning(tree, placeBoxes, compareBoxes, drawPath, leveldistance
     local resultBox
    local boxes = {}
    local edges = {}
-	if(tree.root:degree() == 0) then
+	if(tree.root:getDegree() == 0) then
       resultBox = tree.root
    else
       resultBox = Box:new{}

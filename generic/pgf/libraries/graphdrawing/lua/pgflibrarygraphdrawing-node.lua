@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-node.lua,v 1.9 2011/05/02 02:47:03 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-node.lua,v 1.10 2011/05/02 03:05:04 jannis-pohlmann Exp $
 
 -- This file defines a node class, used in the graph representation.
 
@@ -176,5 +176,5 @@ function Node:__tostring()
 end
 
 function Node:shortname()
-  return string.sub(self.name, string.len('not yet positioned@') + 1)
+  return string.sub(self.name, string.len('not yet positionedPGFGDINTERNAL') + 1)
 end
