@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/algorithms/pgflibrarygraphdrawing-algorithms-wetherelltree.lua,v 1.1 2011/05/02 00:59:33 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/algorithms/pgflibrarygraphdrawing-algorithms-wetherelltree.lua,v 1.2 2011/05/02 02:02:09 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -100,7 +100,7 @@ end
 function getChildren(node)
   local children = {}
 
-  for edge in values(node:getEdges()) do
+  for edge in table.value_iter(node.edges) do
     local child = edge:getNeighbour(node)
 
     if child.parent ~= child and node.parent ~= child then
@@ -272,7 +272,8 @@ function isTree(graph)
     local node = pop()
 
     -- iterate over all adjacent edges that we haven't explored yet
-    for edge in filter(values(node:getEdges()), edgeNotExplored) do
+    --for edge in filter(values(node:getEdges()), edgeNotExplored) do
+    for edge in iter.filter(table.value_iter(node.edges), edgeNotExplored) do
       -- mark the edge as explored
       edge.explored = true
       
