@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-orientation.lua,v 1.5 2011/05/02 02:58:45 jannis-pohlmann Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-orientation.lua,v 1.6 2011/05/02 03:01:01 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -94,6 +94,10 @@ function orientation.rotate(graph)
     local xaxis_len = xaxis_vector:norm()
 
     -- compute the angle between the x axis and the graph axis vector
+    -- TODO here a NaN can be generated which is bad for TikZ/PGF. in
+    -- that case the problem is most likely in the layout algorithm as
+    -- two nodes should never be at the same coordinate (where |gaxis| 
+    -- is 0)
     local angle = math.acos(xaxis_vector:dotProduct(gaxis_vector) / (xaxis_len * gaxis_len))
 
     -- determine whether the graph axis vector is positively rotated to the x axis
