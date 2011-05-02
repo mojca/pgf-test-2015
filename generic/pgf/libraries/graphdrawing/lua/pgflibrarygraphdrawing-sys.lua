@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more details.
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-sys.lua,v 1.7 2011/05/02 02:09:05 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-sys.lua,v 1.8 2011/05/02 02:16:14 jannis-pohlmann Exp $
 
 -- This file contains methods dealing with the output back to the TeX
 -- side and some TeX and PGF specialties.
@@ -95,6 +95,11 @@ function Sys:putEdge(edge)
    local node_strings = table.map_values(edge.nodes, function (node) 
       return '(' .. string.sub(node.name, string.len('not yet positioned@') + 1) .. ')'
    end)
+
+   -- reverse strings if the edge is reversed
+   if edge.reversed then
+     node_strings = table.reverse_values(node_strings, node_strings)
+   end
 
    -- determine the direction string, which is '' for undirected edges
    local direction = edge.direction == Edge.UNDIRECTED and '' or edge.direction
