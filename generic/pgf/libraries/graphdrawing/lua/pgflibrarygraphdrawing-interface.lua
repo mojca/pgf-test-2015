@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header:$
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-interface.lua,v 1.2 2011/04/20 17:50:27 matthiasschulz Exp $
 
 -- This file defines the Interface global object, which is used as a
 -- simplified frontend in the TeX part of the library.
@@ -140,7 +140,7 @@ function Interface:finishGraph()
 
    Sys:logMessage("GD:INT: graph = " .. tostring(graph))
 
-   for node in values(graph.nodes) do
+   for node in table.value_iter(graph.nodes) do
       Sys:logMessage("GD:INT: node = " .. tostring(node))
       self:drawNode(node)
    end
