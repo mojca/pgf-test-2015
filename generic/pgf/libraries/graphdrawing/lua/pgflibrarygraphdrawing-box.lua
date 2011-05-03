@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-box.lua,v 1.3 2011/05/03 11:24:43 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-box.lua,v 1.4 2011/05/03 13:06:36 jannis-pohlmann Exp $
 
 -- This files defines a box class.  Boxes can contain other boxes.  Used
 -- in the algorithm implementations.
@@ -43,6 +43,7 @@ end
 --- Adds new internal Box.
 -- @param box The box to be added.
 function Box:addBox(box)
+   assert(box.pos ~= self.pos)
    box.pos:setOrigin(self.pos)
    self._boxes[box] = true
    self:recalculateSize()
