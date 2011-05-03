@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-vector.lua,v 1.8 2011/05/02 21:40:31 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-vector.lua,v 1.9 2011/05/03 11:24:43 jannis-pohlmann Exp $
 
 --- This file contains a class for defining arbitrary vectors and
 --- perform operations on them.
@@ -363,6 +363,12 @@ end
 
 
 function Vector:__tostring()
-  -- FIXME this is outdated; need to resolve the origin if set
-  return '(' .. table.concat(self.elements, ', ') .. ')'
+  if self.origin then
+    local values = table.map(self.elements, function (n, element)
+      return tostring(self:get(n))
+    end)
+    return '(' .. table.concat(values, ', ') .. ')'
+  else
+    return '(' .. table.concat(self.elements, ', ') .. ')'
+  end
 end
