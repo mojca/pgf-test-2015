@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-iter-helpers.lua,v 1.3 2011/05/02 02:25:58 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-iter-helpers.lua,v 1.4 2011/05/02 21:40:31 jannis-pohlmann Exp $
 
 --- This file contains a several functions that are helpful when dealing
 --- with iterators. Included are functions to filter values of an iterator,

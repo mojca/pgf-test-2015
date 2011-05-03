@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-table-helpers.lua,v 1.11 2011/05/02 03:21:41 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-table-helpers.lua,v 1.12 2011/05/02 21:40:31 jannis-pohlmann Exp $
 
 --- This file contains a number of helper functions for tables, including
 --- functions to create key and value iterators, copy tables, map table
@@ -42,8 +42,8 @@ pgf.module("pgf.graphdrawing")
 -- @return A new table with the key/value pairs of the two input tables
 --         merged together.
 --
-function table.merge(table1, table2, first_metatable)
-  local result = table1 and table.copy(table1) or {}
+function table.custom_merge(table1, table2, first_metatable)
+  local result = table1 and table.custom_copy(table1) or {}
   local first_metatable = first_metatable == true or false
 
   for key, value in pairs(table2) do
@@ -52,7 +52,7 @@ function table.merge(table1, table2, first_metatable)
     end
   end
 
-  if not first_metatable then
+  if not first_metatable or not getmetatable(result) then
     setmetatable(result, getmetatable(table2))
   end
 
@@ -115,7 +115,7 @@ end
 -- @return The \meta{target} table or a newly allocated table containing all
 --         keys and values of the \meta{source} table.
 --
-function table.copy(source, target)
+function table.custom_copy(source, target)
   target = target or {}
   for key, val in pairs(source) do
     target[key] = val

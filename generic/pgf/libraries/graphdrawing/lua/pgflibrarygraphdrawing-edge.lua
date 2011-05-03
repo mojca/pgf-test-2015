@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-edge.lua,v 1.12 2011/05/02 17:09:24 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-edge.lua,v 1.13 2011/05/02 21:40:31 jannis-pohlmann Exp $
 
 -- This file defines an edge class, used in the graph representation.
 
@@ -56,7 +56,7 @@ function Edge:new(values)
     reversed = false,
   }
   setmetatable(defaults, Edge)
-  local result = mergeTable(values, defaults)
+  local result = table.custom_merge(values, defaults)
   return result
 end
 
@@ -280,10 +280,9 @@ end
 -- @return Shallow copy of the edge.
 --
 function Edge:copy()
-  local result = copyTable(self, Edge:new())
-  result._nodes = {}
-  obj.nodes = {}
-  return obj
+  local result = table.custom_copy(self, Edge:new())
+  result.nodes = {}
+  return result
  end
 
 

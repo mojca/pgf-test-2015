@@ -7,31 +7,28 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-files.lua,v 1.7 2011/05/02 02:33:08 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-files.lua,v 1.8 2011/05/02 02:47:03 jannis-pohlmann Exp $
 
 -- This file defines a list of initial files to load.
 
 local files = {
    "module",
-   "helper",
+   "table",
+   "iter",
+   "string",
    "sys",
-   "position",
+   "vector",
    "path",
    "box",
    "node",
    "edge",
    "graph",
-   "algorithms-localsearchgraph",
+   "traversal",
    "component-packing",
    "interface",
-   "iter-helpers",
    "orientation",
    "positioning-helpers",
-   "vector",
-   "traversal-helpers",
-   "table-helpers",
    "texboxregister",
-   "test-position",
    "test-path",
    "test-box",
    "test-vector",
