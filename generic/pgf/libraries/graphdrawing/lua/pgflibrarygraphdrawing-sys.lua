@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more details.
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-sys.lua,v 1.11 2011/05/02 03:36:23 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-sys.lua,v 1.12 2011/05/02 17:09:24 jannis-pohlmann Exp $
 
 -- This file contains methods dealing with the output back to the TeX
 -- side and some TeX and PGF specialties.
@@ -158,7 +158,6 @@ function Sys:putEdge(edge)
   local draw_string = '\\draw[' .. direction .. ',' .. edge.tikz_options ..'] ' .. table.concat(node_strings, edge_string) .. ';'
   
   -- hand TikZ code over to TeX
-  texio.write_nl(draw_string)
   tex.print(draw_string)
 end
 

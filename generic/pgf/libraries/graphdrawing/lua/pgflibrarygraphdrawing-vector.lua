@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-vector.lua,v 1.10 2011/05/03 13:38:36 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-vector.lua,v 1.11 2011/05/03 23:57:16 jannis-pohlmann Exp $
 
 --- This file contains a class for defining arbitrary vectors and
 --- perform operations on them.
@@ -378,4 +378,20 @@ function Vector:__tostring()
   else
     return '(' .. table.concat(self.elements, ', ') .. ')'
   end
+end
+
+
+
+function Vector:equals(other)
+  if #self.elements ~= #other.elements then
+    return false
+  end
+
+  for n = 1, #self.elements do
+    if self.elements[n] ~= other.elements[n] then
+      return false
+    end
+  end
+
+  return true
 end
