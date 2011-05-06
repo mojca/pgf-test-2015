@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/algorithms/pgflibrarygraphdrawing-algorithms-walshaw-spring-electrical.lua,v 1.9 2011/05/06 11:15:33 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/spring/pgfgd-algorithm-walshaw-spring.lua,v 1.1 2011/05/06 15:12:16 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -59,13 +59,10 @@ function drawGraphAlgorithm_walshaw_spring(graph)
   math.randomseed(seed)
 
   -- check if we should use the multilevel approach
-  -- TODO parsing of boolean options should happen in the frontend layer
-  local use_coarsening = graph:getOption('/graph drawing/spring layout/coarsening')
-  use_coarsening = use_coarsening == 'true' or use_coarsening == ''
+  local use_coarsening = graph:getOption('/graph drawing/spring layout/coarsening') == 'true'
 
   -- check if we should use the quadtree optimization
-  local use_quadtree = graph:getOption('/graph drawing/spring layout/quadtree')
-  use_quadtree = use_quadtree == 'true' or use_quadtree == ''
+  local use_quadtree = graph:getOption('/graph drawing/spring layout/quadtree') == 'true'
 
   -- determine parameters for the algorithm
   local k = tonumber(graph:getOption('/graph drawing/spring layout/natural spring dimension')) or 28.5
@@ -76,7 +73,6 @@ function drawGraphAlgorithm_walshaw_spring(graph)
   Sys:log('WALSHAW: use_coarsening = ' .. tostring(use_coarsening))
   Sys:log('WALSHAW: use_quadtree = '   .. tostring(use_quadtree))
   Sys:log('WALSHAW: iterations = ' .. tostring(iterations))
-  Sys:log(' ')
   Sys:setVerbose(false)
 
   --Sys:log('WALSHAW: graph:')

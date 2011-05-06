@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/algorithms/pgflibrarygraphdrawing-algorithms-hu-spring-electrical.lua,v 1.1 2011/05/05 23:14:31 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/spring/pgfgd-algorithm-hu-spring.lua,v 1.1 2011/05/06 15:12:16 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -28,14 +28,16 @@ function drawGraphAlgorithm_hu_spring(graph)
   if seed == 0 then seed = os.time() end
   math.randomseed(seed)
 
+  --Sys:setVerbose(true)
+  --Sys:log('coarsening option: ' .. tostring(graph:getOption('/graph drawing/spring layout/coarsening')))
+  --Sys:log('quadtree option:   ' .. tostring(graph:getOption('/graph drawing/spring layout/quadtree')))
+  --Sys:setVerbose(false)
+
   -- check if we should use the multilevel approach
-  -- TODO parsing of boolean options should happen in the frontend layer
-  local use_coarsening = graph:getOption('/graph drawing/spring layout/coarsening')
-  use_coarsening = use_coarsening == 'true' or use_coarsening == ''
+  local use_coarsening = graph:getOption('/graph drawing/spring layout/coarsening') == 'true'
 
   -- check if we should use the quadtree optimization
-  local use_quadtree = graph:getOption('/graph drawing/spring layout/quadtree')
-  use_quadtree = use_quadtree == 'true' or use_quadtree == ''
+  local use_quadtree = graph:getOption('/graph drawing/spring layout/quadtree') == 'true'
 
   -- determine other parameters of for the algorithm
   local k = tonumber(graph:getOption('/graph drawing/spring layout/natural spring dimension')) or 28.5
