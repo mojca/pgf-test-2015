@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/spring/pgfgd-algorithm-walshaw-spring.lua,v 1.2 2011/05/06 16:11:12 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/spring/pgfgd-algorithm-walshaw-spring.lua,v 1.3 2011/05/09 20:40:52 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -56,11 +56,17 @@ walshaw_spring = {}
 --
 -- @param graph
 --
-function drawGraphAlgorithm_walshaw_spring(graph)
+function drawGraphAlgorithm_Walshaw2000_spring(graph)
   -- apply the random seed specified by the user
   local seed = tonumber(graph:getOption('/graph drawing/spring layout/random seed')) or 42
   if seed == 0 then seed = os.time() end
   math.randomseed(seed)
+
+  for key, val in pairs(graph.options) do
+    Sys:setVerbose(true)
+    Sys:log(tostring(key) .. ' => ' .. tostring(val))
+    Sys:setVerbose(false)
+  end
 
   -- check if we should use the multilevel approach
   local use_coarsening = graph:getOption('/graph drawing/spring layout/coarsening') == 'true'

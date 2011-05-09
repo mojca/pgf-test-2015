@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/spring/pgfgd-algorithm-hu-spring.lua,v 1.2 2011/05/06 16:11:12 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/spring/pgfgd-algorithm-hu-spring.lua,v 1.3 2011/05/09 20:40:51 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -22,7 +22,7 @@ pgf.module("pgf.graphdrawing")
 --
 -- Modifications compared to the original algorithm:
 --
-function drawGraphAlgorithm_hu_spring(graph)
+function drawGraphAlgorithm_Hu2006_spring(graph)
   -- apply the random seed specified by the user
   local seed = tonumber(graph:getOption('/graph drawing/spring layout/random seed')) or 42
   if seed == 0 then seed = os.time() end
