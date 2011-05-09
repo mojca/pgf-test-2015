@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-files.lua,v 1.11 2011/05/06 11:15:33 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-files.lua,v 1.1 2011/05/06 15:12:16 jannis-pohlmann Exp $
 
 -- This file defines a list of initial files to load.
 
@@ -25,6 +25,7 @@ local files = {
    "edge",
    "graph",
    "traversal",
+   "coarse-graph",
    "component-packing",
    "interface",
    "orientation",
