@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-interface.lua,v 1.2 2011/05/06 16:11:13 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-interface.lua,v 1.3 2011/05/10 14:21:00 tantau Exp $
 
 -- This file defines the Interface global object, which is used as a
 -- simplified frontend in the TeX part of the library.
@@ -196,10 +196,8 @@ function Interface:drawGraph()
   local start = os.clock()
   algorithm(self.graph)
   local stop = os.clock()
-  Sys:setVerbose(true)
   Sys:log(string.format("GD:INT: algorithm took %.2f seconds", stop - start))
   Sys:log(' ')
-  Sys:setVerbose(false)
 end
 
 
