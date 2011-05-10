@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-graph.lua,v 1.13 2011/05/03 11:24:43 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-graph.lua,v 1.1 2011/05/06 15:12:16 jannis-pohlmann Exp $
 
 -- This file defines a graph class, which later represents user created
 -- graphs.
@@ -65,7 +65,7 @@ end
 -- @return The value of the graph option \meta{name} or |nil|.
 --
 function Graph:getOption(name)
-  return self.options[name]
+   return self.options[name] or Interface.defaultGraphParameters[name]
 end
 
 
