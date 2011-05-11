@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-vector.lua,v 1.13 2011/05/05 23:14:31 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-vector.lua,v 1.1 2011/05/06 15:12:16 jannis-pohlmann Exp $
 
 --- This file contains a class for defining arbitrary vectors and
 --- perform operations on them.
@@ -258,7 +258,12 @@ end
 -- @return Normalized version of the original vector.
 --
 function Vector:normalized()
-  return self:dividedByScalar(self:norm())
+  local norm = self:norm()
+  if norm == 0 then
+    return Vector:new(#self.elements, function (n) return 0 end)
+  else
+    return self:dividedByScalar(self:norm())
+  end
 end
 
 
