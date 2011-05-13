@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/algorithms/pgflibrarygraphdrawing-algorithms-spring.lua,v 1.11 2011/05/06 11:15:33 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/spring/pgfgd-algorithm-textor-spring.lua,v 1.1 2011/05/06 15:12:16 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
