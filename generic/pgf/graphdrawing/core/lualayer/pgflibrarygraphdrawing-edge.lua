@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-edge.lua,v 1.3 2011/05/11 01:26:41 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-edge.lua,v 1.4 2011/05/14 16:49:11 jannis-pohlmann Exp $
 
 -- This file defines an edge class, used in the graph representation.
 
@@ -118,10 +118,7 @@ end
 -- @return |true| if the node is adjacent to the edge. |false| otherwise.
 --
 function Edge:containsNode(node)
-  local result = table.find(self.nodes, function (other) 
-    return other.name == node.name 
-  end)
-  return not (result == nil)
+  return table.find(self.nodes, function (other) return other == node end) ~= nil
 end
 
 
