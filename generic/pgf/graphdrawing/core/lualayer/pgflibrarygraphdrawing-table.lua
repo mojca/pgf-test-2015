@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/pgflibrarygraphdrawing-table.lua,v 1.1 2011/05/03 11:24:43 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-table.lua,v 1.1 2011/05/06 15:12:16 jannis-pohlmann Exp $
 
 --- This file contains a number of helper functions for tables, including
 --- functions to create key and value iterators, copy tables, map table
@@ -476,7 +476,7 @@ end
 --
 -- @param input       The table to remove values from.
 -- @param remove_func Function to be called for each value of \meta{input}. If
---                    it returns |false|, the value will be removed from the
+--                    it returns |true|, the value will be removed from the
 --                    table in-place.
 --
 -- @return \meta{input} which was edited in-place.
