@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduleshapes.code.tex,v 1.16 2011/04/13 19:56:44 matthiasschulz Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduleshapes.code.tex,v 1.17 2011/05/06 11:15:34 tantau Exp $
 
 
 
@@ -1137,7 +1137,7 @@
   %
   % Background path
   %
-  \backgroundpath{
+  \backgroundpath{%
     \pgfutil@tempdima=\radius%
     \pgfmathsetlength{\pgf@xb}{\pgfkeysvalueof{/pgf/outer xsep}}%  
     \pgfmathsetlength{\pgf@yb}{\pgfkeysvalueof{/pgf/outer ysep}}%  
