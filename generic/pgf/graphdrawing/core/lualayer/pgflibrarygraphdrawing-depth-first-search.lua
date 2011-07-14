@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-depth-first-search.lua,v 1.1 2011/07/14 13:16:25 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-depth-first-search.lua,v 1.2 2011/07/14 13:16:37 jannis-pohlmann Exp $
 
 --- TODO Jannis: Add documentation.
 
@@ -20,9 +20,8 @@ DepthFirstSearch.__index = DepthFirstSearch
 
 
 
-function DepthFirstSearch:new(graph, init_func, visit_func, complete_func)
+function DepthFirstSearch:new(init_func, visit_func, complete_func)
   local dfs = {
-    graph = graph,
     init_func = init_func,
     visit_func = visit_func,
     complete_func = complete_func,
