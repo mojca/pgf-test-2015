@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-interface.lua,v 1.6 2011/05/15 14:15:45 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-interface.lua,v 1.7 2011/07/15 15:52:56 jannis-pohlmann Exp $
 
 -- This file defines the Interface global object, which is used as a
 -- simplified frontend in the TeX part of the library.
@@ -179,7 +179,7 @@ function Interface:convertFilenameToClassname(filename)
   end
 
   filename = filename:gsub("^(%a)", string.upper, 1)
-  filename = filename:gsub("%s+(%a)", string.upper, 1)
+  filename = filename:gsub("%s+(%a)", string.upper)
 
   local post_substitutions = {
     [' '] = '',
