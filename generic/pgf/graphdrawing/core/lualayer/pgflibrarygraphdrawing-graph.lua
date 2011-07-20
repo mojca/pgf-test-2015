@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-graph.lua,v 1.6 2011/05/17 12:37:57 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-graph.lua,v 1.7 2011/05/18 17:36:02 matthiasschulz Exp $
 
 -- This file defines a graph class, which later represents user created
 -- graphs.
@@ -199,9 +199,9 @@ end
 -- @param edge The edge to be added.
 --
 function Graph:addEdge(edge)
-  if not table.find(self.edges, function (other) return other == edge end) then
+  --if not table.find(self.edges, function (other) return other == edge end) then
     table.insert(self.edges, edge)
-  end
+  --end
 end
 
 
