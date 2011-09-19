@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-coarse-graph.lua,v 1.3 2011/05/11 14:40:14 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-coarse-graph.lua,v 1.4 2011/07/20 21:01:27 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -235,7 +235,7 @@ function CoarseGraph:coarsen()
         -- replace the old edges
         self.graph:addEdge(superedge)
         for edge in table.value_iter(edges) do
-          Sys:log('    delete edge ' .. tostring(edge))
+          --Sys:log('    delete edge ' .. tostring(edge))
           self.graph:deleteEdge(edge)
         end
       end
@@ -422,8 +422,11 @@ function CoarseGraph:findMaximalMatching()
         return not matched_nodes[edge:getNeighbour(node)]
       end)
 
+      -- FIXME TODO We use a light-vertex matching here. This is
+      -- different from the algorithm proposed by Hu which collapses
+      -- edges based on a heavy-edge matching...
       if #edges > 0 then
-        -- sort edges bby the weights of the node's neighbours
+        -- sort edges by the weights of the node's neighbours
         table.sort(edges, function (a, b)
           return a:getNeighbour(node).weight < b:getNeighbour(node).weight
         end)
