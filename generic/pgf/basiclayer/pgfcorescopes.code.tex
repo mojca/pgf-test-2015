@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorescopes.code.tex,v 1.34 2010/09/08 15:07:18 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorescopes.code.tex,v 1.35 2011/05/19 08:56:54 tantau Exp $
 
 % Globals
 
@@ -271,9 +271,12 @@
               % note that \pgf@trimright@final is also queried
               % by the pgf image externalization.
               \xdef\pgf@trimright@final{\the\pgf@x}%
+			  %
+			  \global\let\pgf@layerlist@=\pgf@layerlist
             \endgroup%
             \hss%
           \egroup%
+		  \let\pgf@layerlist=\pgf@layerlist@
           \pgf@insertlayers%
         \endgroup%    
         \pgfsys@discardpath%
