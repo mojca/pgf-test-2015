@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-positioning-helpers.lua,v 1.3 2011/05/14 16:49:11 jannis-pohlmann Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-positioning-helpers.lua,v 1.4 2011/05/17 01:15:08 jannis-pohlmann Exp $
 
 --- This file contains a number of helper functions for tables, including
 --- functions to create key and value iterators, copy tables, map table
@@ -40,7 +40,7 @@ function positioning.random(graph_size, graph_density, distance)
 
     -- compute the radius needed to place nodes in a circle that fits around
     -- a matrix with sqrt(|V|^2) nodes and a column/row separation of distance
-    local radius = graph_density * 3 * distance * (math.sqrt(graph_size) - 1) / (2 * math.cos(math.pi / 4))
+    local radius = graph_density * 3 * distance * math.sqrt(graph_size) / 2
     return math.random(-radius, radius)
   end
 end
