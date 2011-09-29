@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-orientation.lua,v 1.1 2011/05/06 15:12:16 jannis-pohlmann Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-orientation.lua,v 1.2 2011/05/13 01:23:49 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -103,8 +103,17 @@ function orientation.rotate(graph)
       -- perform the rotation
       for node in table.value_iter(graph.nodes) do
         local x, y = node.pos:x(), node.pos:y()
+        
         node.pos:set{x = x * math.cos(angle) - y * math.sin(angle)}
         node.pos:set{y = x * math.sin(angle) + y * math.cos(angle)}
+      end
+      for edge in table.value_iter(graph.edges) do
+        for point in table.value_iter(edge.bend_points) do
+          local x, y = point:x(), point:y()
+
+          point:set{x = x * math.cos(angle) - y * math.sin(angle)}
+          point:set{y = x * math.sin(angle) + y * math.cos(angle)}
+        end
       end
   
       if swap then
