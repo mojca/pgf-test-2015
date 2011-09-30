@@ -7,13 +7,13 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/graphdrawing/lua/algorithms/pgflibrarygraphdrawing-algorithms-wetherelltree.lua,v 1.6 2011/05/06 11:15:33 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/trees/pgfgd-algorithm-wetherell-tree.lua,v 1.1 2011/05/06 15:12:16 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
 
 
-function drawGraphAlgorithm_wetherelltree(graph, options)
+function graph_drawing_algorithm_wetherelltree(graph, options)
   -- find the root node of the graph
   graph.root = graph:findNodeIf(function (node) return node:getOption('/graph drawing/root') end)
   if not graph.root then

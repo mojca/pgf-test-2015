@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/spring/pgfgd-algorithm-textor-spring.lua,v 1.1 2011/05/06 15:12:16 jannis-pohlmann Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/force/pgfgd-algorithm-textor-spring.lua,v 1.1 2011/05/13 01:23:49 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -33,7 +33,7 @@ pgf.module("pgf.graphdrawing")
 -- @param graph   The graph to draw.
 -- @param options Options passed to the algorithm from TikZ.
 --
-function drawGraphAlgorithm_spring(graph, options)
+function graph_drawing_algorithm_spring(graph, options)
   -- read options passed to the algorithm from TikZ
   local node_distance = graph:getOption('/graph drawing/node distance') or 7
   local iterations = tonumber(graph:getOption('/graph drawing/spring layouts/maximum iterations') or 500)

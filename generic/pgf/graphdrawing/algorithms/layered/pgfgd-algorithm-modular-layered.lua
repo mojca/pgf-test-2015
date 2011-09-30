@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered.lua,v 1.6 2011/07/20 21:01:37 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered.lua,v 1.7 2011/07/26 11:29:05 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -18,7 +18,7 @@ ModularLayered.__index = ModularLayered
 
 
 
-function drawGraphAlgorithm_modular_layered(graph)
+function graph_drawing_algorithm_modular_layered(graph)
   ModularLayered:new(graph):run()
   orientation.adjust(graph)
 end

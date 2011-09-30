@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/trees/pgfgd-algorithm-AhrensFKSS2011-tree.lua,v 1.2 2011/05/10 14:21:00 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/trees/pgfgd-algorithm-AhrensFKSS2011-tree.lua,v 1.3 2011/05/10 22:08:17 tantau Exp $
 
 -- This file contains an algorithm for drawing arbitrary shaped trees.
 
@@ -15,7 +15,7 @@ pgf.module("pgf.graphdrawing")
 
 --- Initialising options for positioning the given graph
 -- @param graph The tree-graph to be drawn
-function drawGraphAlgorithm_AhrensFKSS2011_tree(graph)
+function graph_drawing_algorithm_AhrensFKSS2011_tree(graph)
 
    -- determine the root of the tree
    graph.root = graph:findNodeIf(function (node) return node:getOption("/graph drawing/root") end) or graph.nodes[1]

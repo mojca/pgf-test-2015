@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-GansnerKNV-layered.lua,v 1.8 2011/07/12 22:35:14 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-GansnerKNV1993-layered.lua,v 1.1 2011/07/14 18:18:53 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -29,7 +29,7 @@ GansnerKNV1993Layered.__index = GansnerKNV1993Layered
 --
 -- Modifications compared to the original algorithm are explained in the manual.
 --
-function drawGraphAlgorithm_GansnerKNV1993_layered(graph)
+function graph_drawing_algorithm_GansnerKNV1993_layered(graph)
   local algorithm = GansnerKNV1993Layered:new(graph)
 
   algorithm:initialize()
