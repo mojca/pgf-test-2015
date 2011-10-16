@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered-node-positioning-GansnerKNV1993.lua,v 1.1 2011/07/15 15:53:28 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered-node-positioning-GansnerKNV1993.lua,v 1.2 2011/07/20 21:00:35 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -24,8 +24,8 @@ function NodePositioningGansnerKNV1993:new(graph, ranking)
     ranking = ranking,
 
     -- read graph input parameters
-    level_distance = tonumber(graph:getOption('/graph drawing/layered drawing/level distance')),
-    sibling_distance = tonumber(graph:getOption('/graph drawing/layered drawing/sibling distance')),
+    level_distance = tonumber(graph:getOption('/graph drawing/level distance')),
+    sibling_distance = tonumber(graph:getOption('/graph drawing/sibling distance')),
   }
   setmetatable(algorithm, NodePositioningGansnerKNV1993)
 

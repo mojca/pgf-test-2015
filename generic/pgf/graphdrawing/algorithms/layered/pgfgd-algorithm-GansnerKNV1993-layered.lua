@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-GansnerKNV1993-layered.lua,v 1.2 2011/09/30 13:16:53 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-GansnerKNV1993-layered.lua,v 1.3 2011/10/02 21:36:07 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -41,8 +41,8 @@ end
 function GansnerKNV1993Layered:new(graph)
   local algorithm = {
     -- read graph input parameters
-    level_distance = tonumber(graph:getOption('/graph drawing/layered drawing/level distance')),
-    sibling_distance = tonumber(graph:getOption('/graph drawing/layered drawing/sibling distance')),
+    level_distance = tonumber(graph:getOption('/graph drawing/level distance')),
+    sibling_distance = tonumber(graph:getOption('/graph drawing/sibling distance')),
 
     -- remember the graph for use in the algorithm
     graph = graph,
