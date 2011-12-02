@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-GansnerKNV1993-layered.lua,v 1.3 2011/10/02 21:36:07 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-GansnerKNV1993-layered.lua,v 1.4 2011/10/16 08:40:10 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -18,7 +18,7 @@ GansnerKNV1993Layered.__index = GansnerKNV1993Layered
 
 
 
---- Implementation of a layered drawing algorithm for directed graphs.
+--- Implementation of a layered layout algorithm for directed graphs.
 -- 
 -- This implementation is based on the paper 
 --
@@ -62,8 +62,8 @@ function GansnerKNV1993Layered:initialize()
   -- initialize edge parameters
   for edge in table.value_iter(self.graph.edges) do
     -- read edge parameters
-    edge.weight = tonumber(edge:getOption('/graph drawing/layered drawing/weight'))
-    edge.minimum_levels = tonumber(edge:getOption('/graph drawing/layered drawing/minimum levels'))
+    edge.weight = tonumber(edge:getOption('/graph drawing/layered layout/weight'))
+    edge.minimum_levels = tonumber(edge:getOption('/graph drawing/layered layout/minimum levels'))
 
     -- validate edge parameters
     assert(edge.minimum_levels >= 0, 'the edge ' .. tostring(edge) .. ' needs to have a minimum levels value greater than or equal to 0')
