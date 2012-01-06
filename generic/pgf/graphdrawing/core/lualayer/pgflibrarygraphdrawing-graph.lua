@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-graph.lua,v 1.9 2011/07/20 21:01:11 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-graph.lua,v 1.10 2011/07/26 11:29:06 jannis-pohlmann Exp $
 
 -- This file defines a graph class, which later represents user created
 -- graphs.
@@ -31,6 +31,7 @@ Graph.__index = Graph
 --                |clusters|: The node clusters of the graph.\par
 --                |pos|: Initial position of the graph.\par
 --                |options|: A table of node options passed over from \tikzname.
+--                |flags|: A table of flags for use by graph algorithms.
 --
 -- @return A newly-allocated graph.
 --
@@ -41,6 +42,7 @@ function Graph:new(values)
     clusters = {},
     pos = Vector:new(2),
     options = {},
+    flags = {},
   }
   setmetatable(defaults, Graph)
   local result = table.custom_merge(values, defaults)
