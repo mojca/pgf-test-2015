@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered.lua,v 1.10 2011/10/16 08:40:10 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered.lua,v 1.11 2011/12/02 14:50:18 tantau Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -19,7 +19,9 @@ ModularLayered.__index = ModularLayered
 
 
 function graph_drawing_algorithm_modular_layered(graph)
-  ModularLayered:new(graph):run()
+  if #graph.nodes > 1 then
+    ModularLayered:new(graph):run()
+  end
 end
 
 
