@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.89 2012/01/24 13:35:05 cjorssen Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.90 2012/03/21 19:48:36 tantau Exp $
 
 
 % Always-present libraries (|\usepgflibrary| defined in
@@ -1595,6 +1595,7 @@
   \gdef\tikz@activecolon{:}%
   \gdef\tikz@activebar{|}%
   \gdef\tikz@activequotes{"}%
+  \global\let\tikz@active@quotes@token="%
   \gdef\tikz@activeexlmark{!}%
   \gdef\tikz@deactivatthings{%
     \def;{\tikz@nonactivesemicolon}%
