@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-node.lua,v 1.4 2011/07/06 21:50:03 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-node.lua,v 1.5 2011/07/20 21:00:58 jannis-pohlmann Exp $
 
 -- This file defines a node class, used in the graph representation.
 
@@ -46,6 +46,8 @@ function Node:new(values)
     edges = {},
     pos = Vector:new(2),
     options = {},
+    growth_direction = nil,
+    index = nil,
   }
   setmetatable(defaults, Node)
   local result = table.custom_merge(values, defaults)

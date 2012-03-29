@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-edge.lua,v 1.8 2011/07/20 21:01:11 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-edge.lua,v 1.9 2011/07/26 11:29:06 jannis-pohlmann Exp $
 
 -- This file defines an edge class, used in the graph representation.
 
@@ -54,7 +54,8 @@ function Edge:new(values)
     bend_points = {},
     bend_nodes = {},
     reversed = false,
-    algorithmically_generated_options = {}
+    algorithmically_generated_options = {},
+    index = nil,
   }
   setmetatable(defaults, Edge)
   local result = table.custom_merge(values, defaults)

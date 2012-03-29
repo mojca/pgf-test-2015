@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgdgd-algorithm-simple-layered.lua,v 1.1 2011/05/06 15:12:16 jannis-pohlmann Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgdgd-algorithm-simple-layered.lua,v 1.2 2011/09/30 13:16:53 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -64,6 +64,8 @@ function graph_drawing_algorithm_simplelayered(graph)
   -- Use spring algorithm to draw the graph
   --require('pgflibrarygraphdrawing-algorithms-spring.lua')
   --graph_drawing_algorithm_spring(graph)
+
+  orientation.algorithm_has_grown_the_graph_in_a_direction(graph)
 end
 
 
