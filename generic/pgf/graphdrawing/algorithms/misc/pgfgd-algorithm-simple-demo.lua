@@ -7,22 +7,28 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/misc/pgfgd-algorithm-simple-demo.lua,v 1.4 2011/05/11 17:22:39 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/misc/pgfgd-algorithm-simple-demo.lua,v 1.5 2011/09/30 13:16:53 jannis-pohlmann Exp $
 
 -- This file contains an example of how a very simple algorithm can be
 -- implemented by a user.
 
 pgf.module("pgf.graphdrawing")
 
+
+
 --- A trivial node placing algorithm for demonstration purposes.
 -- All nodes are positioned on a fixed size circle.
-function graph_drawing_algorithm_simple_demo(graph)
-   local radius = tonumber(graph:getOption("/graph drawing/radius"))
-   local nodeCount = table.count_pairs(graph.nodes)
+
+simple_demo = {}
+simple_demo.__index = simple_demo
+
+function simple_demo:run()
+   local radius = tonumber(self.graph:getOption("/graph drawing/radius") or 28.908)
+   local nodeCount = table.count_pairs(self.graph.nodes)
 
    local alpha = (2 * math.pi) / nodeCount
    local i = 0
-   for node in table.value_iter(graph.nodes) do
+   for node in table.value_iter(self.graph.nodes) do
       -- the interesting part...
       local node_radius = tonumber(node:getOption('/graph drawing/node radius')
                                    or radius)

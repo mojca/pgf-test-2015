@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/trees/pgfgd-algorithm-AhrensFKSS2011-tree.lua,v 1.5 2012/03/21 19:48:36 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/trees/pgfgd-algorithm-AhrensFKSS2011-tree.lua,v 1.6 2012/03/29 19:38:38 tantau Exp $
 
 -- This file contains an algorithm for drawing arbitrary shaped trees.
 

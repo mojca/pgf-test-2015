@@ -8,7 +8,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/trees/pgflibrarygraphdrawing.trees.code.tex,v 1.4 2011/10/16 08:40:10 jannis-pohlmann Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/trees/pgflibrarygraphdrawing.trees.code.tex,v 1.5 2012/03/21 19:48:36 tantau Exp $
 
 
 \usepgflibrary{graphdrawing}
@@ -44,23 +44,8 @@
 \pgfgddeclareforwardedkeys{/graph drawing}{tree layout/.forward to={/graph drawing/layered layout}}
 
 
-% AhrensFKSS2011 tree layout
-%
-% Description:
-%
-% This is an example tree layout algorithm an input tree by the people
-% who first created the graph drawing library.
-%
-% Example:
-%
-% \tikz \graph[AhrensFKSS2011 tree] { a -> {b, c -> {d,e}}};
 
-\pgfgddeclarealgorithmkey
-  {centered root tree layout}
-  {tree layout}
-  {algorithm=AhrensFKSS2011-tree}
-
-
+% No algorithms yet...
 
 
 \endinput

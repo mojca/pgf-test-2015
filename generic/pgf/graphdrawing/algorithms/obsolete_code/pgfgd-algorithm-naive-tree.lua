@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/trees/pgfgd-algorithm-naive-tree.lua,v 1.2 2011/09/30 13:16:53 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/trees/pgfgd-algorithm-naive-tree.lua,v 1.3 2012/03/29 19:38:38 tantau Exp $
 
 -- This is about the most naive implementation of a tree drawing algorithm.
 
