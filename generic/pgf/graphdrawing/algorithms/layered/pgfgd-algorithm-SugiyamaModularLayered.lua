@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered.lua,v 1.14 2012/04/01 21:31:35 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-SugiyamaModuleLayered.lua,v 1.1 2012/04/01 21:54:46 tantau Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -680,13 +680,13 @@ end
 function SugiyamaModularLayered:loadSubAlgorithm(step, name)
 
   -- make sure there are no spaces in the file name
-  escaped_name = name:gsub(' ', '')
+  name = name:gsub(' ', '')
 
   --Sys:log('pre   classname: ' .. classname)
   --Sys:log('escaped name:    ' .. escaped_name)
 
-  local classname = step .. classname
-  local filename = 'pgfgd-subalgorithm-' .. step .. classname .. '.lua'
+  local classname = step .. name
+  local filename = 'pgfgd-subalgorithm-' .. classname .. '.lua'
 
   --Sys:log('load class = ' .. classname .. ', file = ' .. filename)
 
