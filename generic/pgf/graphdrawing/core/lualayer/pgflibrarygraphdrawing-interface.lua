@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-interface.lua,v 1.16 2012/04/01 21:31:38 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-interface.lua,v 1.17 2012/04/01 22:06:08 tantau Exp $
 
 -- This file defines the Interface global object, which is used as a
 -- simplified frontend in the TeX part of the library.
@@ -237,10 +237,10 @@ function Interface:drawGraph()
   -- Step 4: Post layout transformation:
 
   -- Step 4.1: Compute orientation
-  orientation.perform_post_layout_steps(self.graph)
+  orientation.perform_post_layout_steps(algorithm)
 
   -- Step 4.2: Compute anchors
-  anchoring.perform_post_layout_steps(self.graph)
+  anchoring.perform_post_layout_steps(algorithm)
 
   local stop = os.clock()
   Sys:log(string.format("GD:INT: algorithm '" .. name .. "' took %.4f seconds", stop - start))

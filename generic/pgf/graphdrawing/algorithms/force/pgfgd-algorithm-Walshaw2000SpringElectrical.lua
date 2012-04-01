@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/force/pgfgd-algorithm-Walshaw2000-spring-electrical.lua,v 1.6 2012/04/01 21:31:34 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/force/pgfgd-algorithm-Walshaw2000SpringElectrical.lua,v 1.1 2012/04/01 21:54:45 tantau Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -409,6 +409,8 @@ end
 --- Fixes nodes at their specified positions.
 --
 function Walshaw2000SpringElectrical:fixateNodes(graph)
+  local number_of_fixed_nodes = 0
+
   for node in table.value_iter(graph.nodes) do
     -- read the 'desired at' option of the node
     local coordinate = node:getOption('/graph drawing/desired at')
@@ -423,7 +425,12 @@ function Walshaw2000SpringElectrical:fixateNodes(graph)
 
       -- mark the node as fixed
       node.fixed = true
+
+      number_of_fixed_nodes = number_of_fixed_nodes + 1
     end
+  end
+  if number_of_fixed_nodes > 1 then
+     self.growth_direction = "fixed"  -- do not grow, orientation is now fixed
   end
 end
 
