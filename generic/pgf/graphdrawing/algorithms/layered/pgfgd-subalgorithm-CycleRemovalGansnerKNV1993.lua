@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered-cycle-removal-GansnerKNV1993.lua,v 1.1 2011/07/15 15:53:28 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered-cycle-removal-GansnerKNV1993.lua,v 1.2 2011/07/20 21:00:09 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 

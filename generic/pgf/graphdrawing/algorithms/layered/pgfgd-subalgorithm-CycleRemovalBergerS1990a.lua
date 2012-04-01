@@ -7,28 +7,28 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered-cycle-removal-BergerS1990b.lua,v 1.1 2011/07/15 15:53:28 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered-cycle-removal-BergerS1990a.lua,v 1.1 2011/07/15 23:35:08 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
 
 
-CycleRemovalBergerS1990b = {}
-CycleRemovalBergerS1990b.__index = CycleRemovalBergerS1990b
+CycleRemovalBergerS1990a = {}
+CycleRemovalBergerS1990a.__index = CycleRemovalBergerS1990a
 
 
 
-function CycleRemovalBergerS1990b:new(graph)
+function CycleRemovalBergerS1990a:new(graph)
   local algorithm = {
     graph = graph,
   }
-  setmetatable(algorithm, CycleRemovalBergerS1990b)
+  setmetatable(algorithm, CycleRemovalBergerS1990a)
   return algorithm
 end
 
 
 
-function CycleRemovalBergerS1990b:run()
+function CycleRemovalBergerS1990a:run()
   -- remember edges that were removed
   local removed = {}
 
@@ -36,7 +36,7 @@ function CycleRemovalBergerS1990b:run()
   local reverse = {}
 
   -- iterate over all nodes of the graph
-  for node in table.randomized_value_iter(self.graph.nodes) do
+  for node in table.value_iter(self.graph.nodes) do
     -- get all outgoing edges that have not been removed yet
     local out_edges = table.filter_values(node:getOutgoingEdges(), function (edge)
       return not removed[edge]

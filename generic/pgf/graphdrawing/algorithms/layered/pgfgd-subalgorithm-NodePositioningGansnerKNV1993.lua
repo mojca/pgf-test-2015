@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered-node-positioning-GansnerKNV1993.lua,v 1.2 2011/07/20 21:00:35 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered-node-positioning-GansnerKNV1993.lua,v 1.3 2011/10/16 08:40:10 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 

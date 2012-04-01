@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered-node-ranking-MinimumHeight.lua,v 1.1 2011/07/15 15:53:28 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered-node-ranking-minimum-height.lua,v 1.1 2011/07/16 11:42:30 jannis-pohlmann Exp $
 
 pgf.module("pgf.graphdrawing")
 
