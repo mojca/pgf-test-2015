@@ -8,7 +8,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/basiclayer/pgflibrarygraphdrawing.code.tex,v 1.17 2012/04/01 21:31:38 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/basiclayer/pgflibrarygraphdrawing.code.tex,v 1.18 2012/04/03 21:17:55 tantau Exp $
 
 
 
@@ -1167,8 +1167,12 @@
 \pgfgddeclareforwardedkeys{/graph drawing}{
   level distance/.graph parameter=evaluate math expression,
   level distance/.parameter initial=1cm,
+  level sep/.graph parameter=evaluate math expression,
+  level sep/.parameter initial=1pt,
   sibling distance/.graph parameter=evaluate math expression,
   sibling distance/.parameter initial=1cm,
+  sibling sep/.graph parameter=evaluate math expression,
+  sibling sep/.parameter initial=1pt
 }
 
 
