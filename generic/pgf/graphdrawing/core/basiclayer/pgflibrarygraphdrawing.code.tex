@@ -8,7 +8,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/basiclayer/pgflibrarygraphdrawing.code.tex,v 1.16 2012/03/29 19:38:38 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/basiclayer/pgflibrarygraphdrawing.code.tex,v 1.17 2012/04/01 21:31:38 tantau Exp $
 
 
 
@@ -1141,6 +1141,19 @@
 % 
 % 
 %
+
+
+% Random seed
+%
+% To ensure that the same is always shown in the same way when the
+% same algorithm is applied, the random is seed is reset on each call
+% of the graph drawing engine. To (possibly) get different results on
+% different runs, change this value.
+
+\pgfgddeclareforwardedkeys{/graph drawing}{
+  random seed/.graph parameter=evaluate math expression,
+  random seed/.parameter initial=42
+}
 
 
 % Distances between levels and siblings in layered drawings or

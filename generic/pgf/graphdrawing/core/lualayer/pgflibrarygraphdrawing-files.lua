@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-files.lua,v 1.7 2011/07/26 11:29:06 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-files.lua,v 1.8 2012/03/29 19:38:38 tantau Exp $
 
 -- This file defines a list of initial files to load.
 
@@ -41,6 +41,7 @@ local files = {
    "ranking",
    "network-simplex",
    "anchoring",
+   "componentdecomposition",
 --   "test-path",
 --   "test-box",
 --   "test-vector",
