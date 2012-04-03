@@ -8,8 +8,20 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/misc/pgflibrarygraphdrawing.misc.code.tex,v 1.3 2012/04/01 21:31:36 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/misc/pgflibrarygraphdrawing.misc.code.tex,v 1.4 2012/04/03 21:17:55 tantau Exp $
 
+
+
+%
+% A circular layout
+%
+\pgfgddeclarealgorithmkey
+  {circular layout}
+  {circular layout}
+  {
+    algorithm=Circular Layout Tantau 2012,
+    circular layout/radius/.graph parameter=evaluate math expression,
+  }
 
 
 %
