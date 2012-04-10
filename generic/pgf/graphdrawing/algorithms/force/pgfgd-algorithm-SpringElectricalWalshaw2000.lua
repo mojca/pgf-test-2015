@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/force/pgfgd-algorithm-SpringElectricalWalshaw2000.lua,v 1.3 2012/04/03 21:17:55 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/force/pgfgd-algorithm-SpringElectricalWalshaw2000.lua,v 1.1 2012/04/05 10:04:11 tantau Exp $
 
 
 
@@ -49,7 +49,7 @@
 graph_drawing_algorithm {
   name = 'SpringElectricalWalshaw2000',
   properties = {
-    split_into_connected_components = true
+    works_only_on_connected_graphs = true
   },
   graph_parameters = {
     iterations = {'spring electrical layout/iterations', tonumber},

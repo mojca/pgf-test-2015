@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered-crossing-minimization-GansnerKNV1993.lua,v 1.2 2011/07/20 21:00:23 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-subalgorithm-CrossingMinimizationGansnerKNV1993.lua,v 1.1 2012/04/01 21:54:46 tantau Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -18,8 +18,9 @@ CrossingMinimizationGansnerKNV1993.__index = CrossingMinimizationGansnerKNV1993
 
 
 
-function CrossingMinimizationGansnerKNV1993:new(graph, ranking)
+function CrossingMinimizationGansnerKNV1993:new(main_algorithm, graph, ranking)
   local algorithm = {
+    main_algorithm = main_algorithm,
     graph = graph,
     ranking = ranking,
   }

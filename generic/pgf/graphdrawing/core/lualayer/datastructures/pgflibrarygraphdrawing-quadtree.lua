@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/pgflibrarygraphdrawing-quadtree.lua,v 1.5 2011/10/16 08:39:54 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/datastructures/pgflibrarygraphdrawing-quadtree.lua,v 1.1 2012/04/03 21:41:45 tantau Exp $
 
 --- This file contains a class for defining arbitrary vectors and
 --- perform operations on them.
@@ -249,8 +249,6 @@ end
 
 
 function QuadTree:insert(particle)
-  assert(particle.__index == Particle)
-
   self.root_cell:insert(particle)
 end
 

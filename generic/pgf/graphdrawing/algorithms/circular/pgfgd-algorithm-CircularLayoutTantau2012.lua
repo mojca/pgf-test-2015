@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/misc/pgfgd-algorithm-CircularLayoutTantau2012.lua,v 1.3 2012/04/05 10:04:13 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/circular/pgfgd-algorithm-CircularLayoutTantau2012.lua,v 1.1 2012/04/05 14:28:23 tantau Exp $
 
 
 --- A circular layout
@@ -65,7 +65,7 @@ function CircularLayoutTantau2012:run()
   for i,node in ipairs(self.graph.nodes) do
       node.pos:set{
 	x = radius * math.cos(2 * math.pi * positions[i] / length),
-	y = radius * math.sin(2 * math.pi * positions[i] / length)
+	y = -radius * math.sin(2 * math.pi * positions[i] / length)
       }
    end
 end

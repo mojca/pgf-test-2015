@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered-node-ranking-minimum-height.lua,v 1.1 2011/07/16 11:42:30 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-subalgorithm-NodeRankingMinimumHeight.lua,v 1.1 2012/04/01 21:54:46 tantau Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -18,8 +18,9 @@ NodeRankingMinimumHeight.__index = NodeRankingMinimumHeight
 
 
 
-function NodeRankingMinimumHeight:new(graph)
+function NodeRankingMinimumHeight:new(main_algorithm, graph)
   local algorithm = {
+    main_algorithm = main_algorithm,
     graph = graph,
   }
   setmetatable(algorithm, NodeRankingMinimumHeight)

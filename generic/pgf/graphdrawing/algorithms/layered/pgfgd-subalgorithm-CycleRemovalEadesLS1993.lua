@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-modular-layered-cycle-removal-EadesLS1993.lua,v 1.1 2011/07/15 23:35:08 jannis-pohlmann Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-subalgorithm-CycleRemovalEadesLS1993.lua,v 1.1 2012/04/01 21:54:46 tantau Exp $
 
 pgf.module("pgf.graphdrawing")
 
@@ -18,8 +18,9 @@ CycleRemovalEadesLS1993.__index = CycleRemovalEadesLS1993
 
 
 
-function CycleRemovalEadesLS1993:new(graph)
+function CycleRemovalEadesLS1993:new(main_algorithm, graph)
   local algorithm = {
+    main_algorithm = main_algorithm,
     graph = graph,
   }
   setmetatable(algorithm, CycleRemovalEadesLS1993)
