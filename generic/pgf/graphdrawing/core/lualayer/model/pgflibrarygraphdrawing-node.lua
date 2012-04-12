@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/model/pgflibrarygraphdrawing-node.lua,v 1.2 2012/04/05 10:04:13 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/model/pgflibrarygraphdrawing-node.lua,v 1.3 2012/04/10 23:12:21 tantau Exp $
 
 -- This file defines a node class, used in the graph representation.
 
@@ -19,7 +19,7 @@ pgf.module("pgf.graphdrawing")
 
 -- First class: A normal node 
 
-Node = Box:new{}
+Node = {}
 Node.__index = Node
 
 -- This class is subclassed from Box, but this is more for 

@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/datastructures/pgflibrarygraphdrawing-quadtree.lua,v 1.1 2012/04/03 21:41:45 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/datastructures/pgflibrarygraphdrawing-quadtree.lua,v 1.2 2012/04/10 23:12:21 tantau Exp $
 
 --- This file contains a class for defining arbitrary vectors and
 --- perform operations on them.
@@ -65,8 +65,8 @@ end
 
 
 function CubicalCell:containsParticle(particle)
-  return particle.pos:x() >= self.x and particle.pos:x() <= self.x + self.width
-     and particle.pos:y() >= self.y and particle.pos:y() <= self.y + self.height
+  return particle.pos.x >= self.x and particle.pos.x <= self.x + self.width
+     and particle.pos.y >= self.y and particle.pos.y <= self.y + self.height
 end
 
 
@@ -177,7 +177,7 @@ function CubicalCell:updateCenterOfMass()
         pos = pos:plus(subparticle.pos:timesScalar(subparticle.mass))
       end
       return pos:plus(particle.pos:timesScalar(particle.mass))
-    end, Vector:new(2, function (n) return 0 end))
+    end, Vector:new(2))
     self.center_of_mass = self.center_of_mass:dividedByScalar(self.mass)
   else
     -- the center of mass is the average of the weighted centers of mass 
@@ -189,7 +189,7 @@ function CubicalCell:updateCenterOfMass()
         assert(cell.mass == 0)
         return pos:copy()
       end
-    end, Vector:new(2, function (n) return 0 end))
+    end, Vector:new(2))
     self.center_of_mass = self.center_of_mass:dividedByScalar(self.mass)
   end
 end
