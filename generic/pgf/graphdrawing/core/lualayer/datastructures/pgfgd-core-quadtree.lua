@@ -7,13 +7,15 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/datastructures/pgfgd-core-quadtree.lua,v 1.1 2012/04/12 15:16:07 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/datastructures/pgfgd-core-quadtree.lua,v 1.2 2012/04/16 17:58:36 tantau Exp $
 
 --- This file contains a class for defining arbitrary vectors and
 --- perform operations on them.
 
 pgf.module('pgf.graphdrawing')
 
+
+local lib = require "pgf.gd.lib"
 
 
 Particle = {}
@@ -172,7 +174,7 @@ function CubicalCell:updateCenterOfMass()
         pos = pos:plus(subparticle.pos:timesScalar(subparticle.mass))
       end
       return pos:plus(particle.pos:timesScalar(particle.mass))
-    end, Vector:new(2))
+    end, lib.Vector:new(2))
     self.center_of_mass = self.center_of_mass:dividedByScalar(self.mass)
   else
     -- the center of mass is the average of the weighted centers of mass 
@@ -184,7 +186,7 @@ function CubicalCell:updateCenterOfMass()
         assert(cell.mass == 0)
         return pos:copy()
       end
-    end, Vector:new(2))
+    end, lib.Vector:new(2))
     self.center_of_mass = self.center_of_mass:dividedByScalar(self.mass)
   end
 end

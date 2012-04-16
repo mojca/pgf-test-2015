@@ -7,7 +7,10 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/force/pgfgd-algorithm-SpringHu2006.lua,v 1.3 2012/04/12 14:41:32 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/force/pgfgd-algorithm-SpringHu2006.lua,v 1.4 2012/04/16 17:58:34 tantau Exp $
+
+
+local lib = require "pgf.gd.lib"
 
 
 --- Implementation of a spring spring graph drawing algorithm.
@@ -173,7 +176,7 @@ function SpringHu2006:computeInitialLayout(graph, spring_length)
 
       -- position the loose node relative to the fixed node, with
       -- the displacement (random direction) matching the spring length
-      local direction = Vector:new{x = math.random(1, spring_length), y = math.random(1, spring_length)}
+      local direction = lib.Vector:new{x = math.random(1, spring_length), y = math.random(1, spring_length)}
       local distance = 1.8 * spring_length * self.graph_density * math.sqrt(self.graph_size) / 2
       local displacement = direction:normalized():timesScalar(distance)
 
@@ -238,7 +241,7 @@ function SpringHu2006:computeForceLayout(graph, spring_length, step_update_func)
 
     for v in iter.filter(table.value_iter(graph.nodes), nodeNotFixed) do
       -- vector for the displacement of v
-      local d = Vector:new(2)
+      local d = lib.Vector:new(2)
 
       for u in table.value_iter(graph.nodes) do
         if v ~= u then

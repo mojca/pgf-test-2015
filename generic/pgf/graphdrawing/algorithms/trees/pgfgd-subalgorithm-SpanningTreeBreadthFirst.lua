@@ -7,14 +7,14 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/control/pgfgd-core-spanning-tree.lua,v 1.2 2012/04/15 17:21:25 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/trees/pgfgd-subalgorithm-SpanningTreeBreadthFirst.lua,v 1.1 2012/04/15 22:28:07 tantau Exp $
 
 -- This file defines an edge class, used in the graph representation.
 
 pgf.module("pgf.graphdrawing")
 
 
-
+local lib = require "pgf.gd.lib"
 
 
 --- A subalgorithm for computing spanning trees
@@ -41,5 +41,5 @@ function SpanningTreeBreadthFirst:run ()
   local algorithm = self.parent_algorithm
   local graph = self.graph
 
-  compute_spanning_tree(algorithm, false)
+  lib.Simplifiers:computeSpanningTree(algorithm, false)
 end

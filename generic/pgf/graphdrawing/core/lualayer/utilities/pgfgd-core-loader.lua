@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/control/pgfgd-core-loader.lua,v 1.2 2012/04/15 22:28:07 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/control/pgfgd-core-loader.lua,v 1.3 2012/04/16 17:58:36 tantau Exp $
 
 -- This file is the main entry point from the TeX part of the
 -- library.  It defines a module system, which is used in all other Lua
@@ -27,8 +27,6 @@ local preload_these_files = {
   "table",
   "stack",
   "iter",
-  "string",
-  "vector",
   "quadtree",
   "node",
   "edge",
@@ -41,18 +39,10 @@ local preload_these_files = {
   "priority-queue",
   "algorithms",
   "coarsen-graph",
-  "component-packing",
-  "orientation",
   "positioning-helpers",
   "ranking",
   "network-simplex",
-  "anchoring",
-  "component-decomposition",
-  "pipeline",
-  "spanning-tree",
   "spacing",
-  "growth-adjust",
-  "event-handling",
 }
 
 
@@ -367,7 +357,3 @@ function toboolean(string)
   return string == "true"
 end
 
-
--- Load TeXInterface
-
-require "pgf.gd.control"
