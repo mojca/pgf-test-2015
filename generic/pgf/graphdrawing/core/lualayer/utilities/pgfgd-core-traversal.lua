@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/utilities/pgflibrarygraphdrawing-traversal.lua,v 1.1 2012/04/03 21:41:46 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/utilities/pgfgd-core-traversal.lua,v 1.1 2012/04/12 15:16:08 tantau Exp $
 
 --- This file implements a number of graph traversal functions including
 --- depth-first and breadth-first search, traversal using a topological sorting
@@ -118,7 +118,6 @@ function traversal.depth_first_dag(graph, initial_nodes)
   return function ()
     while #stack > 0 do
       local node = table.remove(stack)
-      Sys:log('VISIT: ' .. tostring(node))
 
       local out_edges = node:getOutgoingEdges()
       for edge in iter.filter(table.value_iter(out_edges), edgeNotExplored) do

@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/datastructures/pgflibrarygraphdrawing-quadtree.lua,v 1.3 2012/04/12 14:41:32 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/datastructures/pgfgd-core-quadtree.lua,v 1.1 2012/04/12 15:16:07 tantau Exp $
 
 --- This file contains a class for defining arbitrary vectors and
 --- perform operations on them.
@@ -114,11 +114,6 @@ function CubicalCell:insert(particle)
         self:createSubcells()
       end
         
-      --Sys:log(' ')
-      --Sys:log('parent cell after creating subcells:')
-      --self:dump('  ')
-      --Sys:log(' ')
-
       -- move particles to the new subcells
       for existing in table.value_iter(self.particles) do
         local cell = self:findSubcell(existing)
@@ -210,14 +205,6 @@ end
 
 
 
-function CubicalCell:dump(indent)
-  local indent = indent or ''
-  Sys:log(indent .. tostring(self))
-  for subcell in table.value_iter(self.subcells) do
-    subcell:dump(indent .. '  ')
-  end
-end
-
 
 
 function CubicalCell:__tostring()
@@ -252,11 +239,6 @@ function QuadTree:insert(particle)
   self.root_cell:insert(particle)
 end
 
-
-
-function QuadTree:dump(indent)
-  self.root_cell:dump(indent)
-end
 
 
 

@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more details.
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/algorithms/pgflibrarygraphdrawing-manipulation.lua,v 1.1 2012/04/03 21:41:45 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/utilities/pgfgd-core-manipulation.lua,v 1.1 2012/04/12 15:16:08 tantau Exp $
 
 --- TODO Jannis: Add documentation for the file.
 
@@ -49,13 +49,9 @@ end
 function manipulation.merge_multiedges(graph)
   local individual_edges = {}
 
-  Sys:log('merge multiedges:')
-
   local node_processed = {}
 
   for node in table.value_iter(graph.nodes) do
-    Sys:log('  neighbour edges of ' .. node.name)
-
     node_processed[node] = true
 
     local multiedge = {}
@@ -101,11 +97,6 @@ function manipulation.merge_multiedges(graph)
     end
 
     for neighbour, multiedge in pairs(multiedge) do
-      Sys:log('    with neighbour ' .. neighbour.name)
-
-      for subedge in table.value_iter(individual_edges[multiedge]) do
-        Sys:log('      ' .. tostring(subedge))
-      end
 
       if #individual_edges[multiedge] <= 1 then
         individual_edges[multiedge] = nil
@@ -132,8 +123,6 @@ end
 function manipulation.restore_multiedges(graph, individual_edges)
   for multiedge, subedges in pairs(individual_edges) do
     assert(#subedges >= 2)
-
-    Sys:log('restore multiedges of ' .. multiedge:getTail().name .. ' and ' .. multiedge:getHead().name)
 
     graph:deleteEdge(multiedge)
 
