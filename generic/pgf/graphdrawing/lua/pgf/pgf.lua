@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/control/pgfgd-core-loader.lua,v 1.2 2012/04/15 22:28:07 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/pgf.lua,v 1.1 2012/04/16 17:58:36 tantau Exp $
 
 
 -- Declare the pgf namespace:
@@ -34,7 +34,7 @@ local function searcher_function(modulename)
   end
 
   if filename and filename ~= "" then
-    return function () dofile(filename) end
+    return function () return dofile(filename) end
   else
     return nil
   end

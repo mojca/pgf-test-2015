@@ -7,18 +7,19 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/control/pgfgd-core-event-handling.lua,v 1.1 2012/04/12 15:16:07 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf-gd-lib-Events.lua,v 1.1 2012/04/16 22:40:29 tantau Exp $
 
-
-local lib = require "pgf.gd.lib"
 
 
 --- The Events class is a singleton object.
 --
 -- Its methods implements methods for handling and working with evetns.
 
-lib.Events = {}
+local Events = {}
 
+-- Namespace
+local lib = require "pgf.gd.lib"
+lib.Events = Events
 
 
 --- Compute the number of events in a group of a certain kind
@@ -27,7 +28,7 @@ lib.Events = {}
 -- @param kind The kind we are looking for
 -- @param begin_index The index of a begin event or nil, if the whole event list is meant
 
-function lib.Events:getNumberOfEventsOfKind(events, kind, begin_index)
+function Events:getNumberOfEventsOfKind(events, kind, begin_index)
   local end_index = begin_index and events[begin_index].end_index or #events+1
   local begin_index = begin_index or 0
   
@@ -50,7 +51,7 @@ end
 -- @param kind The kind we are looking for
 -- @param begin_index The index of a begin event or nil, if the whole event list is meant
 
-function lib.Events:getNumberOfEventsOfKindOutsideGroup(events, kind, begin_index)
+function Events:getNumberOfEventsOfKindOutsideGroup(events, kind, begin_index)
   local end_index = begin_index and events[begin_index].end_index or #events
   local begin_index = begin_index or 1
   
@@ -71,4 +72,4 @@ end
 
 -- done
 
-return lib.Events
+return Events

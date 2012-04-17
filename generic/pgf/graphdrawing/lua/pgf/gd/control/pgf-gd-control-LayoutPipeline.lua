@@ -7,26 +7,33 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/control/pgfgd-core-pipeline.lua,v 1.3 2012/04/15 22:28:07 tantau Exp $
-
-
-local control = require "pgf.gd.control"
-local lib     = require "pgf.gd.lib"
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/pgf-gd-control-LayoutPipeline.lua,v 1.1 2012/04/16 22:40:29 tantau Exp $
 
 
 --- The LayoutPipeline class is a singleton object.
+--
 -- Its methods implement the steps that are applied 
 -- to all graphs prior and after a graph drawing algorithm is
 -- called.
 
-control.LayoutPipeline = {}
+local LayoutPipeline = {}
+
+
+-- Namespace
+local control = require "pgf.gd.control"
+control.LayoutPipeline = LayoutPipeline
+
+
+-- Imports
+local lib     = require "pgf.gd.lib"
+
 
 
 
 --- The main "graph drawing pipeline" that handles the pre- and 
 -- postprocessing for a graph
 
-function control.LayoutPipeline:run(graph, algorithm_class)
+function LayoutPipeline:run(graph, algorithm_class)
   
   self:prepareEvents(graph.events)
   
@@ -119,7 +126,7 @@ end
 --
 -- @param events An event list
 
-function control.LayoutPipeline:prepareEvents(events)
+function LayoutPipeline:prepareEvents(events)
 
   local stack = {}
 
@@ -139,4 +146,4 @@ end
 
 -- Done
 
-return control.LayoutPipeline
+return LayoutPipeline

@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/control/pgfgd-core-loader.lua,v 1.3 2012/04/16 17:58:36 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/utilities/pgfgd-core-loader.lua,v 1.1 2012/04/16 22:40:29 tantau Exp $
 
 -- This file is the main entry point from the TeX part of the
 -- library.  It defines a module system, which is used in all other Lua
@@ -25,25 +25,19 @@
 local preload_these_files = {
   "module",
   "table",
-  "stack",
   "iter",
-  "quadtree",
   "node",
   "edge",
-  "cluster",
   "graph",
   "manipulation",
   "depth-first-search",
   "traversal",
-  "fibonacci-heap",
-  "priority-queue",
   "algorithms",
   "coarsen-graph",
   "positioning-helpers",
   "ranking",
   "network-simplex",
-  "spacing",
-}
+ }
 
 
 

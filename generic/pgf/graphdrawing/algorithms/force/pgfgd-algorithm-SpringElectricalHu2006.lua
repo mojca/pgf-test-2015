@@ -7,11 +7,12 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/force/pgfgd-algorithm-SpringElectricalHu2006.lua,v 1.4 2012/04/16 17:58:34 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/force/pgfgd-algorithm-SpringElectricalHu2006.lua,v 1.5 2012/04/16 22:40:29 tantau Exp $
 
 
 
 local lib = require "pgf.gd.lib"
+local QuadTree = require "pgf.gd.force.QuadTree"
 
 
 --- Implementation of a spring-electrical graph drawing algorithm.
@@ -265,7 +266,7 @@ function SpringElectricalHu2006:computeForceLayout(graph, spring_length, step_up
 
       -- compute repulsive forces
       if self.approximate_repulsive_forces then
-        -- determine the cells that have a repulsive influence on v
+	-- determine the cells that have a repulsive influence on v
         local cells = quadtree:findInteractionCells(v, barnes_hut_criterion)
 
         -- compute the repulsive force between these cells and v
@@ -459,12 +460,12 @@ function SpringElectricalHu2006:buildQuadtree(graph)
 
   -- create the quadtree
   quadtree = QuadTree:new(min_pos.x, min_pos.y,
-                          max_pos.x - min_pos.x,
-                          max_pos.y - min_pos.y)
+			      max_pos.x - min_pos.x,
+			      max_pos.y - min_pos.y)
 
   -- insert nodes into the quadtree
   for node in table.value_iter(graph.nodes) do
-    local particle = Particle:new(node.pos, node.weight)
+    local particle = QuadTree.Particle:new(node.pos, node.weight)
     particle.node = node
     quadtree:insert(particle)
   end

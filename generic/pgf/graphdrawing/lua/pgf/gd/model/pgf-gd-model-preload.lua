@@ -10,17 +10,7 @@
 --- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/pgf-gd-model.lua,v 1.1 2012/04/16 22:40:29 tantau Exp $
 
 
-
--- Imports
-
-require "pgf"
-require "pgf.gd"
-
-
--- Declare namespace
-pgf.gd.model = {}
-
-
--- Done
-
-return pgf.gd.model
+require "pgf.gd.model.Cluster"
+require "pgf.gd.model.Edge"
+require "pgf.gd.model.Graph"
+require "pgf.gd.model.Node"

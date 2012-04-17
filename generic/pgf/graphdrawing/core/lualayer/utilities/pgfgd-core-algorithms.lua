@@ -7,13 +7,13 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/utilities/pgfgd-core-algorithms.lua,v 1.1 2012/04/12 15:16:08 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/utilities/pgfgd-core-algorithms.lua,v 1.2 2012/04/16 17:58:36 tantau Exp $
 
 --- This file contains a number of standard graph algorithms such as Dijkstra.
 
 pgf.module("pgf.graphdrawing")
 
-
+local lib = require "pgf.gd.lib"
 
 algorithms = {}
 
@@ -42,7 +42,7 @@ function algorithms.dijkstra(graph, source)
   local levels = {}
   local parent = {}
 
-  local queue = PriorityQueue:new()
+  local queue = lib.PriorityQueue:new()
 
   -- reset the distance of all nodes and insert them into the priority queue
   for node in table.value_iter(graph.nodes) do

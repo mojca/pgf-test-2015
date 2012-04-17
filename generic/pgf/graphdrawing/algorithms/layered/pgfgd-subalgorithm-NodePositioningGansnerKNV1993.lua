@@ -7,7 +7,10 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-subalgorithm-NodePositioningGansnerKNV1993.lua,v 1.2 2012/04/10 23:12:21 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-subalgorithm-NodePositioningGansnerKNV1993.lua,v 1.3 2012/04/12 14:41:32 tantau Exp $
+
+
+local lib = require "pgf.gd.lib"
 
 pgf.module("pgf.graphdrawing")
 
@@ -56,7 +59,7 @@ function NodePositioningGansnerKNV1993:run()
     end
   end
   
-  spacing.arrange_layers_by_baselines(self.main_algorithm, self.graph)
+  lib.NodeDistances:arrangeLayersByBaselines(self.main_algorithm, self.graph)
 end
 
 
@@ -149,5 +152,5 @@ end
 
 
 function NodePositioningGansnerKNV1993:getDesiredHorizontalDistance(v, w)
-  return spacing.ideal_sibling_distance(self.main_algorithm, self.graph, v,w)
+  return lib.NodeDistances:idealSiblingDistance(self.main_algorithm, self.graph, v,w)
 end

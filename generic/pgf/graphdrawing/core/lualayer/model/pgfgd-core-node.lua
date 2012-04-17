@@ -8,13 +8,13 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/model/pgfgd-core-node.lua,v 1.3 2012/04/16 17:58:36 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/model/pgfgd-core-node.lua,v 1.4 2012/04/16 22:40:29 tantau Exp $
 
 -- This file defines a node class, used in the graph representation.
 
 pgf.module("pgf.graphdrawing")
 
-local lib = require "pgf.gd.lib"
+local Vector = require "pgf.gd.lib.Vector"
 
 
 -- First class: A normal node 
@@ -64,7 +64,7 @@ function Node:new(values)
     end
   end
   if not new.pos then 
-    new.pos = lib.Vector:new(2) 
+    new.pos = Vector:new(2) 
   end
   return new
 end
