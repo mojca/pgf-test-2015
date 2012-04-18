@@ -7,11 +7,12 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-ModularLayeredSugiyama.lua,v 1.5 2012/04/16 17:58:35 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/algorithms/layered/pgfgd-algorithm-ModularLayeredSugiyama.lua,v 1.6 2012/04/16 22:40:29 tantau Exp $
 
 
 local control = require "pgf.gd.control"
 local lib     = require "pgf.gd.lib"
+local Ranking = require "pgf.gd.layered.Ranking"
 
 
 --- An implementation of a modular version of the Sugiyama method
@@ -121,7 +122,7 @@ function ModularLayeredSugiyama:insertDummyNodes()
   -- keep track of dummy nodes introduced
   self.dummy_nodes = {}
 
-  for node in traversal.topological_sorting(self.graph) do
+  for node in lib.Iterators:topologicallySorted(self.graph) do
     local in_edges = node:getIncomingEdges()
 
     for edge in table.value_iter (in_edges) do
@@ -131,7 +132,7 @@ function ModularLayeredSugiyama:insertDummyNodes()
       if dist > 1 then
         local dummies = {}
 
-        for i in iter.times(dist-1) do
+        for i=1,dist-1 do
           local rank = self.ranking:getRank(neighbour) + i
 
           local dummy = VirtualNode:new{

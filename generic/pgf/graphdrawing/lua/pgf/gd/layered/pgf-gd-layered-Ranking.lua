@@ -1,4 +1,5 @@
 -- Copyright 2011 by Jannis Pohlmann
+-- Copyright 2012 by Till Tantau
 --
 -- This file may be distributed an/or modified
 --
@@ -7,18 +8,23 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/utilities/pgfgd-core-ranking.lua,v 1.1 2012/04/12 15:16:08 tantau Exp $
-
---- This file contains a helper class for managing node rankings as used
---- in layered drawing algorithms.
-
-pgf.module("pgf.graphdrawing")
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf-gd-lib-NodeIterators.lua,v 1.1 2012/04/17 22:40:53 tantau Exp $
 
 
 
-Ranking = {}
+--- The Ranking class is used by the Sugiyama algorithm to compute an ordering on the
+-- nodes of a layer
+
+local Ranking = {}
 Ranking.__index = Ranking
 
+-- Namespace
+local layered = require "pgf.gd.layered"
+layered.Ranking = Ranking
+
+
+
+-- TODO Jannis: document!
 
 
 function Ranking:new()
@@ -275,3 +281,9 @@ function Ranking:reorderTable(input, get_index_func, is_fixed_func)
     input[new_index] = input_copy[old_index]
   end
 end
+
+
+
+-- Done
+
+return Ranking

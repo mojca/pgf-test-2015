@@ -7,21 +7,27 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/core/lualayer/control/pgfgd-core-pipeline.lua,v 1.3 2012/04/15 22:28:07 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/pgf-gd-model-Edge.lua,v 1.1 2012/04/16 22:40:29 tantau Exp $
 
+
+
+
+
+--- The Edge class ...
+--
+--
+
+local Edge = pgf.graphdrawing.Edge
+Edge.__index = Edge
+
+
+-- Namespace
 
 local model   = require "pgf.gd.model"
-
-
---- The Edge class defines a model of a graph edge.
---
---
-
-model.Edge = {}
-
+model.Edge = Edge
 
 
 
 -- Done
 
-return model.Edge
+return Edge
