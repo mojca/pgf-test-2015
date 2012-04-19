@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/pgf-gd-force-SpringElectricalHu2006.lua,v 1.1 2012/04/19 13:49:07 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/pgf.gd.force.SpringElectricalHu2006.lua,v 1.1 2012/04/19 15:22:28 tantau Exp $
 
 
 
@@ -32,7 +32,7 @@ local SpringElectricalHu2006 = pgf.gd.new_algorithm_class {
     initial_step_length = 'spring electrical layout/initial step dimension [number]',
     convergence_tolerance = 'spring electrical layout/convergence tolerance [number]',
 
-    natural_spring_length = 'spring electrical layout/natural spring dimension [number]',
+    natural_spring_length = 'node distance [number]',
     spring_constant = 'spring electrical layout/spring constant [number]',
 
     approximate_repulsive_forces = 'spring electrical layout/approximate electric forces [boolean]',
