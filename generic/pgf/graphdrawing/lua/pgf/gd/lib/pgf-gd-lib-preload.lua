@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf-gd-lib-preload.lua,v 1.1 2012/04/17 22:40:53 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf-gd-lib-preload.lua,v 1.2 2012/04/18 15:28:18 tantau Exp $
 
 
 require "pgf.gd.lib.Anchoring"
@@ -22,4 +22,6 @@ require "pgf.gd.lib.PriorityQueue"
 require "pgf.gd.lib.Stack"
 require "pgf.gd.lib.Simplifiers"
 require "pgf.gd.lib.Vector"
+
+require "pgf.gd.lib.cleanupthisstuff"
 

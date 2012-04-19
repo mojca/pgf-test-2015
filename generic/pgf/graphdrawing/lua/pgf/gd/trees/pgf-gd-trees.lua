@@ -7,11 +7,20 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf-gd-layered.lua,v 1.1 2012/04/18 15:28:18 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf-gd-lib.lua,v 1.2 2012/04/17 22:40:54 tantau Exp $
 
 
-require("pgf.gd").layered = {}
+
+-- Imports
+
+require "pgf"
+require "pgf.gd"
+
+
+-- Declare namespace
+pgf.gd.trees = {}
+
 
 -- Done
 
-return pgf.gd.layered
+return pgf.gd.trees
