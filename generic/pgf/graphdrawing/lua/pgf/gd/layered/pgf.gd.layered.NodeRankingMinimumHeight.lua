@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf-gd-layered-NodeRankingMinimumHeight.lua,v 1.1 2012/04/19 13:49:07 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.NodeRankingMinimumHeight.lua,v 1.1 2012/04/19 15:22:29 tantau Exp $
 
 
 
@@ -27,7 +27,7 @@ local Ranking = require "pgf.gd.layered.Ranking"
 
 
 
-function NodeRankingMinimumHeight:new(main_algorithm, graph)
+function NodeRankingMinimumHeight.new(main_algorithm, graph)
   local algorithm = {
     main_algorithm = main_algorithm,
     graph = graph,
@@ -39,7 +39,7 @@ end
 
 
 function NodeRankingMinimumHeight:run()
-  local ranking = Ranking:new()
+  local ranking = Ranking.new()
 
   for node in lib.Iterators:topologicallySorted(self.graph) do
     local edges = node:getIncomingEdges()

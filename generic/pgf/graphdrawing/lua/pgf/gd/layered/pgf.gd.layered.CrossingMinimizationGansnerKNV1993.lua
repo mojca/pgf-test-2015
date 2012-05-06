@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf-gd-layered-CrossingMinimizationGansnerKNV1993.lua,v 1.1 2012/04/19 13:49:07 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.CrossingMinimizationGansnerKNV1993.lua,v 1.1 2012/04/19 15:22:29 tantau Exp $
 
 
 --- An sub of Modular for reducing crossings
@@ -27,7 +27,7 @@ local DepthFirstSearch = require "pgf.gd.lib.DepthFirstSearch"
 
 
 
-function CrossingMinimizationGansnerKNV1993:new(main_algorithm, graph, ranking)
+function CrossingMinimizationGansnerKNV1993.new(main_algorithm, graph, ranking)
   local algorithm = {
     main_algorithm = main_algorithm,
     graph = graph,
@@ -116,7 +116,7 @@ function CrossingMinimizationGansnerKNV1993:computeInitialRankOrdering()
       end
     end
 
-    DepthFirstSearch:new(init, visit):run()
+    DepthFirstSearch.new(init, visit):run()
 
     local crossings = self:countRankCrossings(self.ranking)
 
