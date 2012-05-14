@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/pgf.gd.trees.SpanningTreeComputation.lua,v 1.2 2012/05/06 21:45:46 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/pgf.gd.trees.SpanningTreeComputation.lua,v 1.3 2012/05/09 22:57:00 tantau Exp $
 
 
 
@@ -107,7 +107,7 @@ function SpanningTreeComputation.computeSpanningTree (ugraph, dfs, events)
 	local head = arc.head
 
 	if not marked[head] then
-	  local priority = arc.edge_priority
+	  local priority = arc.span_priority
 	  local stack = assert(stacks[priority], "illegal edge priority")
 	  if dfs then
 	    stack.top = stack.top + 1
