@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/pgf.gd.force.SpringHu2006.lua,v 1.3 2012/05/06 21:45:45 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/pgf.gd.force.SpringHu2006.lua,v 1.4 2012/05/14 10:27:48 tantau Exp $
 
 
 --- Implementation of a spring spring graph drawing algorithm.
@@ -49,16 +49,16 @@ function SpringHu2006:run()
   -- Setup some parameters
   local options = self.digraph.options
   
-  self.iterations = options['/graph drawing/spring layout/iterations']
-  self.cooling_factor = options['/graph drawing/spring layout/cooling factor']
-  self.initial_step_length = options['/graph drawing/spring layout/initial step dimension']
-  self.convergence_tolerance = options['/graph drawing/spring layout/convergence tolerance']
+  self.iterations = options['/graph drawing/force based/iterations']
+  self.cooling_factor = options['/graph drawing/force based/cooling factor']
+  self.initial_step_length = options['/graph drawing/force based/initial step dimension']
+  self.convergence_tolerance = options['/graph drawing/force based/convergence tolerance']
 
   self.natural_spring_length = options['/graph drawing/node distance']
    
-  self.coarsen = options['/graph drawing/spring layout/coarsen']
-  self.downsize_ratio = options['/graph drawing/spring layout/coarsening/downsize ratio']
-  self.minimum_graph_size = options['/graph drawing/spring layout/coarsening/minimum graph size']
+  self.coarsen = options['/graph drawing/force based/coarsen']
+  self.downsize_ratio = options['/graph drawing/force based/coarsening/downsize ratio']
+  self.minimum_graph_size = options['/graph drawing/force based/coarsening/minimum graph size']
 
 
   -- Setup
