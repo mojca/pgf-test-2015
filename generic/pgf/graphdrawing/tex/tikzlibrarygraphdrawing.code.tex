@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/tikzlibrarygraphdrawing.code.tex,v 1.3 2012/05/06 21:45:47 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/tikzlibrarygraphdrawing.code.tex,v 1.4 2012/05/12 12:42:05 tantau Exp $
 
 \usepgflibrary{graphdrawing}
 
@@ -39,6 +39,7 @@
       \pgfgdbeginscope%
         \let\tikzgdeventcallback\pgfgdevent%
         \let\tikzgdeventgroupcallback\pgfgdeventgroup%
+        \let\tikzgdlatenodeoptionacallback\pgfgdsetlatenodeoption%
     },
     /tikz/execute at end scope={
       \pgfgdendscope

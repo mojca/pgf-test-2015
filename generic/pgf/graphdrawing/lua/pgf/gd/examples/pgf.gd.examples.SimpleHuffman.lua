@@ -1,4 +1,3 @@
--- Copyright 2010 by Renée Ahrens, Olof Frahm, Jens Kluttig, Matthias Schulz, Stephan Schuster
 -- Copyright 2012 by Till Tantau
 --
 -- This file may be distributed an/or modified
@@ -8,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/examples/pgf.gd.examples.SimpleDemo.lua,v 1.3 2012/05/09 22:57:00 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/examples/pgf.gd.examples.SimpleHuffman.lua,v 1.1 2012/05/12 12:42:05 tantau Exp $
 
 
 -- Import
@@ -21,9 +20,7 @@ local LayoutPipeline = require "pgf.gd.control.LayoutPipeline"
 --- good positioning of the tree nodes in this simple example.
 
 local SimpleHuffman = pgf.gd.new_algorithm_class {
-  properties = {
-    growth_direction = 90
-  }
+  growth_direction = 90
 }
 
 function SimpleHuffman:run()

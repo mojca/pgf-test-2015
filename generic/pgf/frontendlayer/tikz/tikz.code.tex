@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.97 2012/05/02 21:02:56 cjorssen Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.98 2012/05/12 12:42:04 tantau Exp $
 
 
 % Always-present libraries (|\usepgflibrary| defined in
@@ -3690,6 +3690,7 @@
     \fi%
     \tikz@node@begin@hook%
     \tikz@alias%
+    \tikzgdlatenodeoptionacallback{\tikz@fig@name}%
     \global\let\tikz@last@fig@name=\tikz@fig@name%
     \global\let\tikz@after@path@smuggle=\tikz@after@path%
   \endgroup%
@@ -3776,11 +3777,12 @@
 
 
 %
-% Event callbacks: Please see the documentation of the graph drawing
-% lib for info on events
+% Callbacks: Please see the documentation of the graph drawing
+% lib for info on these callbacks
 %
 \def\tikzgdeventcallback#1#2{}
 \def\tikzgdeventgroupcallback#1{}
+\def\tikzgdlatenodeoptionacallback#1{}
 
 % Syntax for trees:
 % node {...} child [options] {...} child [options] {...} ...
