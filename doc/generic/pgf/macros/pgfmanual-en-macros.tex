@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.61 2012/05/21 22:00:02 tantau Exp $
+% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.62 2012/05/23 21:02:07 tantau Exp $
 
 
 \providecommand\href[2]{\texttt{#1}}
@@ -22,6 +22,16 @@
 \newenvironment{pgfmanualentry}{\list{}{\leftmargin=2em\itemindent-\leftmargin\def\makelabel##1{\hss##1}}}{\endlist}
 \newcommand\pgfmanualentryheadline[1]{\itemsep=0pt\parskip=0pt\item\strut{#1}\par\topsep=0pt}
 \newcommand\pgfmanualbody{\parskip3pt}
+
+\let\origtexttt=\texttt
+\def\texttt#1{{\def\textunderscore{\char`\_}\def\textbraceleft{\char`\{}\def\textbraceright{\char`\}}\origtexttt{#1}}}
+
+{
+  \catcode`\|=12
+  \gdef\pgfmanualnormalbar{|}
+  \catcode`\|=13
+  \AtBeginDocument{\gdef|{\ifmmode\pgfmanualnormalbar\else\expandafter\verb\expandafter|\fi}}
+}
 
 
 
@@ -82,14 +92,14 @@
   \let\item=\parameteritem%
   \let\list=\restorelist%
 }
-{
+{\par
 }
 \let\saveditemcommand=\item
 \let\savedlistcommand=\list
 \def\denselist#1#2{\savedlistcommand{#1}{#2}\parskip0pt\itemsep0pt}
 \def\restorelist{\let\item=\saveditemcommand\denselist}
 \def\parameteritem{\pgfutil@ifnextchar[\parameteritem@{}}%}
-\def\parameteritem@[#1]{\def\test{#1}\ifx\test\pgfutil@empty\else\hskip.7em#1:\fi}
+\def\parameteritem@[#1]{\def\test{#1}\ifx\test\pgfutil@empty\else\kern1em\textbullet\ #1\kern.5em\fi}
 
 \newenvironment{commandlist}[1]{%
 	\begin{pgfmanualentry}

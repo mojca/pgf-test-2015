@@ -9,7 +9,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/pgf.gd.control.TeXInterface.lua,v 1.4 2012/05/12 12:42:04 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/pgf.gd.control.TeXInterface.lua,v 1.5 2012/05/14 10:27:47 tantau Exp $
 
 
 
@@ -260,6 +260,7 @@ function TeXInterface.addPgfEdge(from, to, direction, options, pgf_options, pgf_
     storage = Storage.new()
   }
 
+  arc.storage.syntactic_edges = arc.storage.syntactic_edges or {}
   arc.storage.syntactic_edges[#arc.storage.syntactic_edges+1] = edge
 
   scope.events[#scope.events + 1] = { kind = 'edge', parameters = { arc, #arc.storage.syntactic_edges } }
@@ -394,8 +395,8 @@ function TeXInterface.endGraphDrawingScope()
     tex.print("\\pgfgdendnodeshipout")
 
     tex.print("\\pgfgdbeginedgeshipout")
-    for _,a in ipairs(digraph.arcs) do
-        for _,m in ipairs(a.storage.syntactic_edges) do
+      for _,a in ipairs(digraph.arcs) do
+        for _,m in ipairs(a.storage.syntactic_edges or {}) do
 	  local callback = {
   	    '\\pgfgdedgecallback',
 	    '{', a.tail.name, '}',

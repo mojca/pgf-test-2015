@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.Orientation.lua,v 1.3 2012/05/09 22:57:00 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.Orientation.lua,v 1.4 2012/05/12 12:42:05 tantau Exp $
 
 
 
@@ -266,7 +266,7 @@ function Orientation.orient(algorithm, ugraph)
 	local angle, other_name = unpack (orient)
 	local other = ugraph.scope.node_names[other_name]
 	if ugraph:contains(other) then
-	  Orientation.orientTwoNodes(ugraph, node, other, tonumber(angle)/360*2*math.pi, flag)
+	  Orientation.orientTwoNodes(ugraph, v, other, tonumber(angle)/360*2*math.pi, flag)
 	  return true
 	end
       end
@@ -283,7 +283,7 @@ function Orientation.orient(algorithm, ugraph)
       local n1 = ugraph.scope.node_names[name1]
       local n2 = ugraph.scope.node_names[name2]
       if ugraph:contains(n1) and ugraph:contains(n2) then
-	Orientation.orientTwoNodes(ugraph, name1, name2, tonumber(angle)/360*2*math.pi, flag)
+	Orientation.orientTwoNodes(ugraph, n1, n2, tonumber(angle)/360*2*math.pi, flag)
 	return true
       end
     end
