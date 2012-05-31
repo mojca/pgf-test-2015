@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/pgf.gd.trees.SpanningTreeComputation.lua,v 1.3 2012/05/09 22:57:00 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/pgf.gd.trees.SpanningTreeComputation.lua,v 1.4 2012/05/14 17:50:32 tantau Exp $
 
 
 
@@ -107,7 +107,7 @@ function SpanningTreeComputation.computeSpanningTree (ugraph, dfs, events)
 	local head = arc.head
 
 	if not marked[head] then
-	  local priority = arc.span_priority
+	  local priority = arc:spanPriority()
 	  local stack = assert(stacks[priority], "illegal edge priority")
 	  if dfs then
 	    stack.top = stack.top + 1
@@ -131,7 +131,7 @@ function SpanningTreeComputation.computeSpanningTree (ugraph, dfs, events)
   for _,v in ipairs(copy) do
 
     -- Children as they come from the spanning tree computation
-    tree:sortOutgoing(v, function (a,b) return a.event_index < b.event_index end)
+    tree:sortOutgoing(v, function (a,b) return a:eventIndex() < b:eventIndex() end)
     local outgoings = tree:outgoing(v)
     
     -- Compute children as they come in the event list:

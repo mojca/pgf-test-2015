@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/tikzlibrarygraphdrawing.code.tex,v 1.4 2012/05/12 12:42:05 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/tikzlibrarygraphdrawing.code.tex,v 1.5 2012/05/14 10:27:48 tantau Exp $
 
 \usepgflibrary{graphdrawing}
 
@@ -175,6 +175,16 @@
     /graph drawing/.cd,#3]{#6}; }
 }
 
+
+
+%
+% Simple shorthand
+%
+
+\tikzset{
+  layout/.style={/tikz/graph drawing scope,/graph drawing/algorithm={#1}},
+  graph/layout/.style={/tikz/layout={#1}},
+}
 
 
 \endinput

@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/pgf.gd.control.LayoutPipeline.lua,v 1.5 2012/05/12 12:42:04 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/pgf.gd.control.LayoutPipeline.lua,v 1.6 2012/05/24 11:51:31 tantau Exp $
 
 
 --- The LayoutPipeline class is a singleton object.
@@ -114,6 +114,13 @@ function LayoutPipeline.run(scope, algorithm_class)
       end
     end
 
+    -- Step 4.10: Sync the graphs
+    c:sync()
+    ugraph:sync()
+    if algorithm.spanning_tree then
+      algorithm.spanning_tree:sync()
+    end
+    
     -- Step 4.10: Orient the graph
     Orientation.orient(algorithm, algorithm.ugraph)
   end
