@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduleshapes.code.tex,v 1.18 2011/06/07 21:33:16 cjorssen Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduleshapes.code.tex,v 1.19 2011/07/21 11:44:47 tantau Exp $
 
 
 
@@ -64,6 +64,7 @@
         % Interrupt bounding box!
         \pgfinterruptboundingbox%
           % Put everything in our box:
+          \pgf@relevantforpicturesizetrue%
           \setbox\pgfpositionnodelaterbox=\hbox\bgroup%
         %
       \fi%
