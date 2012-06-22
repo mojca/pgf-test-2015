@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.Stack.lua,v 1.1 2012/04/19 15:22:29 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.Stack.lua,v 1.2 2012/05/06 21:45:46 tantau Exp $
 
 
 --- A Stack is a very simple wrapper around an array
@@ -20,14 +20,13 @@ Stack.__index = Stack
 
 
 -- Namespace
-local lib = require "pgf.gd.lib"
-lib.Stack = Stack
+require("pgf.gd.lib").Stack = Stack
 
 
 --- Create a new stack
 function Stack.new()
   local stack = {}
-  setmetatable(stack, lib.Stack)
+  setmetatable(stack, Stack)
   return stack
 end
 
@@ -59,4 +58,4 @@ end
 
 -- done
 
-return lib.Stack
+return Stack

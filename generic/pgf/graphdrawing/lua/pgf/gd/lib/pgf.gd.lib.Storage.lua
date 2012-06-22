@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.Storage.lua,v 1.1 2012/05/06 21:45:46 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.Storage.lua,v 1.2 2012/05/24 11:51:33 tantau Exp $
 
 
 
@@ -25,7 +25,7 @@
 -- algorithm for a graph. This algorithm might wish to mark all nodes
 -- it has visisted. It could just say |v.marked = true|, but this might
 -- clash with someone else also using the |marked| key. The solution is
--- to use the fact that all keys have a storage attached to them. The
+-- to use the fact that all vertices have a storage attached to them. The
 -- algorithm can first say
 --\begin{codeexample}[code only]
 --local mark = {}

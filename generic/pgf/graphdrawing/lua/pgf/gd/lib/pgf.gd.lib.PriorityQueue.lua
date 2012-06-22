@@ -8,14 +8,14 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.PriorityQueue.lua,v 1.1 2012/04/19 15:22:29 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.PriorityQueue.lua,v 1.2 2012/05/06 21:45:46 tantau Exp $
 
 
 
---- A PriorityQueue supports operations for quickly finding the minimum from a set of elements
+---
+-- A PriorityQueue supports operations for quickly finding the minimum from a set of elements
 --
--- Its implementation is based on Fibonacci heaps.
-
+-- Its implementation is based on (simplified) Fibonacci heaps.
 local PriorityQueue = {}
 PriorityQueue.__index = PriorityQueue
 

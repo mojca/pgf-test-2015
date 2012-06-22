@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/pgf.gd.force.SpringHu2006.lua,v 1.4 2012/05/14 10:27:48 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/pgf.gd.force.SpringHu2006.lua,v 1.5 2012/05/14 22:15:52 tantau Exp $
 
 
 --- Implementation of a spring spring graph drawing algorithm.
@@ -128,13 +128,13 @@ function SpringHu2006:run()
     -- to every intermediate coarse graph as well as the original graph
     while coarse_graph:getLevel() > 0 do
       -- compute the diameter of the parent coarse graph
-      local parent_diameter = PathLengths:pseudoDiameter(coarse_graph.graph)
+      local parent_diameter = PathLengths.pseudoDiameter(coarse_graph.graph)
 
       -- interpolate the previous coarse graph from its parent
       coarse_graph:interpolate()
 
       -- compute the diameter of the current coarse graph
-      local current_diameter = PathLengths:pseudoDiameter(coarse_graph.graph)
+      local current_diameter = PathLengths.pseudoDiameter(coarse_graph.graph)
 
       -- scale node positions by the quotient of the pseudo diameters
       for node in table.value_iter(coarse_graph.graph) do
@@ -238,7 +238,7 @@ function SpringHu2006:computeForceLayout(graph, spring_length, step_update_func)
   local progress = 0
 
   -- compute graph distance between all pairs of nodes
-  local distances = PathLengths:floydWarshall(graph)
+  local distances = PathLengths.floydWarshall(graph)
 
   while not converged and iteration < self.iterations do
     -- remember old node positions

@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/pgf.gd.model.Arc.lua,v 1.7 2012/05/24 11:51:33 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/pgf.gd.model.Arc.lua,v 1.8 2012/05/31 20:10:12 tantau Exp $
 
 
 ---
@@ -59,7 +59,7 @@ local Options = require "pgf.gd.control.Options"
 
 
 ---
--- Get an options of the syntactic edges corresponding to an arc.
+-- Get an array of options of the syntactic edges corresponding to an arc.
 --
 -- An arc in a digraph is typically (but not always) present because
 -- there are one or more edges in the syntactic digraph between the

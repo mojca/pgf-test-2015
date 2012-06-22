@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.DepthFirstSearch.lua,v 1.1 2012/04/19 15:22:29 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.DepthFirstSearch.lua,v 1.2 2012/05/06 21:45:46 tantau Exp $
 
 
 
@@ -20,8 +20,10 @@ local DepthFirstSearch = {}
 DepthFirstSearch.__index = DepthFirstSearch
 
 -- Namespace
-local lib     = require "pgf.gd.lib"
-lib.DepthFirstSearch = DepthFirstSearch
+require("pgf.gd.lib").DepthFirstSearch = DepthFirstSearch
+
+-- Imports
+local Stack = require "pgf.gd.lib.Stack"
 
 
 
@@ -33,7 +35,7 @@ function DepthFirstSearch.new(init_func, visit_func, complete_func)
     visit_func = visit_func,
     complete_func = complete_func,
 
-    stack = lib.Stack.new(),
+    stack = Stack.new(),
     discovered = {},
     visited = {},
     completed = {},
@@ -71,7 +73,7 @@ function DepthFirstSearch:reset()
   self.discovered = {}
   self.visited = {}
   self.completed = {}
-  self.stack = lib.Stack.new()
+  self.stack = Stack.new()
 end
 
 
