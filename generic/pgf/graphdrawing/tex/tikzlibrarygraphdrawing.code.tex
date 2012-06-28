@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/tikzlibrarygraphdrawing.code.tex,v 1.8 2012/06/05 21:09:41 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/tikzlibrarygraphdrawing.code.tex,v 1.9 2012/06/22 08:12:15 tantau Exp $
 
 \usepgflibrary{graphdrawing}
 
@@ -164,9 +164,9 @@
 % Overwrite node callback
 %
 
-\def\pgfgdgeneratenodecallback#1#2#3#4#5#6{%
-  { \node[every generated node/.try,xshift=#4pt,yshift=#5pt,name={#1},shape=#2,
-    /graph drawing/.cd,#3]{#6}; }
+\def\pgfgdgeneratenodecallback#1#2#3#4{%
+  { \node[every generated node/.try,name={#1},shape={#2},
+    /graph drawing/.cd,#3]{#4}; }
 }
 
 

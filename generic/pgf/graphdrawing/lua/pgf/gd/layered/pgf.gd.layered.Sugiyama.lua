@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.Sugiyama.lua,v 1.4 2012/05/14 10:27:48 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.Sugiyama.lua,v 1.5 2012/06/22 08:12:11 tantau Exp $
 
 
 --- An implementation of a modular version of the Sugiyama method
@@ -99,8 +99,8 @@ function Sugiyama:preprocess()
   -- initialize edge parameters
   for edge in table.value_iter(self.graph.edges) do
     -- read edge parameters
-    edge.weight = edge:getOption('/graph drawing/layered layout/weight')
-    edge.minimum_levels = edge:getOption('/graph drawing/layered layout/minimum levels')
+    edge.weight = edge:getOption('/graph drawing/weight')
+    edge.minimum_levels = edge:getOption('/graph drawing/minimum levels')
 
     -- validate edge parameters
     assert(edge.minimum_levels >= 0, 'the edge ' .. tostring(edge) .. ' needs to have a minimum levels value greater than or equal to 0')
