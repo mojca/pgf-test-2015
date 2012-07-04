@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.62 2012/05/23 21:02:07 tantau Exp $
+% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.63 2012/05/24 11:51:29 tantau Exp $
 
 
 \providecommand\href[2]{\texttt{#1}}
@@ -75,11 +75,12 @@
 }{\endpgfmanualentry}
 
 \newenvironment{luatable}[2]{
-  \luageneric{#1}{#2}{}{Lua table}
+  \medskip
+  \luageneric{#1}{#2}{}{\textbf{Lua table}}
 }{\endluageneric}
 
 \newenvironment{luanamespace}[2]{
-  \luageneric{#1}{#2}{}{Lua namespace}
+  \luageneric{#1}{#2}{}{\textbf{Lua namespace}}
 }{\endluageneric}
 
 \newenvironment{luafiledescription}[1]{}{}
