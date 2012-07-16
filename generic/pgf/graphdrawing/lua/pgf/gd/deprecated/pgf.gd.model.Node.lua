@@ -9,7 +9,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/pgf.gd.model.Node.lua,v 1.2 2012/05/06 21:45:46 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/deprecated/pgf.gd.model.Node.lua,v 1.1 2012/05/23 21:02:18 tantau Exp $
 
 
 
@@ -27,6 +27,9 @@ Node.__index = Node
 
 local model = require "pgf.gd.model"
 model.Node = Node
+
+
+local lib = require "pgf.gd.lib"
 
 
 -- Imports
@@ -131,9 +134,7 @@ end
 -- @param edge The edge to be added.
 --
 function Node:addEdge(edge)
-  --if not table.find(self.edges, function (other) return other == edge end) then
-    table.insert(self.edges, edge)
-  --end
+  table.insert(self.edges, edge)
 end
 
 
@@ -143,7 +144,7 @@ end
 -- @param edge The edge to remove.
 --
 function Node:removeEdge(edge)
-  table.remove_values(self.edges, function (other) return other == edge end)
+  self.edges = lib.imap (self.edges, function(other) if other ~= edge then return other end end)
 end
 
 
@@ -153,7 +154,7 @@ end
 -- @return The number of adjacent edges of the node.
 --
 function Node:getDegree()
-  return table.count_pairs(self.edges)
+  return #self.edges
 end
 
 
@@ -180,9 +181,10 @@ end
 --         and directed edges pointing to the node.
 --
 function Node:getIncomingEdges(ignore_reversed)
-  return table.filter_values(self.edges, function (edge) 
-    return edge:isHead(self, ignore_reversed)
-  end)
+  return lib.imap(self.edges,
+		  function (edge) 
+		    if edge:isHead(self, ignore_reversed) then return edge end
+		  end)
 end
 
 
@@ -196,9 +198,10 @@ end
 --         and directed edges leaving the node.
 --
 function Node:getOutgoingEdges(ignore_reversed)
-  return table.filter_values(self.edges, function (edge)
-    return edge:isTail(self, ignore_reversed)
-  end)
+  return lib.imap(self.edges,
+		  function (edge) 
+		    if edge:isTail(self, ignore_reversed) then return edge end
+		  end)
 end
 
 
@@ -213,7 +216,7 @@ end
 -- @return The number of incoming edges of the node.
 --
 function Node:getInDegree(ignore_reversed)
-  return table.count_pairs(self:getIncomingEdges(ignore_reversed))
+  return #self:getIncomingEdges(ignore_reversed)
 end
 
 
@@ -228,7 +231,7 @@ end
 -- @return The number of outgoing edges of the node.
 --
 function Node:getOutDegree(ignore_reversed)
-  return table.count_pairs(self:getOutgoingEdges(ignore_reversed))
+  return #self:getOutgoingEdges(ignore_reversed)
 end
 
 
@@ -240,7 +243,7 @@ end
 -- @return Copy of the node.
 --
 function Node:copy()
-  local result = table.custom_copy(self, Node.new())
+  local result = lib.copy(self, Node.new())
   result.edges = {}
   return result
 end

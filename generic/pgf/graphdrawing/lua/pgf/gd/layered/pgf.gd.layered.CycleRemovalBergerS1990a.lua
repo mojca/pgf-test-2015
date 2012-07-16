@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.CycleRemovalBergerS1990a.lua,v 1.1 2012/04/19 15:22:29 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.CycleRemovalBergerS1990a.lua,v 1.2 2012/05/06 21:45:45 tantau Exp $
 
 
 
@@ -20,6 +20,8 @@ CycleRemovalBergerS1990a.__index = CycleRemovalBergerS1990a
 -- Namespace
 require("pgf.gd.layered").CycleRemovalBergerS1990a = CycleRemovalBergerS1990a
 
+
+local lib = require("pgf.gd.lib")
 
 
 function CycleRemovalBergerS1990a.new(main_algorithm, graph)
@@ -41,25 +43,27 @@ function CycleRemovalBergerS1990a:run()
   local reverse = {}
 
   -- iterate over all nodes of the graph
-  for node in table.value_iter(self.graph.nodes) do
+  for _,node in ipairs(self.graph.nodes) do
     -- get all outgoing edges that have not been removed yet
-    local out_edges = table.filter_values(node:getOutgoingEdges(), function (edge)
-      return not removed[edge]
-    end)
+    local out_edges = lib.imap(node:getOutgoingEdges(),
+			       function (edge)
+				 if not removed[edge] then return edge end
+			       end)
 
     -- get all incoming edges that have not been removed yet
-    local in_edges = table.filter_values(node:getIncomingEdges(), function (edge)
-      return not removed[edge]
-    end)
+    local in_edges = lib.imap(node:getIncomingEdges(),
+			      function (edge)
+				if not removed[edge] then return edge end
+			      end)
 
     if #out_edges >= #in_edges then
       -- we have more outgoing than incoming edges, reverse all incoming 
       -- edges and mark all incident edges as removed
       
-      for edge in table.value_iter(out_edges) do
+      for _,edge in ipairs(out_edges) do
         removed[edge] = true
       end
-      for edge in table.value_iter(in_edges) do
+      for _,edge in ipairs(in_edges) do
         reverse[edge] = true
         removed[edge] = true
       end
@@ -67,18 +71,18 @@ function CycleRemovalBergerS1990a:run()
       -- we have more incoming than outgoing edges, reverse all outgoing
       -- edges and mark all incident edges as removed
 
-      for edge in table.value_iter(out_edges) do
+      for _,edge in ipairs(out_edges) do
         reverse[edge] = true
         removed[edge] = true
       end
-      for edge in table.value_iter(in_edges) do
+      for _,edge in ipairs(in_edges) do
         removed[edge] = true
       end
     end
   end
 
   -- mark edges as reversed
-  for edge in table.key_iter(reverse) do
+  for edge in pairs(reverse) do
     edge.reversed = true
   end
 end

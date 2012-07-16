@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.Ranking.lua,v 1.1 2012/04/19 15:22:29 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.Ranking.lua,v 1.2 2012/05/06 21:45:46 tantau Exp $
 
 
 
@@ -22,6 +22,8 @@ Ranking.__index = Ranking
 local layered = require "pgf.gd.layered"
 layered.Ranking = Ranking
 
+
+local lib = require "pgf.gd.lib"
 
 
 -- TODO Jannis: document!
@@ -44,14 +46,14 @@ function Ranking:copy()
   
   -- copy rank to nodes mapping
   for rank, nodes in pairs(self.rank_to_nodes) do
-    copied_ranking.rank_to_nodes[rank] = table.custom_copy(self.rank_to_nodes[rank])
+    copied_ranking.rank_to_nodes[rank] = lib.copy(self.rank_to_nodes[rank])
   end
 
   -- copy node to rank mapping
-  copied_ranking.node_to_rank = table.custom_copy(self.node_to_rank)
+  copied_ranking.node_to_rank = lib.copy(self.node_to_rank)
 
   -- copy node to position in rank mapping
-  copied_ranking.position_in_rank = table.custom_copy(self.position_in_rank)
+  copied_ranking.position_in_rank = lib.copy(self.position_in_rank)
 
   return copied_ranking
 end
@@ -191,7 +193,7 @@ function Ranking:normalizeRanks()
   self.rank_to_nodes = {}
 
   -- iterate over all nodes and rerank them manually
-  for node in table.key_iter(self.position_in_rank) do
+  for node in pairs(self.position_in_rank) do
     local rank, pos = self:getNodeInfo(node)
     local new_rank = rank - (min_rank - 1)
     
@@ -264,9 +266,9 @@ function Ranking:reorderTable(input, get_index_func, is_fixed_func)
   -- index with the same number
   local final_indices = {}
   local n = 1
-  for index in table.value_iter(sort_indices) do
+  for _,index in ipairs(sort_indices) do
     local real_indices = desired_to_real_indices[index]
-    for real_index in table.value_iter(real_indices) do
+    for _,real_index in ipairs(real_indices) do
       final_indices[real_index] = allowed_indices[n]
       n = n + 1
     end
@@ -274,7 +276,7 @@ function Ranking:reorderTable(input, get_index_func, is_fixed_func)
 
   -- flat-copy the input table so that we can still access the elements
   -- using their real index while overwriting the input table in-place
-  local input_copy = table.custom_copy(input)
+  local input_copy = lib.copy(input)
 
   -- move flexible elements to their final indices
   for old_index, new_index in pairs(final_indices) do

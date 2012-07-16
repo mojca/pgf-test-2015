@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.NodeRankingGansnerKNV1993.lua,v 1.1 2012/04/19 15:22:29 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.NodeRankingGansnerKNV1993.lua,v 1.2 2012/05/06 21:45:46 tantau Exp $
 
 
 --- An sub of Modular for computing node rankings
@@ -60,14 +60,14 @@ function NodeRankingGansnerKNV1993:mergeClusters()
   self.original_nodes = {}
   self.original_edges = {}
 
-  for cluster in table.value_iter(self.graph.clusters) do
+  for _,cluster in ipairs(self.graph.clusters) do
 
     local cluster_node = Node.new{
       name = 'cluster@' .. cluster.name,
     }
     table.insert(self.cluster_nodes, cluster_node)
 
-    for node in table.value_iter(cluster.nodes) do
+    for _,node in ipairs(cluster.nodes) do
       self.cluster_node[node] = cluster_node
       table.insert(self.original_nodes, node)
     end
@@ -75,7 +75,7 @@ function NodeRankingGansnerKNV1993:mergeClusters()
     self.graph:addNode(cluster_node)
   end
 
-  for edge in table.value_iter(self.graph.edges) do
+  for _,edge in ipairs(self.graph.edges) do
     local tail = edge:getTail()
     local head = edge:getHead()
 
@@ -104,15 +104,15 @@ function NodeRankingGansnerKNV1993:mergeClusters()
     end
   end
 
-  for edge in table.value_iter(self.cluster_edges) do
+  for _,edge in ipairs(self.cluster_edges) do
     self.graph:addEdge(edge)
   end
 
-  for edge in table.value_iter(self.original_edges) do
+  for _,edge in ipairs(self.original_edges) do
     self.graph:deleteEdge(edge)
   end
 
-  for node in table.value_iter(self.original_nodes) do
+  for _,node in ipairs(self.original_nodes) do
     self.graph:deleteNode(node)
   end
 end
@@ -148,25 +148,25 @@ end
 
 function NodeRankingGansnerKNV1993:expandClusters()
 
-  for node in table.value_iter(self.original_nodes) do
+  for _,node in ipairs(self.original_nodes) do
     assert(self.ranking:getRank(self.cluster_node[node]))
     self.ranking:setRank(node, self.ranking:getRank(self.cluster_node[node]))
     self.graph:addNode(node)
   end
 
-  for edge in table.value_iter(self.original_edges) do
-    for node in table.value_iter(edge.nodes) do
+  for _,edge in ipairs(self.original_edges) do
+    for _,node in ipairs(edge.nodes) do
       node:addEdge(edge)
     end
     self.graph:addEdge(edge)
   end
   
-  for node in table.value_iter(self.cluster_nodes) do
+  for _,node in ipairs(self.cluster_nodes) do
     self.ranking:setRank(node, nil)
     self.graph:deleteNode(node)
   end
 
-  for edge in table.value_iter(self.cluster_edges) do
+  for _,edge in ipairs(self.cluster_edges) do
     self.graph:deleteEdge(edge)
   end
 end
