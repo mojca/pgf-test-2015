@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.LookupTable.lua,v 1.1 2012/05/06 21:45:46 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.LookupTable.lua,v 1.2 2012/05/24 11:51:33 tantau Exp $
 
 
 
@@ -74,7 +74,7 @@ function LookupTable.remove(l, array)
     local t = l[i]
     if l[t] == false then
       l[t] = nil
-    elseif target < i then
+    else
       l[target] = t
       target = target + 1
     end

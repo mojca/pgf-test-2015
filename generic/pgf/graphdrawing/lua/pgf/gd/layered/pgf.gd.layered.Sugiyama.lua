@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.Sugiyama.lua,v 1.6 2012/06/28 19:31:46 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.Sugiyama.lua,v 1.7 2012/07/16 22:09:35 tantau Exp $
 
 
 --- An implementation of a modular version of the Sugiyama method
@@ -91,6 +91,7 @@ function Sugiyama:run()
   Simplifiers:expandMultiedgesOldModel(cluster_subalgorithm)
   require(edge_routing_algorithm).new(self, self.graph):run()
   self:restoreCycles()
+  
 end
 
 

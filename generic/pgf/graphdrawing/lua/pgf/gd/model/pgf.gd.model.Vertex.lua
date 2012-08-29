@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/pgf.gd.model.Vertex.lua,v 1.3 2012/05/23 21:02:22 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/pgf.gd.model.Vertex.lua,v 1.4 2012/05/24 11:51:33 tantau Exp $
 
 
 --- 
@@ -96,7 +96,6 @@ function Vertex.new(values)
   new.shape = new.shape or "none"
   new.kind = new.kind or "dummy"
   new.pos = new.pos or Coordinate.new(0,0)
-  new.options = new.options or {},
   setmetatable(new, Vertex)
   return new
 end
