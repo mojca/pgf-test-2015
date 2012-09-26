@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-pdftex.def,v 1.26 2009/05/22 07:25:48 jinhwancho Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-pdftex.def,v 1.27 2011/12/29 17:27:47 cjorssen Exp $
 
 
 % Driver commands for pdf
@@ -394,6 +394,10 @@
 \pgfutil@setuppdfresources % possibly call the above
 
 \pgfutil@addpdfresource@colorspaces{ /pgfprgb [/Pattern /DeviceRGB] }
+
+\def\pgfsys@color@unstacked#1{%
+	\pdfliteral{\csname\string\color@#1\endcsname}%
+}
 
 \endinput
 
