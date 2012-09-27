@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/pgf.gd.trees.ReingoldTilford1981.lua,v 1.4 2012/05/12 12:42:05 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/pgf.gd.trees.ReingoldTilford1981.lua,v 1.5 2012/05/14 10:27:48 tantau Exp $
 
 
 
@@ -23,6 +23,39 @@ local ReingoldTilford1981 = pgf.gd.new_algorithm_class {
   needs_a_spanning_tree = true,
   growth_direction = 90,
 }
+
+
+
+-- local Declarations = require "pgf.gd.interface.Declarations"
+
+-- ---
+-- -- An implementation of the Reingold-Tilford algorithm
+-- --
+-- -- This implemenation follows the ideas outlined in
+-- --
+-- -- A. Brüggemann-Klein, D. Wood, Drawing trees nicely with TeX,
+-- -- Electronic Publishing, 2(2), 101-115, 1989
+
+-- local ReingoldTilford1981 = Declarations.algorithm {
+--   requires = { "connected", "tree" },
+--   delivers = { "upward oriented" }
+-- }
+
+-- Declarations.graph_transformation 
+
+
+-- ---
+-- -- Toggles, whether an extended version of the graph should be drawn.   
+-- --
+-- -- @codeexample
+-- -- 
+-- -- \tikz \graph [tree layout, missing nodes get space=false]
+-- --   { a -- {b, , c -- {e, f} };
+-- --
+-- Declarations.key ("missing nodes get space", "boolean")
+--
+-- Declarations.style ("ternary tree", { ...=..., ...=..., })
+
 
 
 -- Imports

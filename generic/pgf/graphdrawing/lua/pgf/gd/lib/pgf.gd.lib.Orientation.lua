@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.Orientation.lua,v 1.6 2012/05/31 20:10:12 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.Orientation.lua,v 1.7 2012/08/29 11:07:00 tantau Exp $
 
 
 
@@ -250,7 +250,7 @@ end
 -- @param algorithm An algorithm object.
 
 function Orientation.orient(algorithm, graph, scope)
-  
+
   -- Sanity check
   if #graph.vertices < 2 then return end
   
