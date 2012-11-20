@@ -7,30 +7,15 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.CycleRemovalEadesLS1993.lua,v 1.2 2012/05/06 21:45:45 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.CycleRemovalEadesLS1993.lua,v 1.3 2012/07/16 22:09:35 tantau Exp $
 
 
---- An sub of Modular for removing cycles
 
-CycleRemovalEadesLS1993 = {}
-CycleRemovalEadesLS1993.__index = CycleRemovalEadesLS1993
+-- Declare
+local CycleRemovalEadesLS1993 = {}
 
-
--- Namespace
-require("pgf.gd.layered").CycleRemovalEadesLS1993 = CycleRemovalEadesLS1993
-
+-- Import
 local lib = require "pgf.gd.lib"
-
-
-function CycleRemovalEadesLS1993.new(main_algorithm, graph)
-  local algorithm = {
-    main_algorithm = main_algorithm,
-    graph = graph,
-  }
-  setmetatable(algorithm, CycleRemovalEadesLS1993)
-  return algorithm
-end
-
 
 
 function CycleRemovalEadesLS1993:run()

@@ -7,32 +7,13 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.CycleRemovalBergerS1990a.lua,v 1.2 2012/05/06 21:45:45 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.CycleRemovalBergerS1990a.lua,v 1.3 2012/07/16 22:09:35 tantau Exp $
 
 
 
---- An sub of Modular for removing cycles
-
-CycleRemovalBergerS1990a = {}
-CycleRemovalBergerS1990a.__index = CycleRemovalBergerS1990a
-
-
--- Namespace
-require("pgf.gd.layered").CycleRemovalBergerS1990a = CycleRemovalBergerS1990a
-
+local CycleRemovalBergerS1990a = {}
 
 local lib = require("pgf.gd.lib")
-
-
-function CycleRemovalBergerS1990a.new(main_algorithm, graph)
-  local algorithm = {
-    main_algorithm = main_algorithm,
-    graph = graph,
-  }
-  setmetatable(algorithm, CycleRemovalBergerS1990a)
-  return algorithm
-end
-
 
 
 function CycleRemovalBergerS1990a:run()

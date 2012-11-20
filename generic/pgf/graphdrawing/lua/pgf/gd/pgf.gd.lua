@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/pgf.gd.lua,v 1.2 2012/05/06 21:45:43 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/pgf.gd.lua,v 1.3 2012/05/14 10:27:47 tantau Exp $
 
 
 
@@ -20,7 +20,13 @@ require("pgf").gd = gd
 
 
 
---- Helping function for creating new algorithm classes
+
+
+
+-- Deprecated:
+--
+--
+-- Helping function for creating new algorithm classes
 --
 -- This function creates a new algorithm class. This class will have a
 -- new method, that takes a graph and, optionally, a parent algorithm
@@ -56,6 +62,8 @@ function gd.new_algorithm_class (class)
 
       return obj
     end
+  class.preconditions = {}
+  class.postconditions = {}
 
   return class
 end

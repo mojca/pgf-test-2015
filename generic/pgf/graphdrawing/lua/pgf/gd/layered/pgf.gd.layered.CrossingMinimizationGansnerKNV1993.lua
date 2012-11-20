@@ -7,36 +7,17 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.CrossingMinimizationGansnerKNV1993.lua,v 1.2 2012/05/06 21:45:45 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.CrossingMinimizationGansnerKNV1993.lua,v 1.3 2012/07/16 22:09:35 tantau Exp $
 
 
---- An sub of Modular for reducing crossings
 
-CrossingMinimizationGansnerKNV1993 = {}
-CrossingMinimizationGansnerKNV1993.__index = CrossingMinimizationGansnerKNV1993
+local CrossingMinimizationGansnerKNV1993 = {}
 
-
--- Namespace
-require("pgf.gd.layered").CrossingMinimizationGansnerKNV1993 = CrossingMinimizationGansnerKNV1993
-
-local lib = require "pgf.gd.lib"
 
 -- Imports
 
+local lib = require "pgf.gd.lib"
 local DepthFirstSearch = require "pgf.gd.lib.DepthFirstSearch"
-
-
-
-
-function CrossingMinimizationGansnerKNV1993.new(main_algorithm, graph, ranking)
-  local algorithm = {
-    main_algorithm = main_algorithm,
-    graph = graph,
-    ranking = ranking,
-  }
-  setmetatable(algorithm, CrossingMinimizationGansnerKNV1993)
-  return algorithm
-end
 
 
 

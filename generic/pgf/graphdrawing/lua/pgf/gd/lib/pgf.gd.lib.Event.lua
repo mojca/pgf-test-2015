@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.Events.lua,v 1.1 2012/04/19 15:22:29 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.Event.lua,v 1.1 2012/06/22 08:12:13 tantau Exp $
 
 
 
@@ -63,6 +63,9 @@
 -- 
 -- @field kind A string representing the kind of the events. 
 -- @field parameters Kind-specific parameters.
+-- @field index A number that stores the events logical position in
+-- the sequence of events. The number need not be an integer array
+-- index. 
 --
 local Event = {}
 Event.__index = Event
@@ -85,8 +88,7 @@ function Event.new(values)
   for k,v in pairs(values) do
     new[k] = v
   end
-  setmetatable(new, Event)
-  return new
+  return setmetatable(new, Event)
 end
 
 

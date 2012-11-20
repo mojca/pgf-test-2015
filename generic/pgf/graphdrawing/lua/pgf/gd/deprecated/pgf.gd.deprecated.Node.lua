@@ -9,9 +9,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/deprecated/pgf.gd.model.Node.lua,v 1.1 2012/05/23 21:02:18 tantau Exp $
-
-
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/deprecated/pgf.gd.model.Node.lua,v 1.2 2012/07/16 22:09:33 tantau Exp $
 
 
 
@@ -25,16 +23,12 @@ Node.__index = Node
 
 -- Namespace
 
-local model = require "pgf.gd.model"
-model.Node = Node
-
-
 local lib = require "pgf.gd.lib"
 
 
 -- Imports
 
-local Vector = require "pgf.gd.lib.Vector"
+local Vector = require "pgf.gd.deprecated.Vector"
 
 
 
@@ -104,7 +98,7 @@ end
 -- @return The value of the node option \meta{name} or |nil|.
 --
 function Node:getOption(name, graph)
-   return self.options[name] or (graph and graph.options[name]) or pgf.gd.control.TeXInterface.parameter_defaults[name]
+  return lib.lookup_option(name, self, graph)
 end
 
 

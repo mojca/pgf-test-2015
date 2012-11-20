@@ -9,8 +9,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/deprecated/pgf.gd.model.Edge.lua,v 1.1 2012/05/23 21:02:18 tantau Exp $
-
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/deprecated/pgf.gd.model.Edge.lua,v 1.2 2012/07/16 22:09:33 tantau Exp $
 
 
 
@@ -24,9 +23,6 @@ Edge.__index = Edge
 
 
 -- Namespace
-
-local model   = require "pgf.gd.model"
-model.Edge = Edge
 
 local lib = require "pgf.gd.lib"
 
@@ -101,7 +97,7 @@ end
 -- @return The value of the edge option \meta{name} or |nil|.
 --
 function Edge:getOption(name, graph)
-   return self.options[name] or (graph and graph.options[name]) or pgf.gd.control.TeXInterface.parameter_defaults[name]
+   return lib.lookup_option(name, self, graph) 
 end
 
 

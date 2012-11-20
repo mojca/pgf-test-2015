@@ -7,20 +7,15 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/pgf-gd-trees.lua,v 1.1 2012/04/19 13:49:07 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/pgf.gd.trees.lua,v 1.1 2012/04/19 15:22:29 tantau Exp $
 
 
-
--- Imports
-
-require "pgf"
-require "pgf.gd"
-
+local trees = {}
 
 -- Declare namespace
-pgf.gd.trees = {}
+require("pgf.gd").trees = tree
 
 
 -- Done
 
-return pgf.gd.trees
+return trees

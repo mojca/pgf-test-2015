@@ -7,35 +7,15 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.NodeRankingMinimumHeight.lua,v 1.3 2012/06/22 08:12:11 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.NodeRankingMinimumHeight.lua,v 1.4 2012/07/16 22:09:35 tantau Exp $
 
 
-
---- An sub of Modular for computing node rankings
-
-NodeRankingMinimumHeight = {}
-NodeRankingMinimumHeight.__index = NodeRankingMinimumHeight
-
-
--- Namespace
-require("pgf.gd.layered").NodeRankingMinimumHeight = NodeRankingMinimumHeight
-
+local NodeRankingMinimumHeight = {}
 
 -- Imports
 
 local Ranking = require "pgf.gd.layered.Ranking"
-local Iterators = require "pgf.gd.lib.Iterators"
-
-
-function NodeRankingMinimumHeight.new(main_algorithm, graph)
-  local algorithm = {
-    main_algorithm = main_algorithm,
-    graph = graph,
-  }
-  setmetatable(algorithm, NodeRankingMinimumHeight)
-  return algorithm
-end
-
+local Iterators = require "pgf.gd.deprecated.Iterators"
 
 
 function NodeRankingMinimumHeight:run()

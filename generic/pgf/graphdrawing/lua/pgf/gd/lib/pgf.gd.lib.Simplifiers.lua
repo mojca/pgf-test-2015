@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.Simplifiers.lua,v 1.3 2012/05/06 21:45:46 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.Simplifiers.lua,v 1.4 2012/07/16 22:09:35 tantau Exp $
 
 
 
@@ -26,8 +26,8 @@ lib.Simplifiers = Simplifiers
 
 -- Imports
 
-local Edge            = require "pgf.gd.model.Edge"
-local Node            = require "pgf.gd.model.Node"
+local Edge            = require "pgf.gd.deprecated.Edge"
+local Node            = require "pgf.gd.deprecated.Node"
 
 
 
