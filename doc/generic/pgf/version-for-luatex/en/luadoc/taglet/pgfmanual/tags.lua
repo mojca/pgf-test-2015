@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 -- Handlers for several tags
--- @release $Id: tags.lua,v 1.8 2007/09/05 12:39:09 tomas Exp $
+-- @release $Id: tags.lua,v 1.2 2011/04/20 17:50:27 matthiasschulz Exp $
 -------------------------------------------------------------------------------
 
 local luadoc = require "luadoc"
@@ -8,6 +8,7 @@ local util = require "luadoc.util"
 local string = require "string"
 local table = require "table"
 local assert, type, tostring = assert, type, tostring
+local pgf = pgf
 
 module "luadoc.taglet.pgfmanual.tags"
 
@@ -28,6 +29,27 @@ end
 
 local function class (tag, block, text)
 	block[tag] = text
+end
+
+-------------------------------------------------------------------------------
+-- Set the library tag.
+
+local function library (tag, block, text)
+  block[tag] = text 
+end
+
+
+-------------------------------------------------------------------------------
+-- Set the section tag.
+
+local function section (tag, block, text)
+  block[tag] = block[tag] or {}
+  
+  local _, _, name, desc = string.find(text, "^([_%w%.]+)%s+(.*)")
+  assert(name, "section type not defined")
+
+  block[tag].type = name
+  block[tag].desc = desc
 end
 
 -------------------------------------------------------------------------------
@@ -165,6 +187,8 @@ handlers["return"] = ret
 handlers["see"] = see
 handlers["usage"] = usage
 handlers["ignore"] = ignore
+handlers["library"] = library
+handlers["section"] = section
 
 -------------------------------------------------------------------------------
 
