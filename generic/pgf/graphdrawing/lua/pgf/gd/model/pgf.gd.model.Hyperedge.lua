@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/pgf.gd.control.Sublayouts.lua,v 1.2 2012/09/27 11:45:21 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/pgf.gd.model.Hyperedge.lua,v 1.1 2012/11/20 23:32:04 tantau Exp $
 
 
 
@@ -28,27 +28,27 @@ declare {
   key = "hyper",
   layer = -10,
 
-  documentation = [["  
-       A \emph{hyperedge} of a graph does not connect just two nodes, but
-       is any subset of the node set (although a normal edge is also a
-       hyperedge  that happens to contain just two nodes). Internally, a
-       collection of kind |hyper| is created.   
-       
-       Currently, there is no default renderer for hyper edges. 
-      
-      \begin{codeexample}[code only]
-      \graph {
-        % The nodes:
-        a, b, c, d;
-        
-        % The edges:
-        {[hyper] a,b,c};
-        {[hyper] b,c,d};
-        {[hyper] a,c};
-        {[hyper] d}
-      };
-      \end{codeexample}
- "]]
+  summary = [["  
+      A \emph{hyperedge} of a graph does not connect just two nodes, but
+      is any subset of the node set (although a normal edge is also a
+      hyperedge  that happens to contain just two nodes). Internally, a
+      collection of kind |hyper| is created.       Currently, there is
+      no default renderer for hyper edges.   
+  "]],
+  documentation = [["
+\begin{codeexample}[code only]
+\graph {
+  % The nodes:
+  a, b, c, d;
+  
+  % The edges:
+  {[hyper] a,b,c};
+  {[hyper] b,c,d};
+  {[hyper] a,c};
+  {[hyper] d}
+};
+\end{codeexample}
+  "]]
 }
     
 -- Done 

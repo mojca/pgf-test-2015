@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/pgf.gd.control.TeXInterface.lua,v 1.9 2012/08/29 11:07:00 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/pgf.gd.interface.InterfaceToAlgorithms.lua,v 1.1 2012/11/20 23:26:40 tantau Exp $
 
 
 
@@ -680,12 +680,13 @@ end
 -- @param init A table of initial values for the edge.
 --
 -- The following fields are useful for |init|:
---
--- @param init.direction If present, a direction for the edge. Defaults to "--".
--- @param init.options If present, some options for the edge.
--- @param init.generated_options A table that is passed back to the
+-- \begin{itemize}
+-- \item |init.direction| If present, a direction for the edge. Defaults to "--".
+-- \item |init.options| If present, some options for the edge.
+-- \item |init.generated_options| A table that is passed back to the
 -- display layer as a list of key-value pairs in the syntax of
 -- |declare_parameter|. 
+-- \end{itemize}
 
 function InterfaceToAlgorithms.createEdge(algorithm, tail, head, init)
 

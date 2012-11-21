@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.CycleRemovalGansnerKNV1993.lua,v 1.3 2012/07/16 22:09:35 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.crossing_minimization.lua,v 1.1 2012/11/20 23:32:02 tantau Exp $
 
 
 local declare = require("pgf.gd.interface.InterfaceToAlgorithms").declare
@@ -66,12 +66,13 @@ declare {
   phase = "crossing minimization",
   default = true,
 
-  documentation = [["  
+  summary = [["  
        Gansner et al. combine an initial ordering based on a depth-first
        search with the median and greedy switch heuristics applied in the
        form of an alternating layer-by-layer sweep based on a weighted
        median. 
-      
+  "]],
+  documentation = [["      
        For more details, please see Section 4.1.4 of Pohlmann's Diploma
        thesis. 
       

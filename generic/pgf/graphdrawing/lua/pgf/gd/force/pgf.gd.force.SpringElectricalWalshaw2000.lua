@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/pgf.gd.force.SpringElectricalWalshaw2000.lua,v 1.6 2012/07/16 22:09:34 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/pgf.gd.force.SpringElectricalWalshaw2000.lua,v 1.7 2012/11/20 23:32:00 tantau Exp $
 
 
 
@@ -35,10 +35,11 @@ declare {
 
   old_graph_model = true,
 
-  documentation = [["  
+  summary = [["  
        Implementation of a spring electrical graph drawing algorithm based on
-       the paper   
-      
+       a paper by Walshaw.
+ "]],
+  documentation = [["        
        \begin{itemize}
        \item
          C. Walshaw.
