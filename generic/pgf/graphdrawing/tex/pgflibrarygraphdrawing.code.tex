@@ -8,7 +8,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/pgflibrarygraphdrawing.code.tex,v 1.22 2012/09/27 11:45:22 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/pgflibrarygraphdrawing.code.tex,v 1.23 2012/11/20 23:34:18 tantau Exp $
 
 
 
@@ -25,17 +25,6 @@
 
 
 
-
-%
-% This file defines the pgf display layer for the graph drawing
-% system.
-%
-% Load the graph drawing system and bind it to pgf:
-%
-\directlua{
-  require 'pgf.gd.interface.InterfaceToDisplay' 
-  pgf.gd.interface.InterfaceToDisplay.bind(require 'pgf.gd.bindings.BindingToPGF')
-} 
 
 % 
 % All graph drawing keys normally live in the following namespace:
@@ -1147,11 +1136,15 @@
 }
 
 
-% 
-% Load standard declarations
-% 
 
-\usegdlibrary{model,control}
+
+%
+% Ok, fire up the system by creating the binding!
+%
+\directlua{
+  require 'pgf.gd.interface.InterfaceToDisplay' 
+  pgf.gd.interface.InterfaceToDisplay.bind(require 'pgf.gd.bindings.BindingToPGF')
+} 
 
 
 

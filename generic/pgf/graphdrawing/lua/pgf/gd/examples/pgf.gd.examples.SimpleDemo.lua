@@ -8,11 +8,11 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/examples/pgf.gd.examples.SimpleDemo.lua,v 1.6 2012/05/21 22:00:06 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/examples/pgf.gd.examples.SimpleDemo.lua,v 1.7 2012/11/20 23:31:58 tantau Exp $
 
 
 ---
--- @section subsection {The ``Hello World'' of Graph Drawing}
+-- @section subsubsection {The ``Hello World'' of Graph Drawing}
 
 local _
 
@@ -26,14 +26,14 @@ declare {
   algorithm = {
     run =
       function (self)
-	local g = self.digraph
-	local alpha = (2 * math.pi) / #g.vertices
-	
-	for i,vertex in ipairs(g.vertices) do
-	  local radius = vertex.options['radius'] or g.options['radius']
-	  vertex.pos.x = radius * math.cos(i * alpha)
-	  vertex.pos.y = radius * math.sin(i * alpha)
-	end
+        local g = self.digraph
+        local alpha = (2 * math.pi) / #g.vertices
+        
+        for i,vertex in ipairs(g.vertices) do
+          local radius = vertex.options['radius'] or g.options['radius']
+          vertex.pos.x = radius * math.cos(i * alpha)
+          vertex.pos.y = radius * math.sin(i * alpha)
+        end
       end
   },
 
@@ -56,14 +56,14 @@ declare {
   algorithm = {
     run =
       function (self)
-	local g = self.digraph
-	local alpha = (2 * math.pi) / #g.vertices
-	
-	for i,vertex in ipairs(g.vertices) do
-	  local radius = vertex.options['radius'] or g.options['radius']
-	  vertex.pos.x = radius * math.cos(i * alpha)
-	  vertex.pos.y = radius * math.sin(i * alpha)
-	end
+        local g = self.digraph
+        local alpha = (2 * math.pi) / #g.vertices
+        
+        for i,vertex in ipairs(g.vertices) do
+          local radius = vertex.options['radius'] or g.options['radius']
+          vertex.pos.x = radius * math.cos(i * alpha)
+          vertex.pos.y = radius * math.sin(i * alpha)
+        end
       end
   },
   summary = "This algorithm is the 'Hello World' of graph drawing.",

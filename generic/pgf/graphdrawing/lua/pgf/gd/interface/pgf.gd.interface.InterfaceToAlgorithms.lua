@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/pgf.gd.interface.InterfaceToAlgorithms.lua,v 1.1 2012/11/20 23:26:40 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/pgf.gd.interface.InterfaceToAlgorithms.lua,v 1.2 2012/11/21 21:29:40 tantau Exp $
 
 
 
@@ -92,7 +92,7 @@ local declare_collection_kind
 -- demonstrating how the key is used.
 --
 -- Note that you can take advantage of the Lua syntax of enclosing
--- very long multi-line strings in [[ and ]]. As a bonus, if the
+-- very long multi-line strings in |[[| and |]]|. As a bonus, if the
 -- summary, documentation, or an example starts and ends with a quote,
 -- these two quotes will be stripped. This allows you to enclose the
 -- whole multi-line string (additionally) in quotes, leading to better
@@ -591,7 +591,7 @@ local unique_count = 1
 
 ---
 -- Generate a new vertex in the syntactic digraph. Calling this method
--- allows algorithms to create vretices that are not present in the
+-- allows algorithms to create vertices that are not present in the
 -- original input graph. Using the graph drawing coroutine, this
 -- function will pass back control to the display layer in order to
 -- render the vertex and, thereby, create precise size information

@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/pgf.gd.control.Options.lua,v 1.5 2012/09/27 11:45:21 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/bindings/pgf.gd.bindings.Binding.lua,v 1.1 2012/11/20 23:33:47 tantau Exp $
 
 
 
@@ -78,7 +78,7 @@ end
 -- @param t The table passed from |InterfaceToAlgorithms.declare|.
 
 function Binding:declareAlgorithmCallback(t)
-  error("method must be implemented in binding " .. tostring(self))
+  -- Does nothing by default
 end
 
 
@@ -94,7 +94,7 @@ end
 -- @param t See |InterfaceToAlgorithms.declare| for details.
 
 function Binding:declareParameterCallback(t)
-  error("method must be implemented in binding " .. tostring(self))
+  -- Does nothing by default
 end
 
 
@@ -106,7 +106,7 @@ end
 -- @param t See |InterfaceToAlgorithms.declare| for details.
 
 function Binding:declareParameterSequenceCallback(t)
-  error("method must be implemented in binding " .. tostring(self))
+  -- Does nothing by default
 end
 
 
@@ -117,7 +117,7 @@ end
 -- @param t See |InterfaceToAlgorithms.declare| for details.
 
 function Binding:declareCollectionKind(t)
-  error("method must be implemented in binding " .. tostring(self))
+  -- Does nothing by default
 end
 
 

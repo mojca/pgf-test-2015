@@ -7,11 +7,11 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/examples/pgf.gd.examples.SimpleHuffman.lua,v 1.3 2012/11/20 23:31:58 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/examples/pgf.gd.examples.SimpleHuffman.lua,v 1.4 2012/11/21 21:29:40 tantau Exp $
 
 
 ---
--- @section subsection {How To Generate Nodes Inside an Algorithm}
+-- @section subsubsection {How To Generate Nodes Inside an Algorithm}
 
 local _
 
@@ -72,7 +72,6 @@ local declare = require "pgf.gd.interface.InterfaceToAlgorithms".declare
 -- The class
 local SimpleHuffman = {}
 
---- This algorithm demonstrates... (documentation)
 declare {
   key            = "simple Huffman layout",
   algorithm      = SimpleHuffman,
@@ -80,7 +79,6 @@ declare {
   summary = "..."
 }
 
---- The probability parameter. ... (documentation)
 declare {
   key = "probability",
   type = "number",
