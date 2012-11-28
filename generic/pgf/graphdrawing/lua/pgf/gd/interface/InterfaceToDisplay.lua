@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/pgf.gd.interface.InterfaceToDisplay.lua,v 1.3 2012/11/26 21:44:30 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua,v 1.1 2012/11/27 17:24:25 tantau Exp $
 
 
 
@@ -67,6 +67,7 @@ local vertex_created
 
 local phase_unique = {}  -- a unique handle
 local option_cache = nil -- The option cache
+
 
 
 
@@ -516,7 +517,8 @@ end
 -- including this position will be popped from the stack.
 --
 -- @param key A parameter (must be a string).
--- @param value A value (can be anything).
+-- @param value A value (can be anything). If it is a string, it will
+-- be converted to whatever the key expects.
 -- @param height A stack height at which to insert the key. Everything
 -- above this height will be removed. 
 
@@ -525,7 +527,7 @@ function InterfaceToDisplay.pushOption(key, value, height)
 	  key ~= "algorithm_phases" and
 	  key ~= "collections", "illegal parameter key")
   
-  push_on_option_stack(key, value, height)
+  push_on_option_stack(key, InterfaceCore.convert(value, InterfaceCore.keys[key].type), height)
 end
 
 
@@ -623,21 +625,6 @@ end
 
 
 
-
-
-
---- Defines a default value for a graph parameter. 
---
--- Whenever a graph parameter has not been set by the user explicitly,
--- the value that was last set using this function is used instead.
---
--- @param key The commplete path of the to-be-defined key
--- @param value A string containing the value
---
-function InterfaceToDisplay.setOptionInitial(key,value)
-  assert (not InterfaceCore.option_initial[key], "you may not set a parameter default twice")
-  InterfaceCore.option_initial[key] = value
-end
 
 
 

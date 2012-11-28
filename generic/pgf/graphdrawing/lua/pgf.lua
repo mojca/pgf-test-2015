@@ -7,26 +7,20 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/pgf.lua,v 1.5 2012/08/29 11:07:00 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf.lua,v 1.1 2012/11/27 17:24:23 tantau Exp $
 
 
--- Declare the pgf namespace:
+---
+-- The |pgf| namespace lies in the global namespace. It is the only
+-- global table defined by \pgfname. The whole graph drawing system,
+-- in turn, lies in the table |pgf.gd|.
 
 pgf = {}
 
 
 
-local function tostring_table(t, prefix, depth)
-  if type(t) ~= "table" or (getmetatable(t) and getmetatable(t).__tostring) or depth <= 0 then
-    return tostring(t)
-  else
-    local r = "{\n"
-    for k,v in pairs(t) do
-      r = r .. prefix .. "  " .. tostring(k) .. "=" .. tostring_table(v, prefix .. "  ", depth-1) .. ",\n"
-    end
-    return r .. prefix .. "}"
-  end
-end
+-- Forward 
+local tostring_table
 
 ---
 -- Writes debug info on the \TeX\ output, separating the parameters
@@ -57,6 +51,20 @@ function pgf.debug(...)
 end
 
 
+-- Helper function
+
+function tostring_table(t, prefix, depth)
+  if type(t) ~= "table" or (getmetatable(t) and getmetatable(t).__tostring) or depth <= 0 then
+    return type(t) == "string" and ('"' .. t .. '"') or tostring(t)
+  else
+    local r = "{\n"
+    for k,v in pairs(t) do
+      r = r .. prefix .. "  " .. tostring(k) .. "=" ..
+        (v==t and "self" or tostring_table(v, prefix .. "  ", depth-1)) .. ",\n"
+    end
+    return r .. prefix .. "}"
+  end
+end
 
 
 

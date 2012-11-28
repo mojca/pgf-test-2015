@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/bindings/pgf.gd.bindings.BindingToPGF.lua,v 1.1 2012/11/20 23:33:47 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/bindings/BindingToPGF.lua,v 1.1 2012/11/27 17:24:24 tantau Exp $
 
 
 ---
@@ -55,9 +55,6 @@ end
 function BindingToPGF:declareParameterCallback(t)
   tex.print("\\pgfgdcallbackdeclareparameter{" .. t.key .. "}{"
 	    .. t.type .. "}{" .. tostring(t.default or "") .. "}")
-  if t.initial then
-    tex.print("\\pgfgdcallbacksetinitial{" .. t.key .. "}{" .. t.type .. "}{" .. t.initial .. "}")
-  end
 end
 
 function BindingToPGF:declareParameterSequenceCallback(t)
