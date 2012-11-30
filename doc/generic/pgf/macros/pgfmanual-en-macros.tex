@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.64 2012/07/04 14:06:35 tantau Exp $
+% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.65 2012/11/20 23:40:59 tantau Exp $
 
 
 \providecommand\href[2]{\texttt{#1}}
@@ -894,6 +894,22 @@
         \char`\%\space\space  \LaTeX\space and plain \TeX\space when using \tikzname}}\\
     {{\ttfamily\char`\\usetikzlibrary[\declare{#1}]\space
         \char`\%\space\space  Con\TeX t\space when using \tikzname}}\\[.5em]
+    \pgfmanualbody
+	  \pgfmanualpdflabel{#1}{}%
+}
+{
+  \end{pgfmanualentry}
+}
+
+\newenvironment{purepgflibrary}[1]{
+  \begin{pgfmanualentry}
+    \pgfmanualentryheadline{\textbf{{\small PGF} Library} \texttt{\declare{#1}}}
+    \index{#1@\protect\texttt{#1} library}%
+    \index{Libraries!#1@\protect\texttt{#1}}%
+    \vskip.25em%
+    {{\ttfamily\char`\\usepgflibrary\char`\{\declare{#1}\char`\}\space\space\space
+        \char`\%\space\space  \LaTeX\space and plain \TeX}}\\
+    {{\ttfamily\char`\\usepgflibrary[\declare{#1}]\space\space \char`\%\space\space  Con\TeX t}}\\[.5em]
     \pgfmanualbody
 	  \pgfmanualpdflabel{#1}{}%
 }

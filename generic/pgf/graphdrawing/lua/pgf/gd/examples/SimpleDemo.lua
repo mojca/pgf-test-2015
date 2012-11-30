@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/examples/pgf.gd.examples.SimpleDemo.lua,v 1.8 2012/11/26 21:44:30 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/examples/SimpleDemo.lua,v 1.1 2012/11/27 17:24:25 tantau Exp $
 
 
 ---
@@ -38,10 +38,10 @@ declare {
   },
 
   summary = [["
-      This algorithm is the 'Hello World' of graph drawing.
+      This algorithm is the ``Hello World'' of graph drawing.
   "]],
   documentation = [=["  
-      The algorithm is a ``hello world'' version of graph drawing: It
+      The algorithm 
       arranges nodes in a circle (without paying heed to the sizes of the
       nodes or to the edges). In order to ``really'' layout nodes in a
       circle, use |simple necklace layout|; the present layout is only intended
