@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.library.lua,v 1.1 2012/11/20 23:32:02 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/library.lua,v 1.1 2012/11/27 17:24:26 tantau Exp $
 
 
 
@@ -39,8 +39,8 @@
 --   \newblock Diploma Thesis,
 --   \newblock Institute of Theoretical Computer Science, Univerist\"at
 --   zu L\"ubeck, 2011.\\[.5em]
---   \newblock Online at 
---   \url{http://www.tcs.uni-luebeck.de/downloads/papers/2011/2011-configurable-graph-drawing-algorithms-jannis-pohlmann.pdf}
+--   \newblock Available online via 
+--   \url{http://www.tcs.uni-luebeck.de/downloads/papers/2011/}\\ \url{2011-configurable-graph-drawing-algorithms-jannis-pohlmann.pdf}
 --   \\[.5em]
 --   (Note that since the publication of this thesis some option names
 --   have been changed. Most noticeably, the option name

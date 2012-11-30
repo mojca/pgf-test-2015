@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua,v 1.1 2012/11/27 17:24:25 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua,v 1.2 2012/11/28 21:04:58 tantau Exp $
 
 
 
@@ -532,9 +532,8 @@ end
 
 
 ---
--- Push an algorithm phase to the stack of options. 
---
--- This is like pushing an option, only this option sets the algorithm
+-- Push an algorithm phase to the stack of options. Works like pushing
+-- an option, only this option sets the algorithm  
 -- used in a particular algorithm phase. Use this to set
 -- algorithm phases previously declared using |declare|, see
 -- |InterfaceToAlgorithm.declare| for details.

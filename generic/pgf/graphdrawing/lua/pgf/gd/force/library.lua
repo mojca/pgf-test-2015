@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/pgf.gd.force.library.lua,v 1.1 2012/11/20 23:32:00 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/library.lua,v 1.1 2012/11/27 17:24:25 tantau Exp $
 
 
 
@@ -96,7 +96,7 @@
 --   \newblock Institute of Theoretical Computer Science, Univerist\"at
 --   zu L\"ubeck, 2011.\\[.5em]
 --   \newblock Online at 
---   \url{http://www.tcs.uni-luebeck.de/downloads/papers/2011/2011-configurable-graph-drawing-algorithms-jannis-pohlmann.pdf}
+--   \url{http://www.tcs.uni-luebeck.de/downloads/papers/2011/}\\ \url{2011-configurable-graph-drawing-algorithms-jannis-pohlmann.pdf}
 -- \end{itemize}
 --
 -- In the future, I hope that most, if not all, of the force-based
