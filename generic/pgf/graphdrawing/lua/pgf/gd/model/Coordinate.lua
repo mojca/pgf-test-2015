@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/pgf.gd.model.Coordinate.lua,v 1.5 2012/08/29 11:07:00 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Coordinate.lua,v 1.1 2012/11/27 17:24:26 tantau Exp $
 
 
 --- 
@@ -39,9 +39,7 @@ require("pgf.gd.model").Coordinate = Coordinate
 -- @return A coordinate
 --
 function Coordinate.new(x,y)
-  local new = { x = x, y = y }
-  setmetatable(new, Coordinate)
-  return new
+  return setmetatable( {x=x, y=y}, Coordinate)
 end
 
 

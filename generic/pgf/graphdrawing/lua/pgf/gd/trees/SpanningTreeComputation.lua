@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/pgf.gd.trees.SpanningTreeComputation.lua,v 1.8 2012/11/21 21:29:41 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/SpanningTreeComputation.lua,v 1.1 2012/11/27 17:24:26 tantau Exp $
 
 
 
@@ -436,7 +436,7 @@ declare {
 -- @param dfs True if depth first should be used, false if breadth
 -- first should be used.
 --
--- @return A new graph that is a spanning tree
+-- @return A new graph that is a spanning tree.
 
 function SpanningTreeComputation.computeSpanningTree (ugraph, dfs, events)
 
@@ -617,7 +617,7 @@ function SpanningTreeComputation.computeSpanningTree (ugraph, dfs, events)
     end
   end
   
-  tree.storage.root = root
+  tree.root = root
 
   return tree
 end

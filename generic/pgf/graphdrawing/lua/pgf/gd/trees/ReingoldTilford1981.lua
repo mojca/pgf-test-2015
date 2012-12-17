@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/ReingoldTilford1981.lua,v 1.1 2012/11/27 17:24:26 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/ReingoldTilford1981.lua,v 1.2 2012/11/28 21:04:58 tantau Exp $
 
 
 
@@ -326,7 +326,7 @@ declare {
   
 function ReingoldTilford1981:run()
   
-  local root = self.spanning_tree.storage.root
+  local root = self.spanning_tree.root
   
   self.extended_version = self.digraph.options['missing nodes get space']
   
