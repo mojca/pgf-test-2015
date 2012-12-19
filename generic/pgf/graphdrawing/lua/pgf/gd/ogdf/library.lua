@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/circular/library.lua,v 1.1 2012/11/27 17:24:24 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/library.lua,v 1.1 2012/12/17 23:53:12 tantau Exp $
 
 
 -- Imports
@@ -35,6 +35,8 @@ ogdf.loaded = true -- Workaround for a bug in LuaTeX loader code
 local Control = require "pgf.gd.ogdf.c.Control" -- This is a compiled C file
 local Bridge  = require "pgf.gd.ogdf.Bridge"    -- This is a Lua file
 
+
+Control.do_declarations()
 
 
 -- Declare an algorithm
