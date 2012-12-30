@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/bindings/BindingToPGF.lua,v 1.2 2012/11/28 21:04:58 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/bindings/BindingToPGF.lua,v 1.3 2012/11/30 12:00:51 tantau Exp $
 
 
 ---
@@ -62,10 +62,6 @@ local lib = require "pgf.gd.lib"
 -- Forward
 local table_in_pgf_syntax
 
-function BindingToPGF:__tostring()
-  return "BindingToPGF"
-end
-
 
 -- Scope handling
 
@@ -86,9 +82,11 @@ function BindingToPGF:declareParameterCallback(t)
 	    .. t.type .. "}{" .. tostring(t.default or "") .. "}")
 end
 
+
 function BindingToPGF:declareParameterSequenceCallback(t)
   tex.print("\\pgfgdcallbackdeclareparametersequence{" .. t.key
-	    .. "}{" .. table_in_pgf_syntax(t) .. "}{" .. (t.default or "") .. "}")
+	    .. "}{" .. table_in_pgf_syntax(t)
+	    .. "}{" .. (t.default or "") .. "}")
 end
 
 function BindingToPGF:declareCollectionKind(t)
