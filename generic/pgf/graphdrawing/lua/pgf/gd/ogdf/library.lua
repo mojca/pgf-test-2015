@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/library.lua,v 1.2 2012/12/19 22:53:42 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/library.lua,v 1.3 2012/12/30 00:20:49 tantau Exp $
 
 
 -- Imports
@@ -28,6 +28,8 @@ local declare = require "pgf.gd.interface.InterfaceToAlgorithms".declare
 
 local ogdf
 
+
+require "pgf.gd.ogdf.ModuleHandler"
 
 -- Load sublibraries
 
