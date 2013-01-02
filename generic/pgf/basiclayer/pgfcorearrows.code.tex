@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorearrows.code.tex,v 1.11 2008/04/23 14:59:01 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorearrows.code.tex,v 1.12 2011/06/07 21:33:16 cjorssen Exp $
 
 
 % Sets the end arrow
@@ -87,8 +87,17 @@
 
 
 % Called when an arrow needs to be rendered
-
 \def\pgf@arrow@call#1{%
+  % now and then, people encounter problems with bounding boxes and
+  % arrows (i.e. always when they produce an external graphics).
+  %
+  % In order to get that up and running, we would need to 
+  % avoid the reset of the transformation matrix. And we should not
+  % invoke arrows inside of \pgflowlevelobj as it seems. If such a
+  % feature would be active, we could probably use the same approach
+  % as for plot marks... ?
+  %
+  % But that needs to be done properly.
   \expandafter\ifx\csname\pgf@arrow@full@name{#1}\endcsname\relax%
     \pgfsysprotocol@getcurrentprotocol\pgf@arrow@temp%
     {%
