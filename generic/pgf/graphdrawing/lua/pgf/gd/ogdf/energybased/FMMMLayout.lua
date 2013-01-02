@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/examples/SimpleDemo.lua,v 1.2 2012/11/30 12:00:52 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/energybased/FMMMLayout.lua,v 1.1 2012/12/30 00:20:49 tantau Exp $
 
 
 ---
@@ -35,7 +35,7 @@ declare {
   ]],
   summary = "The OGDF implementation of the FMMM algorithm.",
   documentation = [["  
-      ...
+      Not yet fully implemented interface...
   "]],
 }
 

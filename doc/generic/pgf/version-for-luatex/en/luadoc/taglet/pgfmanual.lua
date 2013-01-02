@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
--- @release $Id: pgfmanual.lua,v 1.5 2012/11/26 21:44:17 tantau Exp $
+-- @release $Id: pgfmanual.lua,v 1.6 2012/11/27 21:28:28 tantau Exp $
 -------------------------------------------------------------------------------
 
 local assert, pairs, tostring, type = assert, pairs, tostring, type
@@ -122,7 +122,7 @@ end
 
 local function process_string(s)
   if s then
-    local t = split(s)
+    local t = split(s.."\n")
     -- Compute min spaces
     local min = math.huge
     for _,l in ipairs(t) do
@@ -202,7 +202,7 @@ local function check_declaration (line, code)
     
     local keys = pgf.gd.interface.InterfaceToDisplay.getDeclaredKeys()
     local key = keys[name]
-
+    
     return {
       name = name,
       default = default,

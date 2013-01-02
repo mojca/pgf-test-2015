@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/layered/SugiyamaLayout.lua,v 1.1 2012/12/30 00:20:50 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/layered/RankingModule.lua,v 1.1 2013/01/01 17:10:09 tantau Exp $
 
 
 ---
@@ -145,7 +145,7 @@ declare {
 ---
 declare {
   key = "CoffmanGrahamRanking.width",
-  type = "number",
+  type = "length",
   initial = "3",
   summary = "A mysterious width parameter..."
 }

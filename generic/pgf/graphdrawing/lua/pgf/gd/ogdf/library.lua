@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/library.lua,v 1.3 2012/12/30 00:20:49 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/library.lua,v 1.4 2013/01/01 17:10:09 tantau Exp $
 
 
 -- Imports
@@ -34,4 +34,6 @@ require "pgf.gd.ogdf.ModuleHandler"
 -- Load sublibraries
 
 require "pgf.gd.ogdf.layered.SugiyamaLayout"
+require "pgf.gd.ogdf.misclayout.CircularLayout"
+
 require "pgf.gd.ogdf.energybased.FMMMLayout"
