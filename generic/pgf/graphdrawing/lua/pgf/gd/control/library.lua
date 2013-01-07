@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/pgf.gd.control.library.lua,v 1.2 2012/11/21 21:29:39 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/library.lua,v 1.1 2012/11/27 17:24:24 tantau Exp $
 
 
 -- Load declarations from:
@@ -102,7 +102,6 @@ declare {
 }
 
 ---
-
 declare {
   key = "random seed",
   type = "number",
@@ -115,11 +114,17 @@ declare {
        different runs, change this value.
   "]]
 }
+    
 
+---
+declare {
+  key = "variation",
+  { key = "random seed", value = "#1" },
+  summary = "An alias for |random seed|."
+}
 
 
 ---
-
 declare {
   key = "weight",
   type = "number",
