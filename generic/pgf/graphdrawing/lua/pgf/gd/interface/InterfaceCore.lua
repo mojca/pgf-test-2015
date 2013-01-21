@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceCore.lua,v 1.1 2012/11/27 17:24:25 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceCore.lua,v 1.2 2012/11/28 21:04:58 tantau Exp $
 
 
 
@@ -63,6 +63,7 @@ local InterfaceCore = {
   option_initial      = {
     algorithm_phases = {}
   },
+  option_aliases      = {},
 
   -- Constant strings for special collection kinds.
   sublayout_kind      = "INTERNAL_sublayout_kind",
@@ -157,6 +158,8 @@ function InterfaceCore.convert(s,t)
     return loadstring(s)()
   elseif t == "direction" then
     return directions[s] or tonumber(s)
+  elseif t == "nil" then
+    return nil
   else
     error ("unknown parameter type")
   end

@@ -8,7 +8,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/pgflibrarygraphdrawing.code.tex,v 1.26 2012/11/28 21:04:58 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/pgflibrarygraphdrawing.code.tex,v 1.27 2012/11/30 12:00:52 tantau Exp $
 
 
 
@@ -217,26 +217,6 @@
   \gdef\pgf@gd@lib@active@bar{|}
 }
 
-
-
-% Callback for declaring a graph parameter style
-%
-% #1 = Style key
-% #2 = List of to-be-executed keys.
-% #3 = A default value
-%
-% Description:
-% 
-% This callback is called to declare a style.
-
-\def\pgfgdcallbackdeclareparametersequence#1#2#3{%
-  \pgfkeys{/graph drawing/#1/.style={#2}}%
-  \def\pgf@temp{#3}%
-  \ifx\pgf@temp\pgfutil@empty\else%
-    \pgfkeys{/graph drawing/#1/.default={#3}}
-  \fi%
-  \pgfgd@callbackkey{#1}%  
-}
 
 
 % Callback for declaring a graph drawing algorithm

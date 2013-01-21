@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/pgf.gd.force.SpringElectricalLayouts.lua,v 1.2 2012/11/21 21:29:40 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/SpringElectricalLayouts.lua,v 1.1 2012/11/27 17:24:25 tantau Exp $
 
 
 -- Imports
@@ -26,8 +26,10 @@ local _
 
 declare {
   key = "spring electrical layout",
-  { key = "spring electrical Hu 2006 layout" },
-  { key = "spring constant", value = "0.2" }  ,
+  use = {
+    { key = "spring electrical Hu 2006 layout" },
+    { key = "spring constant", value = "0.2" }
+  },
 
   summary = [["  
        This key selects Hu's 2006 spring electrical layout with
@@ -40,9 +42,11 @@ declare {
 
 declare {
   key = "spring electrical layout'",
-  { key = "spring electrical Walshaw 2000 layout" },
-  { key = "spring constant", value = "0.01" },
-  { key = "convergence tolerance", value = "0.001" },
+  use = {
+    { key = "spring electrical Walshaw 2000 layout" },
+    { key = "spring constant", value = "0.01" },
+    { key = "convergence tolerance", value = "0.001" },
+  },
 
   summary = [["  
        This key selects Walshaw's 2000 spring electrical layout with

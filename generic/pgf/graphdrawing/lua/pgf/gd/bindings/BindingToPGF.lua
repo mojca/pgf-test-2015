@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/bindings/BindingToPGF.lua,v 1.3 2012/11/30 12:00:51 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/bindings/BindingToPGF.lua,v 1.4 2012/12/30 00:20:48 tantau Exp $
 
 
 ---
@@ -80,13 +80,6 @@ end
 function BindingToPGF:declareParameterCallback(t)
   tex.print("\\pgfgdcallbackdeclareparameter{" .. t.key .. "}{"
 	    .. t.type .. "}{" .. tostring(t.default or "") .. "}")
-end
-
-
-function BindingToPGF:declareParameterSequenceCallback(t)
-  tex.print("\\pgfgdcallbackdeclareparametersequence{" .. t.key
-	    .. "}{" .. table_in_pgf_syntax(t)
-	    .. "}{" .. (t.default or "") .. "}")
 end
 
 function BindingToPGF:declareCollectionKind(t)

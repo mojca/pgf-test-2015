@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/library.lua,v 1.1 2012/11/27 17:24:24 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/library.lua,v 1.2 2013/01/07 14:22:55 tantau Exp $
 
 
 -- Load declarations from:
@@ -26,6 +26,7 @@ require "pgf.gd.control.ComponentOrder"
 
 local InterfaceCore  = require "pgf.gd.interface.InterfaceCore"
 local declare        = require "pgf.gd.interface.InterfaceToAlgorithms".declare
+local lib            = require "pgf.gd.lib"
 
 
 
@@ -89,7 +90,9 @@ declare {
 
 declare {
   key = "edges behind nodes",
-  { key = "nodes behind edges", value = "false" },
+  use = {
+    { key = "nodes behind edges", value = "false" },
+  },
 
   summary = [["  
       This is the default placemenet of edges: Behind the nodes.
@@ -119,7 +122,10 @@ declare {
 ---
 declare {
   key = "variation",
-  { key = "random seed", value = "#1" },
+  type = "number",
+  use = {
+    { key = "random seed", value = lib.id },
+  },
   summary = "An alias for |random seed|."
 }
 

@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/pgf.gd.control.ComponentOrder.lua,v 1.2 2012/11/21 21:29:39 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/ComponentOrder.lua,v 1.1 2012/11/27 17:24:24 tantau Exp $
 
 
 local declare       = require "pgf.gd.interface.InterfaceToAlgorithms".declare
@@ -77,7 +77,9 @@ declare {
 
 declare {
   key = "small components first",
-  { key = "component order", value = "increasing node number" },
+  use = {
+    { key = "component order", value = "increasing node number" }
+  },
 
   summary = [["  
        A shorthand for |component order=increasing node number|.
@@ -88,8 +90,9 @@ declare {
 
 declare {
   key = "large components first",
-  { key = "component order", value = "decreasing node number" },
-
+  use = {
+    { key = "component order", value = "decreasing node number" },
+  },
   summary = [["  
       A shorthand for |component order=decreasing node number|.
   "]],

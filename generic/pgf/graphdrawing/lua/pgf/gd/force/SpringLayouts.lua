@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/pgf.gd.force.SpringLayouts.lua,v 1.2 2012/11/21 21:29:40 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/SpringLayouts.lua,v 1.1 2012/11/27 17:24:25 tantau Exp $
 
 
 -- Imports
@@ -26,7 +26,9 @@ local _
 
 declare {
   key = "spring layout",
-  { key = "spring Hu 2006 layout" },
+  use = {
+    { key = "spring Hu 2006 layout" },
+  },
 
   summary = [["  
        This key selects Hu's 2006 spring layout with appropriate settings

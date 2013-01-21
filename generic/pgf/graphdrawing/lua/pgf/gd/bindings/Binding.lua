@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/bindings/Binding.lua,v 1.2 2012/11/28 21:04:58 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/bindings/Binding.lua,v 1.3 2012/12/30 00:20:48 tantau Exp $
 
 
 
@@ -86,17 +86,6 @@ function Binding:declareParameterCallback(t)
   -- Does nothing by default
 end
 
-
----
--- Declare a new parameter sequence. As for
--- |declareParameterCallback|, but now the parameter |t| represents a
--- parameter sequence, see |declare_parameter_sequence|. 
---
--- @param t See |InterfaceToAlgorithms.declare| for details.
-
-function Binding:declareParameterSequenceCallback(t)
-  -- Does nothing by default
-end
 
 
 ---
