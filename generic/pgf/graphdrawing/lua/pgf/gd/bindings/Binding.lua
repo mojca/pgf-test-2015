@@ -7,8 +7,11 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/bindings/Binding.lua,v 1.3 2012/12/30 00:20:48 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/bindings/Binding.lua,v 1.4 2013/01/21 11:21:30 tantau Exp $
 
+
+-- Imports
+local Storage = require "pgf.gd.lib.Storage"
 
 
 ---
@@ -32,15 +35,19 @@
 -- implement all the functions. Then you need to write the display
 -- layer in such a way that it calls the appropriate functions from
 -- |InterfaceToDisplay|.
+--
+-- @fields storage A |Storage| storing the information passed from the
+-- display layer. The interpretation of this left to the actual
+-- binding. 
 
-local Binding = {}
+local Binding = {
+  storage = Storage.newTableStorage ()
+}
 Binding.__index = Binding
 
 -- Namespace
 require("pgf.gd.bindings").Binding = Binding
 
-
--- Imports
 
 
 
@@ -60,21 +67,7 @@ end
 
 
 ---
--- Declare a new algorithm key. This callback is invoked whenever a
--- new algorithm has been declared. The parameter |t| will have fields
--- set as described in |declare_algorithm|. 
---
--- @param t The table passed from |InterfaceToAlgorithms.declare|.
-
-function Binding:declareAlgorithmCallback(t)
-  -- Does nothing by default
-end
-
-
----
--- Declare a new parameter key. This callback is called by
--- |declare_parameter| when the parameter to this function
--- has turned out to be a declaration of a normal key. It is the job
+-- Declare a new key. This callback is called by |declare|. It is the job
 -- of the display layer to make the parameter |t.key| available to the
 -- parsing process. Furthermore, if |t.initial| is not |nil|, the
 -- display layer must convert it into a value that is stored as the
@@ -82,21 +75,10 @@ end
 --
 -- @param t See |InterfaceToAlgorithms.declare| for details.
 
-function Binding:declareParameterCallback(t)
+function Binding:declareCallback(t)
   -- Does nothing by default
 end
 
-
-
----
--- This function is called by |declare_collection_kind|, see that function
--- for details.
---
--- @param t See |InterfaceToAlgorithms.declare| for details.
-
-function Binding:declareCollectionKind(t)
-  -- Does nothing by default
-end
 
 
 
@@ -196,7 +178,7 @@ end
 -- vertex. After having done its internal bookkeeping, the interface
 -- calls this function to allow the binding to perform further
 -- bookkeeping on the node. Typically, this will be done using the
--- information stored in |v.storage[self]|.
+-- information stored in |Binding.infos|.
 --
 -- @param v The vertex.
 

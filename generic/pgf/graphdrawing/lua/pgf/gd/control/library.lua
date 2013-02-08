@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/library.lua,v 1.2 2013/01/07 14:22:55 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/library.lua,v 1.3 2013/01/21 11:21:30 tantau Exp $
 
 
 -- Load declarations from:
@@ -153,6 +153,28 @@ declare {
         a -- {b,c,d} -- e --[weight=3] a;
       };
    "]]
+  }
+}
+
+     
+     
+---
+declare {
+  key = "length",
+  type = "length",
+  initial = 1,
+
+  summary = [["  
+       Sets the ``length'' of an edge. Algorithms may take this value
+       into account when drawing a graph.
+  "]],
+  examples = {
+    [["
+      \tikz \graph [phylogenetic tree layout] {
+        a --[length=2] b --[length=1] {c,d};
+	a --[length=3] e
+      };
+   "]],
   }
 }
 

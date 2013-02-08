@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/examples/SimpleDemo.lua,v 1.1 2012/11/27 17:24:25 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/examples/SimpleDemo.lua,v 1.2 2012/11/30 12:00:52 tantau Exp $
 
 
 ---
@@ -74,6 +74,8 @@ declare {
 \end{codeexample}
       
        On the display layer (\tikzname, that is) the algorithm can now
-       immediately be used by saying |\usegdlibrary{examples.SimpleDemo}|.  
+       immediately be employed; you just need to say
+       |\usegdlibrary{examples.SimpleDemo}| at the beginning
+       somewhere.   
   "]=]
 }

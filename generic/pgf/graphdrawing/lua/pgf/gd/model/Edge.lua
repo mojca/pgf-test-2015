@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/pgf.gd.model.Edge.lua,v 1.5 2012/11/26 21:44:31 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Edge.lua,v 1.1 2012/11/27 17:24:26 tantau Exp $
 
 
 --- 
@@ -106,7 +106,7 @@ local Storage      = require "pgf.gd.lib.Storage"
 -- @return A new edge object.
 --
 function Edge.new(values)
-  local new = { storage = Storage.new() }
+  local new = {}
   for k,v in pairs(values) do
     new[k] = v
   end

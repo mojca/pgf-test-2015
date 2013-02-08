@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceCore.lua,v 1.2 2012/11/28 21:04:58 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceCore.lua,v 1.3 2013/01/21 11:21:30 tantau Exp $
 
 
 
@@ -76,6 +76,7 @@ require("pgf.gd.interface").InterfaceCore = InterfaceCore
 
 InterfaceCore.option_initial.__index = InterfaceCore.option_initial
 InterfaceCore.option_initial.algorithm_phases.__index = InterfaceCore.option_initial.algorithm_phases
+
 
 -- Imports
 local Coordinate = require "pgf.gd.model.Coordinate"
@@ -158,7 +159,7 @@ function InterfaceCore.convert(s,t)
     return loadstring(s)()
   elseif t == "direction" then
     return directions[s] or tonumber(s)
-  elseif t == "nil" then
+  elseif t == "nil" or t == nil then
     return nil
   else
     error ("unknown parameter type")
