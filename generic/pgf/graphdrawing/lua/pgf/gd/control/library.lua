@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/library.lua,v 1.3 2013/01/21 11:21:30 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/library.lua,v 1.4 2013/02/08 17:14:05 tantau Exp $
 
 
 -- Load declarations from:
@@ -172,7 +172,7 @@ declare {
     [["
       \tikz \graph [phylogenetic tree layout] {
         a --[length=2] b --[length=1] {c,d};
-	a --[length=3] e
+        a --[length=3] e
       };
    "]],
   }
