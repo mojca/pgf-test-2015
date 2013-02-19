@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua,v 1.5 2013/01/21 11:21:30 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua,v 1.6 2013/02/08 17:14:05 tantau Exp $
 
 
 
@@ -172,7 +172,7 @@ function InterfaceToDisplay.runGraphDrawingAlgorithm()
       -- Nothing needs to be done
       return
     end
-  
+    
     LayoutPipeline.run(scope)
   end
 	 
