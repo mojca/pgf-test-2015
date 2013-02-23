@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.99 2012/05/14 10:27:46 tantau Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.100 2012/08/29 11:06:57 tantau Exp $
 
 
 % Always-present libraries (|\usepgflibrary| defined in
@@ -1573,7 +1573,7 @@
 % #2: real command name
 \def\tikzaddtikzonlycommandshortcutlet#1#2{%
 	\expandafter\def\expandafter\tikz@installcommands\expandafter{\tikz@installcommands
-		\let#1=#2
+		\let#1=#2%
 	}%
 }%
 
@@ -4341,7 +4341,17 @@
   \tikz@marshal%  
 }
 
+\def\tikz@ensure@dollar@catcode{%
+  \ifnum\catcode`\$=3 %
+  \else
+    \PackageError{tikz}{Sorry, some package has redefined the meaning of the math-mode dollar sign. This is incompatible with tikz and its calc library and might cause unrecoverable errors}{}%
+    % only show error once:
+    \global\let\tikz@ensure@dollar@catcode=\relax
+  \fi
+}%
+
 \def\tikz@@@scan@@absolute#1({%
+  \tikz@ensure@dollar@catcode
   \pgfutil@ifnextchar{$}%$
   {\tikz@parse@calculator#1(}
   {\tikz@scan@no@calculator#1(}%
