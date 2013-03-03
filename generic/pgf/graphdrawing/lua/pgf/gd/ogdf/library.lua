@@ -7,11 +7,8 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/library.lua,v 1.5 2013/01/02 20:43:05 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/library.lua,v 1.6 2013/01/07 14:22:55 tantau Exp $
 
-
--- Imports
-local declare = require "pgf.gd.interface.InterfaceToAlgorithms".declare
 
 ---
 -- The Open Graph Drawing Framework (\textsc{ogdf}) is a large,
@@ -29,16 +26,6 @@ local declare = require "pgf.gd.interface.InterfaceToAlgorithms".declare
 local ogdf
 
 
-require "pgf.gd.ogdf.ModuleHandler"
+-- Load the C++ code:
 
--- Load sublibraries
-
-require "pgf.gd.ogdf.layered.SugiyamaLayout"
-
-require "pgf.gd.ogdf.misclayout.CircularLayout"
-require "pgf.gd.ogdf.misclayout.BalloonLayout"
-
-require "pgf.gd.ogdf.energybased.FMMMLayout"
-require "pgf.gd.ogdf.energybased.DavidsonHarelLayout"
-
-require "pgf.gd.ogdf.planarity.PlanarizationLayout"
+require "pgf.gd.ogdf.c.ScriptingOGDF"

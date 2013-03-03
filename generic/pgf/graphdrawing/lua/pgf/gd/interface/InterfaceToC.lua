@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToC.lua,v 1.2 2013/02/08 17:14:05 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToC.lua,v 1.3 2013/02/19 23:21:45 tantau Exp $
 
 
 ---
@@ -39,7 +39,8 @@ local lib = require "pgf.gd.lib"
 -- connected components is used.
 -- \item An array of the digraph's vertices, but with the table part
 -- hashing vertex objects to their indices in the array part.
--- \item An array of the syntactic edges of the digraph.
+-- \item An array of the syntactic edges of the digraph. Like the
+-- array, the table part will hash back the indices of the edge objects.
 -- \item The algorithm object.
 -- \end{enumerate}
 --
@@ -58,6 +59,9 @@ function InterfaceToC.declare_algorithm_written_in_c (t)
 	      if a then
 		lib.icopy(a.syntactic_edges, edges)
 	      end
+	    end
+	    for i=1,#edges do
+	      edges[edges[i]] = i
 	    end
 	    t.algorithm_written_in_c (self.digraph, back_table, edges, self)
 	  end

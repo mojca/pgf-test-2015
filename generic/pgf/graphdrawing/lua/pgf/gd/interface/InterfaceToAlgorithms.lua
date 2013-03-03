@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToAlgorithms.lua,v 1.6 2013/02/08 17:14:05 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToAlgorithms.lua,v 1.7 2013/02/19 23:21:45 tantau Exp $
 
 
 
@@ -247,6 +247,9 @@ end
 -- users cannot set this key at all. However algorithms can still read
 -- this key and, through the use of |alias|, can use the key as a
 -- handle to another key.
+-- \item |user value| The key stores a Lua user value (userdata). Such
+-- keys can only be set from C since user values cannot be created in
+-- Lua (let alone in \tikzname).
 -- \end{itemize}
 --
 -- If the |type| field is missing, it is automatically set to

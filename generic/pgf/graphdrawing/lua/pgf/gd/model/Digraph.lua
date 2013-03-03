@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Digraph.lua,v 1.2 2012/11/30 12:43:03 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Digraph.lua,v 1.3 2013/02/08 17:14:05 tantau Exp $
 
 
 
@@ -352,7 +352,10 @@ end
 -- @return The arc object connecting them
 --
 function Digraph:arc(tail, head)
-  return assert(tail.outgoings[self], "tail vertex not in graph")[head]
+  local out = tail.outgoings[self]
+  if out then
+    return out[head]
+  end
 end
 
 

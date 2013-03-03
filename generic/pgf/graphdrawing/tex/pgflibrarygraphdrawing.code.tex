@@ -8,7 +8,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/pgflibrarygraphdrawing.code.tex,v 1.28 2013/01/21 11:21:30 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/pgflibrarygraphdrawing.code.tex,v 1.29 2013/02/08 17:35:30 tantau Exp $
 
 
 
@@ -1023,20 +1023,32 @@
       \pgfutil@IfFileExists{\directlua{tex.print((('pgf.gd.\pgf@temp.library'):gsub('\%.','/')))}.lua}
       {\directlua{require 'pgf.gd.\pgf@temp.library'} }
       {
+      \pgfutil@IfFileExists{\directlua{tex.print((('pgf.gd.\pgf@temp.library'):gsub('\%.','/')))}.so}
+      {\directlua{require 'pgf.gd.\pgf@temp.library'} }
+      {
         \pgfutil@IfFileExists{\directlua{tex.print((('pgf.gd.\pgf@temp'):gsub('\%.','/')))}.lua}
+        {\directlua{require 'pgf.gd.\pgf@temp'} }
+        {
+        \pgfutil@IfFileExists{\directlua{tex.print((('pgf.gd.\pgf@temp'):gsub('\%.','/')))}.so}
         {\directlua{require 'pgf.gd.\pgf@temp'} }
         {
           \pgfutil@IfFileExists{\directlua{tex.print((('\pgf@temp.library'):gsub('\%.','/')))}.lua}
           {\directlua{require '\pgf@temp.library'} }
           {
+          \pgfutil@IfFileExists{\directlua{tex.print((('\pgf@temp.library'):gsub('\%.','/')))}.so}
+          {\directlua{require '\pgf@temp.library'} }
+          {
             \pgfutil@IfFileExists{\directlua{tex.print((('\pgf@temp'):gsub('\%.','/')))}.lua}
             {\directlua{require '\pgf@temp'} }
             {
+            \pgfutil@IfFileExists{\directlua{tex.print((('\pgf@temp'):gsub('\%.','/')))}.so}
+            {\directlua{require '\pgf@temp'} }
+            {
               \PackageError{pgf}{Graph drawing library '\pgf@temp' not found}{}
-            }
-          }
-        }
-      }
+            }}
+          }}
+        }}
+      }}
     \fi
   }%
 }
