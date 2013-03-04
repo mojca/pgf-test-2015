@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/Anchoring.lua,v 1.1 2012/11/27 17:24:24 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/Anchoring.lua,v 1.2 2013/03/04 15:55:50 tantau Exp $
 
 
 
@@ -64,14 +64,14 @@ local declare    = require "pgf.gd.interface.InterfaceToAlgorithms".declare
 declare {
   key = "desired at",
   type = "coordinate",
-  documentation_in = "Anchoring.documentation"
+  documentation_in = "pgf.gd.control.Anchoring_documentation"
 }
        
 ---
 declare {
   key = "anchor node",
   type = "string",
-  documentation_in = "Anchoring.documentation"
+  documentation_in = "pgf.gd.control.Anchoring_documentation"
 }
 
 
@@ -80,7 +80,7 @@ declare {
   key = "anchor at",
   type = "canvas coordinate",
   initial = "(0pt,0pt)",
-  documentation_in = "Anchoring.documentation"
+  documentation_in = "pgf.gd.control.Anchoring_documentation"
 }
 
 
@@ -88,7 +88,7 @@ declare {
 declare {
   key = "anchor here",
   type = "boolean",
-  documentation_in = "Anchoring.documentation"
+  documentation_in = "pgf.gd.control.Anchoring_documentation"
 }
 
 

@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/ReingoldTilford1981.lua,v 1.5 2013/02/08 17:14:06 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/ReingoldTilford1981.lua,v 1.6 2013/03/04 14:15:30 tantau Exp $
 
 
 
@@ -35,7 +35,7 @@ declare {
     upward_oriented = true
   },
 
-  documentation_in = "ReingoldTilford1981.documentation"
+  documentation_in = "pgf.gd.trees.ReingoldTilford1981_documentation"
 }
 
 
@@ -43,7 +43,7 @@ declare {
 declare {
   key    = "missing nodes get space",
   type   = "boolean",
-  documentation_in = "ReingoldTilford1981.documentation"
+  documentation_in = "pgf.gd.trees.ReingoldTilford1981_documentation"
 }
 
 
@@ -53,7 +53,7 @@ declare {
   key     = "significant sep",
   type    = "length",
   initial = "0",
-  documentation_in = "ReingoldTilford1981.documentation"
+  documentation_in = "pgf.gd.trees.ReingoldTilford1981_documentation"
 }
 
 
@@ -65,7 +65,7 @@ declare {
     { key = "minimum number of children" , value=2 },
     { key = "significant sep", value = 10 },
   },
-  documentation_in = "ReingoldTilford1981.documentation"
+  documentation_in = "pgf.gd.trees.ReingoldTilford1981_documentation"
 }
     
 ---
@@ -77,7 +77,7 @@ declare {
     { key = "missing nodes get space" },
     { key = "significant sep", value = 0 },
   },
-  documentation_in = "ReingoldTilford1981.documentation"
+  documentation_in = "pgf.gd.trees.ReingoldTilford1981_documentation"
 }
 
 
