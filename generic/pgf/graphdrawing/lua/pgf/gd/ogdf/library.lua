@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/library.lua,v 1.6 2013/01/07 14:22:55 tantau Exp $
+--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/library.lua,v 1.7 2013/03/03 22:13:12 tantau Exp $
 
 
 ---
@@ -28,4 +28,4 @@ local ogdf
 
 -- Load the C++ code:
 
-require "pgf.gd.ogdf.c.ScriptingOGDF"
+require "pgf.gd.ogdf.c.ogdf_script"
