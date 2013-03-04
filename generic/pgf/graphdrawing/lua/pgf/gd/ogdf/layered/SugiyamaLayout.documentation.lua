@@ -7,11 +7,12 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/layered/SugiyamaLayout.lua,v 1.5 2013/01/07 14:22:55 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/layered/SugiyamaLayout.documentation.lua,v 1.1 2013/03/04 09:57:18 tantau Exp $
 
 
 return 
 [[
+
 
 Documentation of: SugiyamaLayout 
 --------------------------------
