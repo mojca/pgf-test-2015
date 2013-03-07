@@ -7,11 +7,13 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/layered/SugiyamaLayout.documentation.lua,v 1.2 2013/03/04 14:15:30 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/doc/ogdf/layered.lua,v 1.1 2013/03/05 23:44:30 tantau Exp $
 
 
 
 ---
 -- @section subsection {Algorithms for Drawing Layered Graphs}
 --
--- ...
+-- 
+
+local _
