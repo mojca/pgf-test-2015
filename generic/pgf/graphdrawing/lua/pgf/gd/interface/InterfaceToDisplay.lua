@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua,v 1.7 2013/02/19 23:21:45 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua,v 1.8 2013/03/07 18:17:14 tantau Exp $
 
 
 
@@ -550,6 +550,10 @@ function InterfaceToDisplay.pushOption(key, value, height)
   local key_record = assert(InterfaceCore.keys[key], "unknown key")
   local main_phase_set = false
   
+  if value == nil and key_record.default then
+    value = key_record.default
+  end
+  
   -- Find out what kind of key we are pushing:
   
   if key_record.algorithm then
@@ -612,6 +616,9 @@ function InterfaceToDisplay.pushOption(key, value, height)
     for _,u in ipairs(InterfaceCore.keys[key].use) do
       local use_k = u.key
       local use_v = u.value
+      if type(use_k) == "function" then
+	use_k = use_k(value)
+      end
       if type(use_v) == "function" then
 	use_v = use_v(value)
       end
