@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/ogdf/layered/SugiyamaLayout.documentation.lua,v 1.2 2013/03/04 14:15:30 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/doc.lua,v 1.1 2013/03/05 23:44:29 tantau Exp $
 
 
 ---
@@ -39,15 +39,15 @@
 -- \item Next, for each to-be-lazily-documented key, add a block to
 -- the file like the following:
 --\begin{codeexample}[code only]
------
---key           "my radius"
---summary       "This key specifies a radius."
---documentation
---[[
---This key is used, whenever...
---]]
---example       "\tikz \graph [foo layout, my radius=5] { a--b };"
---example       "\tikz \graph [foo layout, my radius=3] { c--d };"
+-- ---
+-- key           "my radius"
+-- summary       "This key specifies a radius."
+-- documentation
+-- [[
+-- This key is used, whenever...
+-- ]]
+-- example       "\tikz \graph [foo layout, my radius=5] { a--b };"
+-- example       "\tikz \graph [foo layout, my radius=3] { c--d };"
 --\end{codeexample}
 --
 -- Note that |[[| and |]]| are used in Lua for raw multi-line

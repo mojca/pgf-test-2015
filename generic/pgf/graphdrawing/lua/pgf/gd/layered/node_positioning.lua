@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.node_positioning.lua,v 1.2 2012/11/21 21:29:41 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/node_positioning.lua,v 1.1 2012/11/27 17:24:26 tantau Exp $
 
 
 local declare = require("pgf.gd.interface.InterfaceToAlgorithms").declare
@@ -42,7 +42,7 @@ declare {
   key = "linear optimization node positioning",
   algorithm = require "pgf.gd.layered.NodePositioningGansnerKNV1993",
   phase = "node positioning",
-  default = true,
+  phase_default = true,
 
   summary = [["  
        This node positioning method, due to Gasner et al., is based on a

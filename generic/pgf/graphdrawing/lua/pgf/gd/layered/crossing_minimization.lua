@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.crossing_minimization.lua,v 1.2 2012/11/21 21:29:41 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/crossing_minimization.lua,v 1.1 2012/11/27 17:24:26 tantau Exp $
 
 
 local declare = require("pgf.gd.interface.InterfaceToAlgorithms").declare
@@ -64,7 +64,7 @@ declare {
   key = "sweep crossing minimization",
   algorithm = require "pgf.gd.layered.CrossingMinimizationGansnerKNV1993",
   phase = "crossing minimization",
-  default = true,
+  phase_default = true,
 
   summary = [["  
        Gansner et al. combine an initial ordering based on a depth-first
