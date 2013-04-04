@@ -7,10 +7,12 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
---- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib.lua,v 1.3 2013/02/19 23:21:45 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib.lua,v 1.4 2013/03/15 15:04:41 tantau Exp $
 
 
 
+---
+-- Basic library functions
 
 local lib = {}
 
