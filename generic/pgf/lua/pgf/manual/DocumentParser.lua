@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/LayoutPipeline.lua,v 1.7 2013/03/15 15:04:41 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/doc/generic/pgf/lua/pgf/manual/DocumentParser.lua,v 1.1 2013/04/04 20:43:29 tantau Exp $
 
 
 
@@ -45,7 +45,8 @@ local collect_infos, render_infos
 
 function DocumentParser.include(filename, typ)
 
-  local fullname = assert(kpse.find_file(filename:gsub("%.", "/"), typ or "lua"),
+  local fullname = assert(kpse.find_file(filename:gsub("%.", "/"), typ or "lua")
+			  or kpse.find_file(filename:gsub("%.", "\\"), typ or "lua"),
 			  "file " .. filename .. " not found")
 
   local file, error = io.open(fullname)
@@ -191,22 +192,28 @@ DocumentParser.addRenderer (
     local pars = rest:match(".-%((.*)%)")
     
     -- Render the head
-    print_on_output_escape(output,
-		    [[\begin{luacommand}]],
+    print_on_output_escape(output, [[\begin{luacommand}]])
+    output[#output+1] = "{" .. (tab or "") .. fun .. "}"
+    print_on_output_escape(output,     
 		    "{", tab or "", "}",
-		    "{", fun,"}",
+		    "{", fun, "}",
 		    "{", pars, "}")
 
     if tab then
       local table_name = tab:sub(1,-2)
       local t = output[table_name] or {}
-      t[#t+1] = "function " .. tab .. "\\declare{" .. fun .. "} (" .. pars .. ")"
+      t[#t+1] = {
+	link = "pgf/lua/" .. tab .. fun,
+	text = "function " .. tab .. "\\declare{" .. fun .. "} (" .. pars .. ")"
+      }
       output[table_name] = t
     end
     
     local mode = "text"
     for _,l in ipairs(infos.doc_lines) do
-      mode = print_docline_on_output(output, l, mode)
+      if mode ~= "done" then
+	mode = print_docline_on_output(output, l, mode)
+      end
     end
     close_mode(output, mode)
 
@@ -253,9 +260,9 @@ DocumentParser.addRenderer (
       function ()
 	if output[name] then
 	  tex.print("\\par\\emph{Alphabetical method summary:}\\par{\\small")
-	  table.sort(output[name])
+	  table.sort(output[name], function (a,b) return a.text < b.text end)
 	  for _,l in ipairs(output[name]) do
-	    tex.print("\\texttt{" .. l:gsub("_", "\\_") .. "}\\\\")
+	    tex.print("\\texttt{\\hyperlink{" .. l.link .. "}{" .. l.text:gsub("_", "\\_") .. "}}\\\\")
 	  end
 	  tex.print("}")
 	end
@@ -311,7 +318,7 @@ DocumentParser.addRenderer (
 )
 
 		      
--- The section renderer
+-- The documentation (plain text) renderer
 DocumentParser.addRenderer (
   function (infos)
     -- The test
@@ -484,6 +491,9 @@ function print_docline_on_output(output, l, mode)
     mode = "text"
   elseif l:match("^%s*@library") then
     -- do nothing
+  elseif l:match("^%s*@end") then
+    close_mode(output, mode)
+    mode = "done"
   elseif l:match("^%s*@") then
     error("Unknown mark " .. l)
   else
@@ -543,10 +553,18 @@ function collect_infos (lines, i, state)
     doc_lines [#doc_lines + 1] = find_keywords(lines[i]:sub(3))
     i = i + 1
   end
+
+  local head_line = ""
   
-  -- Skip empty lines
-  while lines[i] and lines[i]:match("^%s*$") do
-    i = i + 1
+  if not keywords["end"] then
+    -- Skip empty lines
+    while lines[i] and lines[i]:match("^%s*$") do
+      i = i + 1
+    end
+    head_line = lines[i] or ""
+    if lines[i] and lines[i]:match("^%-%-%-") then
+      i = i - 1
+    end
   end
   
   return {
@@ -554,7 +572,7 @@ function collect_infos (lines, i, state)
     last_line = i,
     doc_lines = doc_lines,
     keywords  = keywords,
-    head_line = lines[i] or ""
+    head_line = head_line
   }
   
 end

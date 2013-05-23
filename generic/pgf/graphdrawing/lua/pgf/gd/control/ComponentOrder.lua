@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/ComponentOrder.lua,v 1.1 2012/11/27 17:24:24 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/ComponentOrder.lua,v 1.2 2013/01/21 11:21:30 tantau Exp $
 
 
 local declare       = require "pgf.gd.interface.InterfaceToAlgorithms".declare
@@ -21,8 +21,8 @@ local declare       = require "pgf.gd.interface.InterfaceToAlgorithms".declare
 -- The different connected components of the graph are collected in a
 -- list. The ordering of the nodes in this list can be configured using
 -- the following key.
-
-local _
+--
+-- @end
 
 
 ---

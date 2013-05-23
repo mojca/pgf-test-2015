@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/library.lua,v 1.2 2012/11/30 12:43:02 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/library.lua,v 1.3 2013/04/04 20:43:45 tantau Exp $
 
 
 
@@ -102,7 +102,7 @@
 -- In the future, I hope that most, if not all, of the force-based
 -- algorithms become ``just configuration options'' of a general
 -- force-based algorithm similar to the way the modular Sugiyama method
--- is implemented in the |graphdrawing.layered| library.
+-- is implemented in the |layered| graph drawing library.
 --
 -- @library
 

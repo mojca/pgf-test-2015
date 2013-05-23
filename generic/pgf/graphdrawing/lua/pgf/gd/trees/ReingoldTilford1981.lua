@@ -7,13 +7,15 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/ReingoldTilford1981.lua,v 1.8 2013/03/04 22:46:04 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/ReingoldTilford1981.lua,v 1.9 2013/03/05 23:44:30 tantau Exp $
 
 
 
 ---
 -- @section subsubsection {The Reingold--Tilford Layout}
 --
+-- @end
+
 local ReingoldTilford1981 = {}
 
 -- Imports
@@ -86,7 +88,7 @@ declare {
 -- Now comes the implementation:
   
 function ReingoldTilford1981:run()
-  
+
   local root = self.spanning_tree.root
 
   local layers = Storage.new()

@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/node_positioning.lua,v 1.1 2012/11/27 17:24:26 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/node_positioning.lua,v 1.2 2013/03/20 17:16:38 tantau Exp $
 
 
 local declare = require("pgf.gd.interface.InterfaceToAlgorithms").declare
@@ -31,8 +31,8 @@ local declare = require("pgf.gd.interface.InterfaceToAlgorithms").declare
 --
 -- For more details, please see Section 4.1.2 of Pohlmann's Diploma
 -- thesis. 
-
-local _
+--
+-- @end
 
 
 

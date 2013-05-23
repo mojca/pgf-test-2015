@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/ChildSpec.lua,v 1.2 2013/01/21 11:21:30 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/ChildSpec.lua,v 1.3 2013/04/04 20:43:45 tantau Exp $
 
 
 
@@ -61,8 +61,9 @@
 -- \item You can simply specify the index of a child directly using
 -- the key |desired child index|.
 -- \end{enumerate}
+--
+-- @end
 
-local ChildSpec = {}
 
 -- Imports
 local declare = require("pgf.gd.interface.InterfaceToAlgorithms").declare
@@ -224,7 +225,3 @@ declare {
   "]]
  }
 
-
--- Done
-
-return ChildSpec

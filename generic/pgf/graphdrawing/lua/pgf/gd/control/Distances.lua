@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/Distances.lua,v 1.3 2013/01/21 11:21:30 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/Distances.lua,v 1.4 2013/03/15 15:04:41 tantau Exp $
 
 
 local declare       = require "pgf.gd.interface.InterfaceToAlgorithms".declare
@@ -43,8 +43,8 @@ local lib           = require "pgf.gd.lib"
 -- Section~\ref{section-gd-packing} for the details, such that between
 -- the nodes of any two components a padding is avaiable.
 -- \end{itemize}
-
-local _
+--
+-- @end
 
 
 

@@ -7,13 +7,15 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/Sugiyama.lua,v 1.1 2012/11/27 17:24:26 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/Sugiyama.lua,v 1.2 2012/11/30 12:00:52 tantau Exp $
 
 
 
 ---
 -- @section subsection {The Modular Sugiyama Method}
 --
+-- @end
+
 local Sugiyama = {}
 
 -- Namespace

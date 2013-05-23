@@ -1,4 +1,5 @@
 % Copyright 2010 by Renée Ahrens, Olof Frahm, Jens Kluttig, Matthias Schulz, Stephan Schuster
+% Copyright 2011 by Till Tantau
 %
 % This file may be distributed and/or modified
 %
@@ -7,7 +8,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/tikzlibrarygraphdrawing.code.tex,v 1.16 2012/12/17 23:53:12 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/tikzlibrarygraphdrawing.code.tex,v 1.17 2012/12/30 00:20:50 tantau Exp $
 
 \usepgflibrary{graphdrawing}
 
@@ -102,11 +103,10 @@
 }
 
 \def\pgfgdtikzedgecallback#1#2#3#4#5#6#7{%
-  \draw[edge macro=]
-    (#1)
-    edge[to path={#7 (\tikztotarget) \tikztonodes},#3,#4,/graph drawing/.cd,#6]
+  \draw (#1)
+    edge [to path={#7 \tikztonodes},#3,#4,/graph drawing/.cd,#6,/tikz/.cd]
     #5
-    (#2);%
+    (#2);
 }
 
 \def\tikz@gd@edge@from@parent@macro#1#2{
@@ -229,6 +229,7 @@
 \tikzset{
   subgraph nodes/.style={/tikz/every subgraph node/.style={#1}},
   graphs/subgraph nodes/.style={/tikz/every subgraph node/.style={#1}},
+  graphs/@graph drawing setup/.style={/graph drawing/anchor at={(\tikz@lastx,\tikz@lasty)}}
 }
 
 

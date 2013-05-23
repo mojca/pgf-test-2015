@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua,v 1.8 2013/03/07 18:17:14 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua,v 1.9 2013/03/15 15:04:43 tantau Exp $
 
 
 
@@ -243,18 +243,25 @@ end
 -- |parameter| will be the vertex.
 --
 -- @param name Name of the vertex.
+--
 -- @param shape The shape of the vertex such as |"circle"| or
 -- |"rectangle"|. This shape may help a graph drawing algorithm
 -- figuring out how the node should be placed.
--- @param hull An array of |Coordinate| objects that form the convex
--- hull of the vertex.
+--
+-- @param path A |Path| object representing the vertex's path.
+--
 -- @param height The to-be-used height of the options stack. All
 -- options above this height will be popped prior to attacking the
 -- options to the syntactic digraph.
--- @param binding_infos These options will be stored in the |storage|
--- of the vertex at the field indexed by the binding.
 --
-function InterfaceToDisplay.createVertex(name, shape, hull, height, binding_infos)
+-- @param binding_infos These options are passed to and are specific
+-- to the current |Binding|.
+--
+-- @param anchors A table of anchors (mapping anchor positions to
+-- |Coordinates|). 
+
+
+function InterfaceToDisplay.createVertex(name, shape, path, height, binding_infos, anchors)
   
   -- Setup
   local scope = InterfaceCore.topScope()
@@ -270,15 +277,17 @@ function InterfaceToDisplay.createVertex(name, shape, hull, height, binding_info
       name                     = name,
       shape                    = shape,
       kind                     = "node",
-      hull                     = hull,
+      path                     = path,
       options                  = get_current_options_table(height),
+      anchors                  = anchors,
     }
-    
+
     vertex_created(v,scope)
   else
     assert(v.kind == "subgraph node", "subgraph node expected")
-    v.shape = shape
-    v.hull = hull
+    v.shape   = shape
+    v.path    = path
+    v.anchors = anchors
   end
 
   v.created_on_display_layer = true

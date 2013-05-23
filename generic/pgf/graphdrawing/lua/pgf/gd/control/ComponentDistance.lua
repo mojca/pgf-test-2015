@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/pgf.gd.control.ComponentDistance.lua,v 1.1 2012/11/20 23:31:44 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/ComponentDistance.lua,v 1.1 2012/11/27 17:24:24 tantau Exp $
 
 
 local declare       = require "pgf.gd.interface.InterfaceToAlgorithms".declare
@@ -20,8 +20,8 @@ local declare       = require "pgf.gd.interface.InterfaceToAlgorithms".declare
 -- and a direction has been chosen, it remains to determine the distance
 -- between adjacent components. Two methods are available for computing
 -- this distance, as specified by the following option:
-
-local _
+--
+-- @end
 
   
 ---

@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.66 2012/11/30 12:00:51 tantau Exp $
+% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.67 2013/04/04 20:43:29 tantau Exp $
 
 
 \providecommand\href[2]{\texttt{#1}}
@@ -152,8 +152,8 @@
 
 \newenvironment{luafiledescription}[1]{}{}
 
-\newenvironment{luacommand}[3]{
-  \luageneric{#1}{#2}{\texttt{(#3)}}{\texttt{function}}
+\newenvironment{luacommand}[4]{
+  \hypertarget{pgf/lua/#1}{\luageneric{#2}{#3}{\texttt{(#4)}}{\texttt{function}}}
 }{\endluageneric}
 
 \newenvironment{luaparameters}{\par\emph{Parameters:}%

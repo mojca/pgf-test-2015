@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/ControlStart.lua,v 1.1 2012/11/27 17:24:25 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/force/ControlStart.lua,v 1.2 2013/04/04 20:43:45 tantau Exp $
 
 
 -- Imports
@@ -36,7 +36,5 @@ local declare = require("pgf.gd.interface.InterfaceToAlgorithms").declare
 --
 -- Other methods, like a planar preembedding, are not implemented
 -- currently. 
-
-local _
-
-
+--
+-- @end

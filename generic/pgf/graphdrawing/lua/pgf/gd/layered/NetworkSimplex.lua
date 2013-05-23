@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/pgf.gd.layered.NetworkSimplex.lua,v 1.4 2012/11/20 23:32:02 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/layered/NetworkSimplex.lua,v 1.1 2012/11/27 17:24:26 tantau Exp $
 
 
 
@@ -140,7 +140,7 @@ function NetworkSimplex:constructFeasibleTree()
 
     if min_slack_edge then
       local delta = self:edgeSlack(min_slack_edge)
-
+      
       if delta > 0 then
         local head = min_slack_edge:getHead()
         local tail = min_slack_edge:getTail()
@@ -483,7 +483,7 @@ function NetworkSimplex:findTightTree()
     
     for _,edge in ipairs(edges) do
       local neighbour = edge:getNeighbour(node)
-      if (not marked[neighbour]) and self:edgeSlack(edge) == 0 then
+      if (not marked[neighbour]) and math.abs(self:edgeSlack(edge)) < 0.00001 then
         self:addEdgeToTree(edge)
 
         for _,node in ipairs(edge.nodes) do

@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/LayoutPipeline.lua,v 1.7 2013/03/15 15:04:41 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/doc/generic/pgf/lua/pgf/manual.lua,v 1.1 2013/04/04 20:43:29 tantau Exp $
 
 
 
