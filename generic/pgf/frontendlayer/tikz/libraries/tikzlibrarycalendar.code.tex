@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibrarytikzcalendar.code.tex,v 1.14 2007/07/23 21:23:14 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalendar.code.tex,v 1.1 2008/01/09 17:57:15 tantau Exp $
 
 
 \pgfutil@usemodule{pgfcalendar}
@@ -366,24 +366,24 @@ execute before day scope={\ifdate{day of month=1}{%
 }
 
 \def\tikz@lib@cal@scanner{%
-  \afterassignment\tikz@lib@cal@handle\let\@let@token=%
+  \afterassignment\tikz@lib@cal@handle\let\pgf@let@token=%
 }
 
 \def\tikz@lib@cal@handle{%
   \let\@next=\tikz@lib@cal@expand%
-  \ifx\@let@token;%
+  \ifx\pgf@let@token;%
     \let\@next=\tikz@lib@cal@stop%
   \else%
-    \ifx\@let@token(%)
+    \ifx\pgf@let@token(%)
       \let\@next=\tikz@lib@cal@name%
     \else%
-      \ifx\@let@token a%
+      \ifx\pgf@let@token a%
         \let\@next=\tikz@lib@cal@at%
       \else%
-        \ifx\@let@token[%
+        \ifx\pgf@let@token[%
           \let\@next=\tikz@lib@cal@option%
         \else%
-          \ifx\@let@token i%
+          \ifx\pgf@let@token i%
             \let\@next=\tikz@lib@cal@if%
           \fi%
         \fi%
@@ -402,7 +402,7 @@ execute before day scope={\ifdate{day of month=1}{%
   \fi%
   \@next}
 
-\def\tikz@lib@cal@@expand{\expandafter\tikz@lib@cal@scanner\@let@token}
+\def\tikz@lib@cal@@expand{\expandafter\tikz@lib@cal@scanner\pgf@let@token}
 
 
 \def\tikz@lib@cal@name#1){%
