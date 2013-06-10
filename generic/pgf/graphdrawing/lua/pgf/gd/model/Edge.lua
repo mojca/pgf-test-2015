@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Edge.lua,v 1.2 2013/02/08 17:14:05 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Edge.lua,v 1.3 2013/05/23 20:01:27 tantau Exp $
 
 
 --- 
@@ -145,7 +145,11 @@ end
 
 function Edge:tailAnchorForEdgePath()
   return function ()
-	   return self.tail:anchor(self.options['tail anchor']) + self.tail.pos
+	   local a = self.options['tail anchor']
+	   if a == "" then
+	     a = "center"
+	   end
+	   return self.tail:anchor(a) + self.tail.pos
 	 end
 end
 
@@ -154,7 +158,11 @@ end
 
 function Edge:headAnchorForEdgePath()
   return function ()
-	   return self.head:anchor(self.options['head anchor']) + self.head.pos
+	   local a = self.options['head anchor']
+	   if a == "" then
+	     a = "center"
+	   end
+	   return self.head:anchor(a) + self.head.pos
 	 end
 end
 

@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Arc.lua,v 1.2 2013/02/08 17:14:05 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Arc.lua,v 1.3 2013/05/23 20:01:27 tantau Exp $
 
 
 ---
@@ -530,7 +530,11 @@ end
 
 function Arc:tailAnchorForArcPath()
   return function (edge)
-	   return self.tail:anchor(edge.options['tail anchor']) + self.tail.pos
+	   local a = edge.options['tail anchor']
+	   if a == "" then
+	     a = "center"
+	   end
+	   return self.tail:anchor(a) + self.tail.pos
 	 end
 end
 
@@ -539,7 +543,11 @@ end
 
 function Arc:headAnchorForArcPath()
   return function (edge)
-	   return self.head:anchor(edge.options['head anchor']) + self.head.pos
+	   local a = edge.options['head anchor']
+	   if a == "" then
+	     a = "center"
+	   end
+	   return self.head:anchor(a) + self.head.pos
 	 end
 end
 
