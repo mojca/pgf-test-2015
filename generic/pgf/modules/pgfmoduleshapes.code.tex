@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduleshapes.code.tex,v 1.23 2012/11/20 23:41:04 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduleshapes.code.tex,v 1.24 2013/05/23 20:01:29 tantau Exp $
 
 
 
@@ -1020,6 +1020,15 @@
     {\pgfpointadd{\northeast}{\pgfpointscale{-1}{\pgfpoint{\pgfkeysvalueof{/pgf/outer xsep}}{\pgfkeysvalueof{/pgf/outer ysep}}}}}
   }
 }
+
+
+% Special current path start coordinate:
+\expandafter\def\csname pgf@sh@ns@current subpath start\endcsname{coordinate}
+\expandafter\def\csname pgf@sh@np@current subpath start\endcsname{%
+  \def\centerpoint{\expandafter\pgfqpoint\pgfsyssoftpath@lastmoveto}%
+}
+\expandafter\def\csname pgf@sh@nt@current subpath start\endcsname{{1}{0}{0}{1}{0pt}{0pt}}
+\expandafter\def\csname pgf@sh@pi@current subpath start\endcsname{\pgfpictureid}
 
 
 
