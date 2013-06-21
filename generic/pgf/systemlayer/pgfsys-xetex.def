@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-xetex.def,v 1.4 2012/11/30 22:07:30 ludewich Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-xetex.def,v 1.5 2013/06/20 12:46:05 tantau Exp $
 
 \input pgfsys-dvipdfmx.def
 
@@ -22,6 +22,7 @@
   \pdfpageheight#2%
   \pdfpagewidth#1}
   
+
   
 % XeTeX supports position tracking, now
 \def\pgfsys@markposition#1{%
@@ -40,6 +41,14 @@
   \pgf@marshal%
 }
 
-\def\pgf@sys@pdf@mark@pos@pgfpageorigin{\pgfpointorigin}
+\def\pgf@sys@pdf@mark@pos@pgfpageorigin{\pgfqpoint{2\hoffset}{0pt}}
+
+\ifx\paperheight\@undefined
+\else
+  \pdfpagewidth\paperwidth
+  \pdfpageheight\paperheight % this is to work around a positioning problem in xetex.
+\fi
+
+
 
 \endinput

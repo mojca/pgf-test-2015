@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys.code.tex,v 1.37 2010/06/30 13:06:37 ludewich Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys.code.tex,v 1.38 2012/03/30 09:39:44 tantau Exp $
 
 
 % Load key mechanism
@@ -655,6 +655,16 @@
 % #1 = width
 % #2 = height
 
+
+\ifx\paperheight\@undefined
+  \def\pgfsys@thepageheight{\the\vsize} % this is wrong, but I do not
+                                % know how to compute the page height
+                                % in plain tex.
+  \def\pgfsys@thepagewidth{\the\hsize}
+\else
+  \def\pgfsys@thepageheight{\paperheight}
+  \def\pgfsys@thepagewidth{\paperwidth}
+\fi
 
 
 %
