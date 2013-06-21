@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvips.def,v 1.20 2008/04/03 17:04:45 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvips.def,v 1.21 2011/05/13 10:16:37 tantau Exp $
 
 % Driver commands for dvips
 
@@ -100,7 +100,7 @@
 \def\pgfsys@markposition#1{%
   \pdfsavepos%
   \edef\pgf@temp{#1}%
-  \expandafter\write\expandafter\pgfutil@auxout\expandafter{%
+  \expandafter\pgfutil@writetoaux\expandafter{%
     \expandafter\noexpand\expandafter\pgfsyspdfmark\expandafter{\pgf@temp}{\the\pdflastxpos}{\the\pdflastypos}}%
 }
 
