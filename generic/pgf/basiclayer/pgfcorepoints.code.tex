@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorepoints.code.tex,v 1.21 2012/01/06 14:26:51 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorepoints.code.tex,v 1.22 2013/06/20 12:46:05 tantau Exp $
 
 \newdimen\pgf@picminx
 \newdimen\pgf@picmaxx
@@ -450,10 +450,11 @@
   \pgf@xa=\pgf@x%
   \pgf@ya=\pgf@y%
   \pgf@process{#2}%
+  \pgfmathsetmacro\pgf@temp{#1}
   \advance\pgf@xa by-\pgf@x\relax%
   \advance\pgf@ya by-\pgf@y\relax%
-  \advance\pgf@x by #1\pgf@xa\relax%
-  \advance\pgf@y by #1\pgf@ya\relax%  
+  \advance\pgf@x by \pgf@temp\pgf@xa\relax%
+  \advance\pgf@y by \pgf@temp\pgf@ya\relax%  
   \ignorespaces}
 
 
