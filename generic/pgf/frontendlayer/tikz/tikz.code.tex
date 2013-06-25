@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.107 2013/06/25 18:35:45 tantau Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.108 2013/06/25 19:31:59 tantau Exp $
 
 
 % Always-present libraries (|\usepgflibrary| defined in
@@ -2013,7 +2013,11 @@
   \iftikz@mode@fade@path%
     \tikz@addoption{%
       \iftikz@fade@adjust%
-        \pgfsetfadingforcurrentpath{\tikz@path@fading}{\tikz@do@fade@transform}%
+        \iftikz@mode@draw%
+          \pgfsetfadingforcurrentpathstroked{\tikz@path@fading}{\tikz@do@fade@transform}%
+        \else%
+          \pgfsetfadingforcurrentpath{\tikz@path@fading}{\tikz@do@fade@transform}%
+        \fi%
       \else%
         \pgfsetfading{\tikz@path@fading}{\tikz@do@fade@transform}%
       \fi%
@@ -2026,7 +2030,11 @@
   %
   \iftikz@mode@fade@scope%
     \iftikz@fade@adjust%
-      \pgfsetfadingforcurrentpath{\tikz@scope@fading}{\tikz@do@fade@transform}%
+      \iftikz@mode@draw%
+        \pgfsetfadingforcurrentpathstroked{\tikz@scope@fading}{\tikz@do@fade@transform}%
+      \else%
+        \pgfsetfadingforcurrentpath{\tikz@scope@fading}{\tikz@do@fade@transform}%
+      \fi%
     \else%
       \pgfsetfading{\tikz@scope@fading}{\tikz@do@fade@transform}%
     \fi%
