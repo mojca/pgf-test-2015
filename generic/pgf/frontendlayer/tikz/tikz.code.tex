@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.108 2013/06/25 19:31:59 tantau Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.109 2013/06/25 20:03:08 tantau Exp $
 
 
 % Always-present libraries (|\usepgflibrary| defined in
@@ -3461,10 +3461,11 @@
             \ignorespaces%
 }
 \def\tikz@fig@collectresetcolor{%
-  \pgfutil@ifnextchar\reset@color%
-  {\reset@color\afterassignment\tikz@fig@collectresetcolor\let\tikz@temp=}%
-  {\tikz@fig@boxdone}%
+  % Hacks for special packages that mess with \aftergroup
+  \pgfutil@ifnextchar\reset@color% hack for color package
+  {\reset@color\afterassignment\tikz@fig@collectresetcolor\let\tikz@temp=}\tikz@fig@boxdone%
 }
+\def\tikz@show{\show\pgf@temp}
 \def\tikz@fig@boxdone{%
             \tikz@atend@node%
           \ifx\tikz@text@width\pgfutil@empty%
