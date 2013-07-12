@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfmx.def,v 1.5 2013/06/20 12:46:05 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfmx.def,v 1.6 2013/06/21 14:23:49 tantau Exp $
 
 % Driver commands for dvipdfmx
 %
@@ -45,6 +45,18 @@
 \def\stop@force@reset@color{%
   \special{pdf:ecolor}%
   \special{pdf:ecolor}%
+}
+
+
+\def\pgfsys@hbox#1{%
+  \pgfsys@beginscope%
+    \setbox#1=\hbox{\box#1}%
+    \wd#1=0pt%
+    \ht#1=0pt%
+    \dp#1=0pt%
+    \pgfsys@invoke{0 J [] 0 d}% reset line cap and dash
+   \box#1%
+  \pgfsys@endscope%
 }
 
 % We cannot use many codes in pgfsys-common-pdf-via-dvi.def.

@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-common-pdf-via-dvi.def,v 1.6 2008/05/14 16:05:56 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-common-pdf-via-dvi.def,v 1.7 2008/05/19 12:52:49 tantau Exp $
 
 % Common driver commands for all drivers that produce pdf via the
 % detour of a dvi file
@@ -23,6 +23,7 @@
                                 % not show anything
   {\hbox to 0pt{\pgfutil@font@normalfont\pgfutil@selectfont.\hss}}% enforce font change
   \pgfsys@invoke{0 Tr}%
+  \pgfsys@invoke{0 J [] 0 d}% reset line cap and dash
     \wd#1=0pt%
     \ht#1=0pt%
     \dp#1=0pt%
@@ -41,6 +42,7 @@
         \pgflowlevelsynccm% 
         \pgfsys@invoke{q -1 0 0 -1 0 0 cm}%
         \special{pdf: content -1 0 0 -1 0 0 cm q}% translate to original coordinate system
+        \pgfsys@invoke{0 J [] 0 d}% reset line cap and dash
         \wd#1=0pt%
         \ht#1=0pt%
         \dp#1=0pt%
