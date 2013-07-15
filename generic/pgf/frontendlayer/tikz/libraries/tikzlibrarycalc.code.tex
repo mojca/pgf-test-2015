@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex,v 1.7 2012/05/03 13:40:36 cjorssen Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex,v 1.8 2012/05/06 20:17:52 cjorssen Exp $
 
 %
 %
@@ -48,7 +48,7 @@
     \pgfutil@ifnextchar\n{%
       \tikz@cc@handle@num%
     }{%
-      \PackageError{tikz}{``\string\p'' or ``\string\n'' expected}{}%
+      \tikzerror{``\string\p'' or ``\string\n'' expected}%
     }%
   }%
 }
@@ -112,7 +112,7 @@
       \pgfutil@ifnextchar-{%
         \tikz@cc@sub%
       }{%
-        \PackageError{tikz}{+ or - expected}{}%
+        \tikzerror{+ or - expected}%
         \tikz@cc@end$%$
       }%
     }%
@@ -393,8 +393,8 @@
 {%
   \tikzset{cs/.cd,#1}%
   \expandafter\ifx\csname tikz@tangent@\tikz@cs@type\endcsname\relax%
-    \PackageError{tikz}{I do not know how to compute the tangent to 
-    a \tikz@cs@type}{}%
+    \tikzerror{I do not know how to compute the tangent to 
+    a \tikz@cs@type}%
     \pgfpointorigin%
   \else%
     \expandafter\tikz@scan@one@point\expandafter\tikz@lib@do@tangent\tikz@cs@point%  

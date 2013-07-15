@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduleplot.code.tex,v 1.9 2011/05/31 13:48:41 cjorssen Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduleplot.code.tex,v 1.10 2011/10/22 09:56:46 cjorssen Exp $
 
 
 % PGF's plotting interface works as follows:
@@ -212,7 +212,7 @@
     \pgfplotstreamstart%
     \openin\r@pgf@reada=#1
     \ifeof\r@pgf@reada
-      \PackageWarning{pgf}{Plot data file `#1' not found.}
+      \pgfwarning{Plot data file `#1' not found.}
      \else
       \catcode`\#=14
       \pgf@readxyfile%
@@ -261,7 +261,7 @@
     \pgfplotstreamstart%
     \openin\r@pgf@reada=#1
     \ifeof\r@pgf@reada
-      \PackageWarning{pgf}{Plot data file `#1' not found.}
+      \pgfwarning{Plot data file `#1' not found.}
     \else
       \catcode`\#=14
       \pgf@readxyzfile%

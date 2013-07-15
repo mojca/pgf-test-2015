@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcoreexternal.code.tex,v 1.18 2012/05/17 15:34:15 ludewich Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcoreexternal.code.tex,v 1.19 2012/06/18 20:39:58 ludewich Exp $
 
 
 
@@ -180,7 +180,7 @@
 
 % This will be overwritten by the tikz external lib if it is loaded.
 \def\pgfexternal@error@no@shipout{%
-    \PackageError{pgf}{Sorry, image externalization failed: the resulting image was EMPTY. I tried to externalize '\pgfactualjobname'. Perhaps there was a typo somewhere? Please check that your document contains '\string\beginpgfgraphicnamed{\pgfactualjobname} ... \string\endpgfgraphicnamed'}%
+    \pgferror{Sorry, image externalization failed: the resulting image was EMPTY. I tried to externalize '\pgfactualjobname'. Perhaps there was a typo somewhere? Please check that your document contains '\string\beginpgfgraphicnamed{\pgfactualjobname} ... \string\endpgfgraphicnamed'}%
 }%
 
 

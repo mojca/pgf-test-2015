@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys.code.tex,v 1.38 2012/03/30 09:39:44 tantau Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys.code.tex,v 1.39 2013/06/21 12:25:39 tantau Exp $
 
 
 % Load key mechanism
@@ -115,8 +115,7 @@
   \expandafter\ifx\csname pgf@sys@fail@#1\endcsname\pgfutil@empty%
   \else%
     \expandafter\global\expandafter\let\csname pgf@sys@fail@#1\endcsname=\pgfutil@empty%
-    \PackageWarning{pgf}{%
-      Your graphic driver \pgfsysdriver\space does not support #1. This warning is given only once}%
+    \pgfwarning{Your graphic driver \pgfsysdriver\space does not support #1. This warning is given only once}%
   \fi%
 }
 
@@ -926,9 +925,9 @@
 
 \input pgf.cfg
 
-\PackageInfo{pgfsys}{Driver file for pgf: \pgfsysdriver}
+\immediate\write-1{Driver file for pgf: \pgfsysdriver}
 \pgfutil@InputIfFileExists{\pgfsysdriver}{}{%
-  \PackageError{pgfsys}{Driver file ``\pgfsysdriver'' not found.}{}}
+  \pgferror{Driver file ``\pgfsysdriver'' not found.}}
 
 
 

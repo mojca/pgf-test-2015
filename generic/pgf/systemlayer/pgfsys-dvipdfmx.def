@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfmx.def,v 1.6 2013/06/21 14:23:49 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfmx.def,v 1.7 2013/07/12 13:52:50 tantau Exp $
 
 % Driver commands for dvipdfmx
 %
@@ -390,7 +390,7 @@
 }
 \def\pgfsys@usefading#1#2#3#4#5#6#7{%
   \expandafter\ifx\csname pgfsmaskxform@#1\endcsname\relax%
-    \PackageError{pgf}{Undefined fading '#1'}{}%
+    \pgferror{Undefined fading '#1'}%
   \else%
     {%
       \expandafter\ifx\csname pgfsmask@#1\endcsname\relax%

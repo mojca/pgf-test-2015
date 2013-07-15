@@ -8,18 +8,18 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/pgflibrarygraphdrawing.code.tex,v 1.33 2013/03/20 17:16:38 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/tex/pgflibrarygraphdrawing.code.tex,v 1.34 2013/05/23 20:01:29 tantau Exp $
 
 
 
 % check if luatex is running
 
 \ifx\directlua\relax%
-  \PackageError{pgf}{You need to run LuaTeX to use the graph drawing library}{}
+  \pgferror{You need to run LuaTeX to use the graph drawing library}
   \expandafter\endinput
 \fi
 \ifx\directlua\undefined%
-  \PackageError{pgf}{You need to run LuaTeX to use the graph drawing library}{}
+  \pgferror{You need to run LuaTeX to use the graph drawing library}
   \expandafter\endinput
 \fi
 
@@ -1055,7 +1055,7 @@
     \ifx\pgf@temp\pgfutil@empty
     \else
       \directlua{if not pgf_lookup_and_require('\pgf@temp') then
-        tex.print('\luaescapestring{\noexpand\PackageError{pgf}{Graph drawing library '\pgf@temp' not found}{}}')
+        tex.print('\luaescapestring{\noexpand\pgferror{Graph drawing library '\pgf@temp' not found}}')
       end}
     \fi
   }
