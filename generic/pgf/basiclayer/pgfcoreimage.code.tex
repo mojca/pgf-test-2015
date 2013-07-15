@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcoreimage.code.tex,v 1.16 2010/03/25 20:57:13 ludewich Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcoreimage.code.tex,v 1.17 2013/07/15 12:05:31 tantau Exp $
 
 
 
@@ -66,6 +66,7 @@
 \pgfkeys{/pgf/images/height/.estore in=\pgf@imageheight}
 \pgfkeys{/pgf/images/page/.estore in=\pgf@imagepage}
 \pgfkeys{/pgf/images/interpolate/.cd,.code=\edef\pgf@imageinterpolate{#1},.default=true}
+\let\pgf@imageinterpolate\pgfutil@empty
 \pgfkeys{/pgf/images/mask/.code=%
   {%
     \edef\pgf@imagemask{#1}%

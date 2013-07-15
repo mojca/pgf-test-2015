@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfmx.def,v 1.7 2013/07/12 13:52:50 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfmx.def,v 1.8 2013/07/15 12:05:34 tantau Exp $
 
 % Driver commands for dvipdfmx
 %
@@ -19,6 +19,7 @@
 % Load common pdf and pdf in dvi commands:
 %
 \input pgfsys-common-pdf.def
+
 
 % For unique object name:
 \newcount\pgfsys@objnum\pgfsys@objnum\@ne
@@ -284,7 +285,7 @@
 % Image Mask came from pgfsys-pdftex.def
 % generic/pgf/basiclayer/pgfcoreimage.code.tex must be modified!
 \def\pgfsys@defineimage{% width, height, page number
-  \ifx\includegraphics\relax
+  \ifx\includegraphics\undefined
     \ifx\pgf@imagewidth\pgfutil@empty\edef\pgf@imagewidth{1bp}\fi% width?
     \ifx\pgf@imageheight\pgfutil@empty\edef\pgf@imageheight{1bp}\fi% height?
     \ifx\pgf@imagepage\pgfutil@empty\else\edef\pgf@imagepage{ page \pgf@imagepage}\fi%
