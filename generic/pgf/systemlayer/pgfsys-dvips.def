@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvips.def,v 1.21 2011/05/13 10:16:37 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvips.def,v 1.22 2013/06/21 14:23:50 tantau Exp $
 
 % Driver commands for dvips
 
@@ -52,7 +52,8 @@
 \def\pgfsys@imagesuffixlist{.epsi:.eps:.ps:}
 
 \def\pgfsys@papersize#1#2{%
-  \expandafter\gdef\expandafter\pgfsys@atbegindocument\expandafter{\pgfsys@atbegindocument\special{papersize=#1,#2}}}
+  \special{papersize=#1,#2}%
+}%  \expandafter\gdef\expandafter\pgfsys@atbegindocument\expandafter{\pgfsys@atbegindocument\special{papersize=#1,#2}}}
 
 \expandafter\gdef\expandafter\pgfsys@atbegindocument\expandafter{\pgfsys@atbegindocument%
   \pgf@sys@postscript@header{

@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfm.def,v 1.19 2008/05/14 16:05:56 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfm.def,v 1.20 2013/06/20 12:46:05 tantau Exp $
 
 % Driver commands for dvipdfm
 
@@ -24,8 +24,11 @@
 \def\pgfsys@invoke#1{\special{pdf: content Q #1 q}} % ugly, but necessary...
 
 \def\pgfsys@papersize#1#2{%
-  \expandafter\gdef\expandafter\pgfsys@atbegindocument%
-  \expandafter{\pgfsys@atbegindocument\special{papersize=#1,#2}}}
+%  \expandafter\gdef\expandafter\pgfsys@atbegindocument%
+%  \expandafter{\pgfsys@atbegindocument
+    \special{papersize=#1,#2}%
+%  }
+}
 
 
 %
