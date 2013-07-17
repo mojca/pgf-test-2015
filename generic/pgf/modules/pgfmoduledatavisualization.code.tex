@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduledatavisualization.code.tex,v 1.44 2011/05/06 11:15:34 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduledatavisualization.code.tex,v 1.45 2013/07/15 12:05:34 tantau Exp $
 
 \usepgfmodule{oo,shapes}
 \usepgflibrary{fpu}
@@ -2689,6 +2689,10 @@
     \pgfooset{ideal}{#2}
     \pgfooset{max}{#3}
     \pgfooset{strategy}{#4}
+  }
+
+  % Method
+  \method default connects() {
   }
 
   % Method

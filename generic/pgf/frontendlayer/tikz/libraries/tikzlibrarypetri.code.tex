@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypetri.code.tex,v 1.1 2008/01/09 17:57:16 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypetri.code.tex,v 1.2 2008/06/18 23:34:49 tantau Exp $
 
 
 % Styles for places:
@@ -59,7 +59,7 @@
 
 \tikzoption{structured tokens}{%
   \tikzset{append after command={}%
-    {[children are tokens]child foreach \tikz@child@name in {#1} {node[token]{\tikz@child@name}}}}%
+    {[children are tokens]child foreach \tikzpetrichildname in {#1} {node[token]{\tikzpetrichildname}}}}%
   }
 
 
