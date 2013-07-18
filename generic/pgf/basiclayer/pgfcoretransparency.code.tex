@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcoretransparency.code.tex,v 1.2 2008/01/17 20:09:16 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcoretransparency.code.tex,v 1.3 2013/06/25 20:03:08 tantau Exp $
 
 
 % Sets the opacity of stroking operations.
@@ -37,6 +37,19 @@
   \pgfmathparse{#1}%
   \expandafter\pgfsys@fill@opacity\expandafter{\pgfmathresult}}
 
+
+
+% Sets the current blend mode. See Section 7.2.4 of the PDF
+% Specification 1.7 for an introduction to blend modes in general. 
+% 
+% #1 = One of the allowed blend modes, as described in 7.2.4 of the
+% PDF Specification 1.7
+%
+% Example:
+%
+% \pgfsetblendmode{Multiply}
+
+\def\pgfsetblendmode#1{\pgfsys@blend@mode{#1}}
 
 
 % Declares a new fading based on the contents of a box.
@@ -231,9 +244,22 @@
 % 
 
 \def\pgftransparencygroup{%
+  \pgfutil@ifnextchar[{\pgftransparencygroup@}{\pgftransparencygroup@[]}%
+}
+\def\pgftransparencygroup@[#1]{%
   \begingroup%
+    \pgfkeys{/pgf/transparency group options/.cd,%
+      isolated=false,
+      knockout=false,
+      #1}%
     \setbox\pgfutil@tempboxa=\hbox\bgroup%
 }
+\pgfkeys{
+  /pgf/transparency group options/.cd,
+  isolated/.is if=pgfsys@transparency@group@isolated,
+  knockout/.is if=pgfsys@transparency@group@knockout
+}
+  
 \def\endpgftransparencygroup{%
     \egroup%
     % Now compute the correct position. This is a bit tricky...

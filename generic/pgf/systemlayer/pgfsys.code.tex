@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys.code.tex,v 1.40 2013/07/15 12:05:34 tantau Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys.code.tex,v 1.41 2013/07/16 16:03:13 tantau Exp $
 
 
 % Load key mechanism
@@ -527,6 +527,12 @@
 % overlap will be darker than the rest. By comparison, if the circles
 % are part of a transparency group, the overlap will get the same
 % color as the rest.
+%
+% The following settings modify the bevahiour of a transparency group:
+
+\newif\ifpgfsys@transparency@group@isolated
+\newif\ifpgfsys@transparency@group@knockout
+
 
 \def\pgfsys@definemask{\pgf@sys@fail{image masks}}
 % This command declares a mask for usage with images. It works similar
