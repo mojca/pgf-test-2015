@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/utilities/pgffor.code.tex,v 1.22 2012/08/27 18:35:14 ludewich Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/utilities/pgffor.code.tex,v 1.23 2013/07/17 11:23:49 tantau Exp $
 
 % pgfmath is needed
 \input pgfmath.code.tex
@@ -486,12 +486,12 @@
 	\begingroup%
 		\escapechar=-1\relax%
 			\expandafter\pgffor@@addiftotoks\string#1\pgffor@stop}
-\def\pgffor@@addiftotoks#1#2#3#4#5\pgffor@stop{%
+\def\pgffor@@addiftotoks#1#2#3#4\pgffor@stop{%
 	\endgroup
-	\csname if#4#5\endcsname%
-		\expandafter\def\expandafter\pgffor@tokstemp\expandafter{\csname#4#5true\endcsname}%
+	\csname if#3#4\endcsname%
+		\expandafter\def\expandafter\pgffor@tokstemp\expandafter{\csname#3#4true\endcsname}%
 	\else%
-		\expandafter\def\expandafter\pgffor@tokstemp\expandafter{\csname#4#5false\endcsname}%
+		\expandafter\def\expandafter\pgffor@tokstemp\expandafter{\csname#3#4false\endcsname}%
 	\fi%
 	\pgffor@@addcstotoks%
 }
