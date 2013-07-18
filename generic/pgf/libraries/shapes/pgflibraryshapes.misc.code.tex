@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex,v 1.3 2008/10/07 18:23:25 vibrovski Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex,v 1.4 2013/07/11 15:17:51 tantau Exp $
 
 
 \pgfdeclareshape{cross out}
@@ -1089,7 +1089,7 @@
 					\pgfmathanglebetweenpoints{\centerpoint}{\after@sw@anchor}%
 					\ifdim\externalangle pt<\pgfmathresult pt\relax% after south west.
 						\pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
-							{\before@sw@anchor}{\after@sw@anchor}%
+							{\sw@anchor}{\after@sw@anchor}%
 					\else%
 						\pgfpointintersectionoflines{\centerpoint}{\externalpoint}%
 							{\after@sw@anchor}{\centerpoint\pgf@xa\pgf@x\after@sw@anchor\pgf@x\pgf@xa}%
