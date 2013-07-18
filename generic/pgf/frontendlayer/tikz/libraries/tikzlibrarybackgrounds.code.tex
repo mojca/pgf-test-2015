@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex,v 1.1 2008/01/09 17:57:15 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex,v 1.2 2010/02/08 11:21:46 tantau Exp $
 
 
 % Layers
@@ -18,8 +18,14 @@
 
 % Switch command
 \tikzset{on background layer/.style={
-    execute at begin scope={\pgfonlayer{background}},
-    execute at end scope={\endpgfonlayer}}}
+    execute at begin scope={%
+      \pgfonlayer{background}%
+      \let\tikz@options=\pgfutil@empty%
+      \tikzset{every on background layer/.try,#1}%
+      \tikz@options},
+    execute at end scope={\endpgfonlayer}
+  }
+}
 
 
 % Main style
