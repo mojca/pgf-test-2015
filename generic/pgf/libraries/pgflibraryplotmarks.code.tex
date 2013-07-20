@@ -7,14 +7,14 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibraryplotmarks.code.tex,v 1.11 2010/10/13 08:07:39 ludewich Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibraryplotmarks.code.tex,v 1.12 2010/10/15 07:34:06 ludewich Exp $
 
 
 % A stroked circle mark
 
 \pgfdeclareplotmark{o}
 {%
-  \pgfpathcircle{\pgfpointorigin}{\pgfplotmarksize}
+  \pgfpathellipse{\pgfpointorigin}{\pgfqpoint{\pgfplotmarksize}{0sp}}{\pgfqpoint{0sp}{\pgfplotmarksize}}%
   \pgfusepathqstroke
 }
 
