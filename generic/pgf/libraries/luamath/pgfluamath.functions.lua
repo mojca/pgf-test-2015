@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more details.
 --
--- $Id: pgfluamath.functions.lua,v 1.7 2011/06/06 20:34:36 cjorssen Exp $
+-- $Id: pgfluamath.functions.lua,v 1.8 2011/11/12 22:41:35 cjorssen Exp $
 --
 
 local pgfluamathfunctions = pgfluamathfunctions or {}
@@ -289,8 +289,8 @@ function pgfluamathfunctions.aTan(x)
    return mathdeg(mathatan(x))
 end
 
-function pgfluamathfunctions.aTan2(x,y)
-   return mathdeg(mathatan2(x,y))
+function pgfluamathfunctions.aTan2(y,x)
+   return mathdeg(mathatan2(y,x))
 end
 
 function pgfluamathfunctions.pointnormalised (pgfx, pgfy)
