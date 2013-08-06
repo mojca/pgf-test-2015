@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-tex4ht.def,v 1.23 2010/08/18 12:14:47 ludewich Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-tex4ht.def,v 1.24 2013/08/05 18:22:47 tantau Exp $
 
 
 
@@ -85,6 +85,8 @@
 %  \Configure{htf}{0}{+}{<span\Hnewline
 %     class="}{\%s}{-\%s}{x-x-\%d}{}{">}{</span>}
 %}
+
+\def\pgfsys@svg@newline{\Hnewline}
 
 % we don't want tex4ht putting <p> and </p> tags automatically in our svg code and causing invalid xhtml in our svg pictures
 \newif\ifpgfsys@CssIncluded@\pgfsys@CssIncluded@false
