@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys.code.tex,v 1.43 2013/08/01 16:02:22 tantau Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys.code.tex,v 1.44 2013/08/05 18:22:47 tantau Exp $
 
 
 % Load key mechanism
@@ -906,7 +906,9 @@
   {%
     \pgfsysprotocol@setcurrentprotocol\pgfutil@empty%
     \pgfsysprotocol@bufferedtrue%
+    \pgfsys@beginscope%
     #4%
+    \pgfsys@endscope%
     \pgfsysprotocol@getcurrentprotocol\pgfsys@@temp%
     \expandafter\global\expandafter\let\csname #1\endcsname=\pgfsys@@temp%
   }%
