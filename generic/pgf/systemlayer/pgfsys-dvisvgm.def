@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvisvgm.def,v 1.1 2013/08/06 17:46:08 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvisvgm.def,v 1.2 2013/08/06 22:52:10 tantau Exp $
 
 
 % Driver commands for dvisvgm
@@ -18,8 +18,7 @@
 \input pgfsys-common-svg.def
 
 \def\pgfsys@invoke#1{{\let\#\pgf@sys@svg@hash\special{dvisvgm:raw #1}}}
-\def\pgfsys@beginpicture{\pgfsys@invoke{<g
-    transform="translate({?x},{?y}) scale(1,-1)">}}
+\def\pgfsys@beginpicture{\pgfsys@invoke{<g transform="translate({?x},{?y}) scale(1,-1)">}}
 \def\pgfsys@endpicture{\pgfsys@invoke{</g>}}
 
 \def\pgfsys@svg@newline{{?nl}}
