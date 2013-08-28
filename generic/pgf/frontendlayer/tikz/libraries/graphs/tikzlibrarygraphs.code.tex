@@ -8,7 +8,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/graphs/tikzlibrarygraphs.code.tex,v 1.40 2013/07/15 12:05:32 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/graphs/tikzlibrarygraphs.code.tex,v 1.41 2013/08/05 18:22:47 tantau Exp $
 
 
 % 
@@ -196,8 +196,8 @@
 }
 
 \def\tikz@lib@graph@parser@[#1]{%
-  \setbox\tikz@figbox=\hbox\bgroup%
-    \unhbox\tikz@figbox%
+  \setbox\tikz@whichbox=\hbox\bgroup%
+    \unhbox\tikz@whichbox%
     \hbox\bgroup
       \bgroup%
         \pgfinterruptpath%
