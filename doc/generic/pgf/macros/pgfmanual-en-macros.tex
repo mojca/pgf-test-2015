@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.70 2013/07/31 10:52:37 vibrovski Exp $
+% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.71 2013/08/28 11:00:53 tantau Exp $
 
 
 \providecommand\href[2]{\texttt{#1}}
@@ -438,9 +438,9 @@
   \end{pgfmanualentry}
 }
 
-\newenvironment{pictype}[1]{
+\newenvironment{pictype}[2]{
   \begin{pgfmanualentry}
-  	\pgfmanualentryheadline{\textbf{Pic type} {\ttfamily\declare{#1}}}%
+  	\pgfmanualentryheadline{\textbf{Pic type} {\ttfamily\declare{#1}#2}}%
     \index{#1@\protect\texttt{#1} pic type}%
     \index{Pic Types!#1@\protect\texttt{#1}}
     \pgfmanualpdflabel{#1}{}%
