@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibraryarrows.code.tex,v 1.9 2008/10/27 21:00:46 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibraryarrows.spaced.code.tex,v 1.1 2012/03/21 11:57:42 tantau Exp $
 
 
 \usepgflibrary{arrows}
@@ -73,11 +73,21 @@
 \pgfarrowsdeclarecombine*{spaced triangle 90 cap reversed}{spaced triangle 90 cap reversed}{triangle 90 cap reversed}{triangle 90 cap reversed}{space}{space}
 \pgfarrowsdeclarecombine*{spaced fast cap}{spaced fast cap}{fast cap}{fast cap}{space}{space}
 \pgfarrowsdeclarecombine*{spaced fast cap reversed}{spaced fast cap reversed}{fast cap reversed}{fast cap reversed}{space}{space}
-\pgfarrowsdeclarecombine*{spaced [}{spaced ]}{[}{]}{space}{space}
-\pgfarrowsdeclarecombine*{spaced ]}{spaced [}{]}{[}{space}{space}
 \pgfarrowsdeclarecombine*{spaced (}{spaced )}{(}{)}{space}{space}
 \pgfarrowsdeclarecombine*{spaced )}{spaced (}{)}{(}{space}{space}
 \pgfarrowsdeclarecombine*{spaced |}{spaced |}{|}{|}{space}{space}
+
+
+\pgfdeclarearrow{
+  name = spaced [-spaced ],
+  means = square bracket[].space
+} 
+
+\pgfdeclarearrow{
+  name = spaced ]-spaced [,
+  means = square bracket[reversed].space
+} 
+
 
 
 \endinput
