@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorepathusage.code.tex,v 1.16 2013/09/17 20:22:03 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorepathusage.code.tex,v 1.17 2013/09/17 22:00:21 tantau Exp $
 
 
 % Stroke/fill/clip/etc. the current path. Depending on the options,
@@ -139,6 +139,7 @@
 
 \def\pgf@stroke@inner@line@if@needed{%
   \ifdim\pgfinnerlinewidth>0pt\relax%
+    \expandafter\let\expandafter\pgf@temp@save\csname\string\color@pgfstrokecolor\endcsname%
     \pgfsys@beginscope%
     {%
       \pgfsys@setlinewidth{\pgfinnerlinewidth}%
@@ -147,6 +148,7 @@
       \pgfsys@stroke%
     }%
     \pgfsys@endscope%
+    \expandafter\global\expandafter\let\csname\string\color@pgfstrokecolor\endcsname\pgf@temp@save%
   \fi%
 }
 
