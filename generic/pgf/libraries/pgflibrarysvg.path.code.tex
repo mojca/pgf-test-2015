@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibrarysvg.path.code.tex,v 1.5 2009/01/22 10:27:29 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibrarysvg.path.code.tex,v 1.6 2009/01/24 17:07:14 tantau Exp $
 
 
 \usepgfmodule{parser}
@@ -178,6 +178,10 @@
   \pgfparserswitch{initial}%
 }
 
+
+% Ignore spaces if no other rules says differently:
+
+\pgfparserdef{svgpath}{all}{blank space \space}{}
 
 
 
