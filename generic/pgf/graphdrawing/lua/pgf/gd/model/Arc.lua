@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Arc.lua,v 1.3 2013/05/23 20:01:27 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Arc.lua,v 1.4 2013/06/10 09:40:59 tantau Exp $
 
 
 ---
@@ -54,7 +54,7 @@
 -- @field tail The tail vertex of the arc.
 -- @field head The head vertex of the arc. May be the same as the tail
 -- in case of a loop.
--- @field path If nonempty, the path of the arc. See the description
+-- @field path If non-nil, the path of the arc. See the description
 -- above.
 -- @field syntactic_edges This field is an array containing syntactic
 -- edges (``real'' edges in the syntactic digraph) that underly this

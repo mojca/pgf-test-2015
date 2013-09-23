@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Vertex.lua,v 1.2 2013/02/08 17:14:05 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Vertex.lua,v 1.3 2013/05/23 20:01:28 tantau Exp $
 
 
 --- 
@@ -188,7 +188,6 @@ local anchor_cache = Storage.new ()
 
 local directions = {
   north = function(min_x, min_y, max_x, max_y)
-	    pgf.debug(min_x,min_y,max_x,max_y)
 	    return (min_x+max_x)/2, max_y
 	  end,
   south = function(min_x, min_y, max_x, max_y)
@@ -270,7 +269,7 @@ end
 -- @return The Arc as string.
 --
 function Vertex:__tostring()
-  return self.name or tostring(self.path)
+  return self.name or tostring(self.anchors)
 end
 
 

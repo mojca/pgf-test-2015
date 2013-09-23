@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Digraph.lua,v 1.3 2013/02/08 17:14:05 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Digraph.lua,v 1.4 2013/03/03 22:13:12 tantau Exp $
 
 
 
@@ -698,6 +698,7 @@ end
 
 function Digraph:collapse(collapse_vertices, collapse_vertex, vertex_fun, arc_fun)
 
+
   -- Create and add node, if necessary.
   if not collapse_vertex then
     collapse_vertex = Vertex.new {}
@@ -712,7 +713,7 @@ function Digraph:collapse(collapse_vertices, collapse_vertex, vertex_fun, arc_fu
     cvs[v] = true
   end
   assert (cvs[collapse_vertex] ~= true, "collapse_vertex is in collapse_vertices")
-  
+
   -- Connected collapse_vertex appropriately
   local collapsed_arcs = {}
   
@@ -727,8 +728,8 @@ function Digraph:collapse(collapse_vertices, collapse_vertex, vertex_fun, arc_fu
     for _,a in ipairs(v.outgoings[self]) do
       if cvs[a.head] ~= true then
 	arc_fun (self:connect(collapse_vertex, a.head), a)
+	collapsed_arcs[#collapsed_arcs + 1] = a
       end
-      collapsed_arcs[#collapsed_arcs + 1] = a
     end
     for _,a in ipairs(v.incomings[self]) do
       if cvs[a.tail] ~= true then
@@ -737,7 +738,7 @@ function Digraph:collapse(collapse_vertices, collapse_vertex, vertex_fun, arc_fu
       collapsed_arcs[#collapsed_arcs + 1] = a
     end
   end
-
+  
   -- Remember the old vertices.
   collapse_vertex.collapsed_vertices = cvs
   collapse_vertex.collapsed_arcs     = collapsed_arcs
