@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmodulebending.code.tex,v 1.14 2013/09/22 22:56:01 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmodulebending.code.tex,v 1.15 2013/09/23 18:04:36 tantau Exp $
 
 
 %
@@ -103,9 +103,9 @@
     {%
       \csname pgf@ar@saves@\pgf@arrow@id\endcsname%
       \ifcase\pgf@arrow@flex@mode\relax%
-        \pgferror{}% cannot happen!
+        \expandafter\expandafter\expandafter\pgf@arrow@drawer@rigid\csname pgf@ar@rigid@\pgf@arrow@id\endcsname% like flex
       \or%
-        \expandafter\expandafter\expandafter\pgf@arrow@drawer@rigid\csname pgf@ar@rigid@\pgf@arrow@id\endcsname%      
+        \expandafter\expandafter\expandafter\pgf@arrow@drawer@rigid\csname pgf@ar@rigid@\pgf@arrow@id\endcsname% 
       \or%
         \expandafter\expandafter\expandafter\pgf@arrow@drawer@rigid\csname pgf@ar@ends@\pgf@arrow@id\endcsname%      
       \or%

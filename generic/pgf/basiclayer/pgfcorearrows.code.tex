@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorearrows.code.tex,v 1.29 2013/09/22 22:56:01 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorearrows.code.tex,v 1.30 2013/09/23 18:04:35 tantau Exp $
 
 
 
@@ -990,9 +990,9 @@
 
 % Default shorthands:
 
-\pgfdeclarearrow{ name = to } % forward declaration
+\pgfdeclarearrow{ name = To } % forward declaration
 \pgfkeys{
-  <-> /.tip           = {to},
+  <-> /.tip           = {To},
   >-< /.tip           = {>[reversed]},
 }
 
@@ -1089,6 +1089,7 @@
   {\pgfqpoint{-3\pgfutil@tempdima}{-4\pgfutil@tempdima}}
   \pgfusepathqstroke
 }
+\pgfkeys{To /.tip = to}
 \pgfarrowsdeclare{to reversed}{to reversed}
 {
   \pgfutil@tempdima=-0.21pt%
