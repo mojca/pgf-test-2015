@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmodulebending.code.tex,v 1.16 2013/09/23 22:09:36 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmodulebending.code.tex,v 1.17 2013/09/24 16:23:32 tantau Exp $
 
 
 %
@@ -134,6 +134,11 @@
   \pgftransformnonlinear{\pgf@arrow@bending@mode{\pgf@x}{\pgf@y}}
   \pgftransformscale{-1}%
   \pgftransformxshift{-\pgf@xa}%
+  % Do slant:  
+  \ifdim\pgfarrows@slant pt=0pt%
+  \else%
+    \pgftransformxslant{\pgfarrows@slant}%
+  \fi%
   \ifpgfarrowswap%
     \pgftransformyscale{-1}%
   \fi%
@@ -164,6 +169,12 @@
   \pgf@xc#1%
   \pgf@xc-\pgf@xc%
   \pgftransformxshift{+\pgf@xc}%
+  % Do slant:  
+  \ifdim\pgfarrows@slant pt=0pt%
+  \else%
+    \pgftransformxslant{\pgfarrows@slant}%
+  \fi%
+  % do swap:
   \ifpgfarrowswap%
     \pgftransformyscale{-1}%
   \fi%

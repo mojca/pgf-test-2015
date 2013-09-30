@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcoretransparency.code.tex,v 1.3 2013/06/25 20:03:08 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcoretransparency.code.tex,v 1.4 2013/07/18 10:34:43 tantau Exp $
 
 
 % Sets the opacity of stroking operations.
@@ -42,12 +42,30 @@
 % Sets the current blend mode. See Section 7.2.4 of the PDF
 % Specification 1.7 for an introduction to blend modes in general. 
 % 
-% #1 = One of the allowed blend modes, as described in 7.2.4 of the
-% PDF Specification 1.7
+% #1 = One of the following modes, see also section 7.2.4 of the
+% PDF Specification 1.7. (The PGF names, which are all lowercase with
+% spaces as usual, must be mapped to the PDF or SVG by the drivers.)
+%
+% normal
+% multiply
+% screen
+% overlay
+% darken
+% lighten
+% color dodge
+% color burn
+% hard light
+% soft light
+% difference
+% exclusion
+% saturation
+% color
+% hue
+% luminosity
 %
 % Example:
 %
-% \pgfsetblendmode{Multiply}
+% \pgfsetblendmode{multiply}
 
 \def\pgfsetblendmode#1{\pgfsys@blend@mode{#1}}
 
