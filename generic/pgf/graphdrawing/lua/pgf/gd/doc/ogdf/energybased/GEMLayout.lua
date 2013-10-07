@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/doc/ogdf/energybased/GEMLayout.lua,v 1.1 2013/03/15 15:04:41 tantau Exp $
 
 
 local key           = require 'pgf.gd.doc'.key
@@ -46,49 +46,49 @@ summary       "Sets the minimal temperature."
 
 --------------------------------------------------------------------------------
 key           "GEMLayout.initialTemperature"
-summary       "Sets the initial temperature; must be $\ge$ |minimalTemperature|."
+summary       "Sets the initial temperature; must be $\\ge$ |minimalTemperature|."
 --------------------------------------------------------------------------------
     
 
 --------------------------------------------------------------------------------
 key           "GEMLayout.gravitationalConstant"
-summary       "Sets the gravitational constant; must be $\ge 0$."
+summary       "Sets the gravitational constant; must be $\\ge 0$."
 --------------------------------------------------------------------------------
     
 
 --------------------------------------------------------------------------------
 key           "GEMLayout.desiredLength"
-summary       "Sets the desired edge length; must be $\ge 0$."
+summary       "Sets the desired edge length; must be $\\ge 0$."
 --------------------------------------------------------------------------------
     
 
 --------------------------------------------------------------------------------
 key           "GEMLayout.maximalDisturbance"
-summary       "Sets the maximal disturbance; must be $\ge 0$."
+summary       "Sets the maximal disturbance; must be $\\ge 0$."
 --------------------------------------------------------------------------------
     
 
 --------------------------------------------------------------------------------
 key           "GEMLayout.rotationAngle"
-summary       "Sets the opening angle for rotations ($0 \le x \le \pi / 2$)."
+summary       "Sets the opening angle for rotations ($0 \\le x \\le \\pi / 2$)."
 --------------------------------------------------------------------------------
     
 
 --------------------------------------------------------------------------------
 key           "GEMLayout.oscillationAngle"
-summary       "Sets the opening angle for oscillations ($0 \le x \le \pi / 2$)."
+summary       "Sets the opening angle for oscillations ($0 \\le x \\le \\pi / 2$)."
 --------------------------------------------------------------------------------
     
 
 --------------------------------------------------------------------------------
 key           "GEMLayout.rotationSensitivity"
-summary       "Sets the rotation sensitivity ($0 \le x \le 1$)."
+summary       "Sets the rotation sensitivity ($0 \\le x \\le 1$)."
 --------------------------------------------------------------------------------
     
 
 --------------------------------------------------------------------------------
 key           "GEMLayout.oscillationSensitivity"
-summary       "Sets the oscillation sensitivity ($0 \le x \le 1$)."
+summary       "Sets the oscillation sensitivity ($0 \\le x \\le 1$)."
 --------------------------------------------------------------------------------
     
 
