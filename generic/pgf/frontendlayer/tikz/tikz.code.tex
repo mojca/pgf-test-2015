@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.137 2013/09/24 10:20:03 tantau Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/tikz.code.tex,v 1.138 2013/09/30 18:30:15 tantau Exp $
 
 
 \def\tikzerror#1{\pgfutil@packageerror{tikz}{#1}{}}
@@ -889,6 +889,14 @@
   \def\tikz@node@at{\pgfpointanchor{#1}{center}}}
 \def\tikz@extract@node@dist#1and#2\pgf@stop{%
   \def\tikz@extracted@node@distance{#1}}  
+
+\tikzset{
+  transform shape nonlinear/.is choice,
+  transform shape nonlinear/.default=true,
+  transform shape nonlinear/true/.code=\let\tikz@nlt\relax,
+  transform shape nonlinear/false/.code=\def\tikz@nlt{\pgftransformapproximatenonlineartranslation},
+  transform shape nonlinear=false
+}
 
 
 \tikzoption{transform shape}[true]{%
@@ -3777,8 +3785,9 @@
     %
     % Node transformation
     %
-    \tikz@node@transformations
-    %
+    \tikz@node@transformations%
+    \tikz@nlt%
+    % 
     \setbox\tikz@whichbox=\hbox{%
       \unhbox\tikz@whichbox%
       \hbox{{%

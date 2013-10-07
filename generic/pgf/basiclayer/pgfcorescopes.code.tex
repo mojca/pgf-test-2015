@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorescopes.code.tex,v 1.41 2013/09/09 10:05:41 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorescopes.code.tex,v 1.42 2013/09/19 22:34:34 tantau Exp $
 
 % Globals
 
@@ -120,6 +120,8 @@
   \expandafter\pgf@text@setkeys\expandafter{\pgf@text@options}%
   \csname pgf@halign\pgf@text@hshift\endcsname%
   \csname pgf@valign\pgf@text@vshift\endcsname%
+  %
+  \pgftransformapproximatenonlineartransformation%
   % Protocol sizes:
   \pgf@process{\pgfpointtransformed{\pgfqpoint{0pt}{\dp\pgf@hbox}}}%
   \pgf@protocolsizes{\pgf@x}{\pgf@y}%

@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorepoints.code.tex,v 1.25 2013/09/09 10:05:41 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorepoints.code.tex,v 1.26 2013/09/17 17:33:59 tantau Exp $
 
 \newdimen\pgf@picminx
 \newdimen\pgf@picmaxx
@@ -1265,5 +1265,14 @@
 \pgf@def{cosfrac}{95}{0.724999}  \pgf@def{cosfrac}{96}{0.721387}
 \pgf@def{cosfrac}{97}{0.717792}  \pgf@def{cosfrac}{98}{0.714213}
 \pgf@def{cosfrac}{99}{0.710651}  \pgf@def{cosfrac}{100}{0.707107}
+
+
+
+
+% Forward declarations for nonlinear stuff (have no effect till module
+% nonlineartransformations is loaded)
+
+\let\pgfpointtransformednonlinear\pgfpointtransformed
+
 
 \endinput
