@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/LayoutPipeline.lua,v 1.8 2013/03/20 17:16:38 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/LayoutPipeline.lua,v 1.9 2013/05/23 20:01:25 tantau Exp $
 
 
 ---
@@ -389,7 +389,7 @@ end
 -- a special way, all other shapes are currently treated like a
 -- rectangle.
 --
--- @param rotation_info The table computed by prepareRotateAround
+-- @param rotation_info The table computed by the function prepareRotateAround
 -- @param packing_storage A storage in which the computed distances are stored. 
 -- @param graph    An graph
 -- @param vertices  An array of to-be-prepared vertices inside graph

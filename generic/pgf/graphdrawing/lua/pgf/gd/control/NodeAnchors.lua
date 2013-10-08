@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/NodeAnchors.lua,v 1.1 2013/05/23 20:01:25 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/NodeAnchors.lua,v 1.2 2013/06/10 09:40:58 tantau Exp $
 
 local declare        = require "pgf.gd.interface.InterfaceToAlgorithms".declare
 
@@ -15,6 +15,8 @@ local declare        = require "pgf.gd.interface.InterfaceToAlgorithms".declare
 
 ---
 -- @section subsection {Anchoring Edges}
+--
+-- \label{section-gd-anchors}
 --
 -- When a graph has been layed out completely, the edges between the
 -- nodes must be drawn. Conceptually, an edge is ``between two

@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.73 2013/10/01 21:00:41 tantau Exp $
+% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.74 2013/10/02 14:27:56 tantau Exp $
 
 
 \providecommand\href[2]{\texttt{#1}}
@@ -20,7 +20,7 @@
 \definecolor{codebackground}{rgb}{0.8,0.8,1}
 
 \newenvironment{pgfmanualentry}{\list{}{\leftmargin=2em\itemindent-\leftmargin\def\makelabel##1{\hss##1}}}{\endlist}
-\newcommand\pgfmanualentryheadline[1]{\itemsep=0pt\parskip=0pt\item\strut{#1}\par\topsep=0pt}
+\newcommand\pgfmanualentryheadline[1]{\itemsep=0pt\parskip=0pt{\raggedright\item\strut{#1}\par}\topsep=0pt}
 \newcommand\pgfmanualbody{\parskip3pt}
 
 \let\origtexttt=\texttt
