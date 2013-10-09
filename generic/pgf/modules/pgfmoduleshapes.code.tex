@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduleshapes.code.tex,v 1.31 2013/08/05 18:22:47 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmoduleshapes.code.tex,v 1.32 2013/10/07 15:51:46 tantau Exp $
 
 
 
@@ -89,7 +89,7 @@
         \expandafter\pgfutil@for\expandafter\pgf@shape@com\expandafter:\expandafter=\csname pgf@sh@boxes@#1\endcsname\do{%
           {%
             \pgftransformshift{\pgf@sh@reanchor{#1}{\pgf@shape@com}}%
-              \pgftransformapproximatenonlineartransformation%
+              \pgfapproximatenonlineartransformation%
             \expandafter\pgfqboxsynced\expandafter{\csname pgfnodepart\pgf@shape@com box\endcsname}%
           }%
         }%

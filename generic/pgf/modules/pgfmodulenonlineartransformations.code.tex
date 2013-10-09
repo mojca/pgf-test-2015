@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmodulenonlineartransformations.code.tex,v 1.2 2013/09/17 17:34:00 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/modules/pgfmodulenonlineartransformations.code.tex,v 1.3 2013/10/07 15:51:46 tantau Exp $
 
 
 %
@@ -69,7 +69,7 @@
 % the coordinate system will not be rotated, only a shift is done (use
 % the "real" local sync for a full sync).
 
-\def\pgftransformapproximatenonlineartranslation{%
+\def\pgfapproximatenonlineartranslation{%
   \ifx\pgf@nlt@list\pgfutil@empty%
   \else%
     \pgfpointtransformednonlinear{\pgfpointorigin}%
@@ -98,7 +98,7 @@
 % The net effect is that you can now draw things near the origin as
 % before, but with just a linear transformation in force. 
 
-\def\pgftransformapproximatenonlineartransformation{%
+\def\pgfapproximatenonlineartransformation{%
   \ifx\pgf@nlt@list\pgfutil@empty%
   \else%
     \pgfpointtransformednonlinear{\pgfpoint{1pt}{0pt}}%
