@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/doc/ogdf/layered/SugiyamaLayout.lua,v 1.2 2013/03/07 18:17:14 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/doc/ogdf/energybased/FMMMLayout.lua,v 1.1 2013/03/07 22:28:37 tantau Exp $
 
 
 local key           = require 'pgf.gd.doc'.key
@@ -50,9 +50,10 @@ example
               draw=black!20, thick, fill=white, font=\footnotesize},
        >=spaced stealth', rounded corners, semithick]
   \graph [FMMMLayout, node sep=1mm, variation=2] {
-    "5th Edition" ->[orient=right] { "6th Edition", "PWB 1.0" };
+    "5th Edition" -> { "6th Edition", "PWB 1.0" };
     "6th Edition" -> { "LSX",  "1 BSD", "Mini Unix", "Wollongong", "Interdata" };
-    "Interdata" -> { "Unix/TS 3.0", "PWB 2.0", "7th Edition" };
+    "Interdata" ->[orient=down] "Unix/TS 3.0",
+    "Interdata" -> { "PWB 2.0", "7th Edition" };
     "7th Edition" -> { "8th Edition", "32V", "V7M", "Ultrix-11", "Xenix", "UniPlus+" };
     "V7M" -> "Ultrix-11";
     "8th Edition" -> "9th Edition";

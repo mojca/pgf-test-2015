@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/LayoutPipeline.lua,v 1.9 2013/05/23 20:01:25 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/LayoutPipeline.lua,v 1.10 2013/10/08 09:21:17 tantau Exp $
 
 
 ---
@@ -513,7 +513,7 @@ end
 -- Performs a post-layout orientation of the graph by performing the
 -- steps documented in Section~\ref{subsection-library-graphdrawing-standard-orientation}.
 -- 
--- @param rotation_info The info record computed by prepareRotateAround.
+-- @param rotation_info The info record computed by the function |prepareRotateAround|.
 -- @param postconditions The algorithm's postconditions.
 -- @param graph A to-be-oriented graph.
 -- @param scope The graph drawing scope.
