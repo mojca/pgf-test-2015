@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua,v 1.10 2013/05/23 20:01:27 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua,v 1.11 2013/07/18 12:26:12 tantau Exp $
 
 
 
@@ -77,7 +77,7 @@ local option_cache       = nil -- The option cache
 -- layer at the very beginning. For instance, \tikzname\ does the
 -- following call:
 --
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 --InterfaceToDisplay.bind(require "pgf.gd.bindings.BindingToPGF")
 --\end{codeexample}
 --
@@ -700,7 +700,7 @@ end
 --
 -- In detail, this function calls:
 --
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 --local binding = InterfaceCore.binding
 --
 --binding:renderStart()
@@ -752,7 +752,7 @@ end
 -- In this case, after the graph drawing algorithm has run, the
 -- present function will call:
 --
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 --local binding = InterfaceCore.binding
 --
 --binding:renderVerticesStart()
@@ -785,7 +785,7 @@ end
 -- (to ensure that they are always rendered in the same order).
 --
 -- Consider the following code:
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 --declare { key = "hyper", layer = 1 }
 --\end{codeexample}
 -- you can say on the \tikzname\ layer
@@ -800,7 +800,7 @@ end
 -- In this case, after the graph drawing algorithm has run, the
 -- present function will call:
 --
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 --local binding = InterfaceCore.binding
 --
 --binding:renderCollectionStartKind("hyper", 1)
@@ -850,7 +850,7 @@ end
 -- In this case, after the graph drawing algorithm has run, the
 -- present function will call:
 --
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 -- local binding = InterfaceCore.binding
 --
 -- binding:renderEdgesStart()

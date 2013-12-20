@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Arc.lua,v 1.4 2013/06/10 09:40:59 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Arc.lua,v 1.5 2013/09/23 20:04:26 tantau Exp $
 
 
 ---
@@ -133,7 +133,7 @@ local lib = require 'pgf.gd.lib'
 -- values come first in the table, you can easily iterate over the
 -- |option|'s values of only those edges that are aligned with the arc:
 --
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 --local a = g:arc(tail.head)   -- some arc
 --local opt = a:optionsArray('length')
 --local sum = 0
@@ -248,7 +248,7 @@ end
 -- |accumulator| function again.
 --
 -- @usage Here is typical usage:
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 --local total_length = a:optionsAccumulated('length', function (a,b) return a+b end) or 0
 --\end{codeexample}
 --
@@ -443,7 +443,7 @@ end
 -- the |Path|.
 --
 -- You use this method like this:
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 --...
 --local arc = g:connect(s,t)
 --arc:setPolylinePath { Coordinate.new(x,y), Coordinate.new(x1,y1) }
@@ -512,7 +512,7 @@ end
 --
 -- Here is the code you would use to create the abovementioned path:
 --
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 --local a = g:connect(tail,head)
 --...
 --arc.path = Path.new()
@@ -524,7 +524,7 @@ end
 -- Normally, however, you will not write code as detailed as the above
 -- and you would just write instead of the last three lines:
 --
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 --arc:setPolylinePath { Coordinate.new (10, 10) }
 --\end{codeexample}
 

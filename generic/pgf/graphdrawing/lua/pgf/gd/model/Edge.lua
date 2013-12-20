@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Edge.lua,v 1.4 2013/06/10 09:40:59 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/model/Edge.lua,v 1.5 2013/09/23 20:04:26 tantau Exp $
 
 
 --- 
@@ -81,7 +81,7 @@ local Path         = require "pgf.gd.model.Path"
 -- some initial values.
 --
 -- @usage 
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 --local v = Edge.new { tail = v1, head = v2 }
 --\end{codeexample} 
 --
@@ -125,7 +125,7 @@ end
 --
 -- Here is the code you would use to create the abovementioned path:
 --
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 --local a = g:connect(tail,head)
 --local e = a.syntactic_edges[1]
 --...
@@ -137,7 +137,7 @@ end
 --
 -- As for the |Arc| class, you can also setup a polyline more easily:
 --
---\begin{codeexample}[code only]
+--\begin{codeexample}[code only, tikz syntax=false]
 --e:setPolylinePath { Coordinate.new (10, 10) }
 --\end{codeexample}
 
