@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.77 2013/10/09 18:54:47 tantau Exp $
+% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.78 2013/12/20 14:44:46 tantau Exp $
 
 
 \providecommand\href[2]{\texttt{#1}}
@@ -743,6 +743,7 @@
     \index{#1@\protect\texttt{#1} key}%
     \index{\mypath#1@\protect\texttt{#1}}%
     \gdef\myname{#1}%
+    \pgfmanualpdflabel{#1}{}
   \else%
     \advance\pgfmanualdecomposecount by1\relax%
     \ifnum\pgfmanualdecomposecount>2\relax%
