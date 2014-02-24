@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToC.lua,v 1.5 2013/03/15 15:04:43 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToC.lua,v 1.6 2013/05/23 20:01:27 tantau Exp $
 
 
 ---
@@ -63,9 +63,9 @@ function InterfaceToC.declare_algorithm_written_in_c (t)
 	    for i=1,#edges do
 	      edges[edges[i]] = i
 	    end
-	    collectgarbage("stop") -- BUG! Remove this when everything is linked against a SINGLE Lua lib at runtime
+	    collectgarbage("stop") -- Remove once Lua Link Bug is fixed
 	    t.algorithm_written_in_c (self.digraph, back_table, edges, self)
-	    collectgarbage("restart") -- Remove also!
+	    collectgarbage("restart") -- Remove once Lua Link Bug is fixed
 	  end
   }  
 end

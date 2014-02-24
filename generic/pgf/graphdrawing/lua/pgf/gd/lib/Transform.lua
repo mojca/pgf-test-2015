@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/pgf.gd.lib.Transform.lua,v 1.2 2012/06/22 08:12:13 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/lib/Transform.lua,v 1.1 2012/11/27 17:24:26 tantau Exp $
 
 
 ---
@@ -96,6 +96,22 @@ function Transform.concat(a,b)
   return { a1*b1 + a2*b3,  a1*b2 + a2*b4,
 	   a3*b1 + a4*b3,  a3*b2 + a4*b4,
 	   a1*b5 + a2*b6 + a5,  a3*b5 + a4*b6 + a6 }
+end
+
+
+
+---
+-- Inverts a transformation matrix.
+--
+-- @param t The transformation.
+--
+-- @return The inverted transformation
+--
+function Transform.invert(t)
+  local t1, t2, t3, t4 = t[1], t[2], t[3], t[4]
+  local idet = 1/(t1*t4 - t2*t3)
+
+  return { t4*idet, -t2*idet, -t3*idet, t1*idet, -t[5], -t[6] }
 end
 
 

@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceCore.lua,v 1.4 2013/02/08 17:14:05 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceCore.lua,v 1.5 2013/03/07 18:17:14 tantau Exp $
 
 
 
@@ -57,14 +57,21 @@ local InterfaceCore = {
   -- The declared keys
   keys                = {},
 
+  -- The phase kinds
+  phase_kinds         = {},
+  
   -- Internals for handling the options stack
   option_stack        = {},
   option_cache_height = nil,
   option_initial      = {
-    algorithm_phases = {}
+    algorithm_phases = {
+      ["preprocessing stack"] = {},
+      ["edge routing stack"] = {},
+      ["postprocessing stack"] = {},
+    }
   },
   option_aliases      = {
-    [{}] = true -- dummy entry to make sure table is not empty
+    [{}] = true -- Remove, once Lua Link Bug is fixed
   },
 
   -- Constant strings for special collection kinds.
