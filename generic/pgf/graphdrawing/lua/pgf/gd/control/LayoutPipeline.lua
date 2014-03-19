@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/LayoutPipeline.lua,v 1.11 2013/10/09 19:46:59 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/control/LayoutPipeline.lua,v 1.12 2014/02/24 10:40:32 tantau Exp $
 
 
 ---
@@ -157,7 +157,7 @@ function LayoutPipeline.run(scope)
   
   -- Step 4: Apply regardless transforms
   Sublayouts.regardless(scope.syntactic_digraph)
-
+  
   -- Step 5: Cut edges
   LayoutPipeline.cutEdges(scope.syntactic_digraph)
   
@@ -304,7 +304,7 @@ function LayoutPipeline.runOnLayout(scope, algorithm_class, layout_graph, layout
 
   -- Step 3: Packing:
   LayoutPipeline.packComponents(layout_graph, syntactic_components)
-  
+
 end
 
 

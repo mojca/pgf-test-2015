@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua,v 1.12 2013/12/20 14:44:46 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua,v 1.13 2014/02/24 10:40:32 tantau Exp $
 
 
 
@@ -183,7 +183,7 @@ function InterfaceToDisplay.runGraphDrawingAlgorithm()
   
   -- End timing:
   local stop = os.clock()
-  
+
   return stop - start
 end
 

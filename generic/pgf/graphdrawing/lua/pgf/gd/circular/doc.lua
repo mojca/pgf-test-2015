@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/circular/documentation/Tantau2012.lua,v 1.1 2013/03/04 22:46:04 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/doc/circular/Tantau2012.lua,v 1.1 2013/03/05 23:44:30 tantau Exp $
 
 local key           = require 'pgf.gd.doc'.key
 local documentation = require 'pgf.gd.doc'.documentation

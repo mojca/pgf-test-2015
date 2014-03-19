@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/circular/Tantau2012.lua,v 1.7 2013/05/23 20:01:25 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/circular/Tantau2012.lua,v 1.8 2014/02/24 10:40:32 tantau Exp $
 
 
 -- Imports
@@ -27,7 +27,7 @@ declare {
     upward_oriented = true
   },
 
-  documentation_in = "pgf.gd.doc.circular.Tantau2012"
+  documentation_in = "pgf.gd.circular.doc"
 }
 
 

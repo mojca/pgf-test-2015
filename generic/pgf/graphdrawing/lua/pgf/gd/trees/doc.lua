@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/trees/documentation/ReingoldTilford1981.lua,v 1.1 2013/03/04 22:46:04 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/doc/trees/ReingoldTilford1981.lua,v 1.1 2013/03/05 23:44:30 tantau Exp $
 
 
 local key           = require 'pgf.gd.doc'.key
