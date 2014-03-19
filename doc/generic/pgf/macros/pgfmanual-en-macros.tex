@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.78 2013/12/20 14:44:46 tantau Exp $
+% $Header: /cvsroot/pgf/pgf/doc/generic/pgf/macros/pgfmanual-en-macros.tex,v 1.79 2013/12/20 15:22:35 tantau Exp $
 
 
 \providecommand\href[2]{\texttt{#1}}
@@ -1539,6 +1539,13 @@
 
 \newread\examplesource
 
+% Dollar problem...
+{
+  \catcode`\$=13%$
+  \gdef\handledollar{
+    \catcode`\$=13\def${a}  
+  }
+}%$
 
 % Opening, reading and closing the results file
 
@@ -1586,6 +1593,7 @@
   \medskip%
   \let\do\@makeother%
   \dospecials%
+%  \handledollar%
   \obeylines%
   \@vobeyspaces%
   \catcode`\%=13%
