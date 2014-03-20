@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-xetex.def,v 1.8 2013/07/15 15:41:25 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-xetex.def,v 1.9 2013/07/16 16:03:13 tantau Exp $
 
 \input pgfsys-dvipdfmx.def
 
@@ -54,6 +54,7 @@
 
 \def\pgfsyspdfmark#1#2#3{%
   \expandafter\gdef\csname pgf@sys@pdf@mark@pos@#1\endcsname{\pgfqpoint{#2sp}{#3sp}}%
+  \pgfutil@check@rerun{#1}{{#2}{#3}}%
 }
 
 \def\pgfsys@getposition#1#2{%

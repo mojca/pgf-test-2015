@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvips.def,v 1.22 2013/06/21 14:23:50 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvips.def,v 1.23 2013/07/16 16:03:13 tantau Exp $
 
 % Driver commands for dvips
 
@@ -107,6 +107,7 @@
 
 \def\pgfsyspdfmark#1#2#3{%
   \expandafter\gdef\csname pgf@sys@pdf@mark@pos@#1\endcsname{\pgfqpoint{#2sp}{#3sp}}%
+  \pgfutil@check@rerun{#1}{{#2}{#3}}%
 }
 
 \def\pgfsys@getposition#1#2{%
