@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-xetex.def,v 1.9 2013/07/16 16:03:13 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-xetex.def,v 1.10 2014/03/20 16:08:40 tantau Exp $
 
 \input pgfsys-dvipdfmx.def
 
@@ -19,12 +19,12 @@
 
 % XeTeX supports pdftex commands for paper size
 \def\pgfsys@papersize#1#2{%
-  \pdfpageheight#2%
-  \pdfpagewidth#1}
+  \pdfpageheight#2\relax%
+  \pdfpagewidth#1\relax}
   
 \def\pgfsys@global@papersize#1#2{%
-  \global\pdfpageheight#2%
-  \global\pdfpagewidth#1}
+  \global\pdfpageheight#2\relax%
+  \global\pdfpagewidth#1\relax}
   
 
 % Xetex does not support interpolate and not mask

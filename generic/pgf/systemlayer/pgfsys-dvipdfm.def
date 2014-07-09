@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfm.def,v 1.20 2013/06/20 12:46:05 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-dvipdfm.def,v 1.21 2013/07/16 16:03:13 tantau Exp $
 
 % Driver commands for dvipdfm
 
@@ -30,6 +30,12 @@
 %  }
 }
 
+\def\pgfsys@prepare@papersize#1#2{%
+  \expandafter\gdef\expandafter\pgfsys@atbegindocument%
+  \expandafter{\pgfsys@atbegindocument
+    \special{papersize=#1,#2}%
+  }
+}
 
 %
 % Position tracking (needs pdftex >= 1.40.0-alpha-20051205 in dvi mode)
