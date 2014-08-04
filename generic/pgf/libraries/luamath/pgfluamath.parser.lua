@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more details.
 --
--- $Id: pgfluamath.parser.lua,v 1.15 2014/08/04 19:38:45 cfeuersaenger Exp $	
+-- $Id: pgfluamath.parser.lua,v 1.16 2014/08/04 19:40:13 cfeuersaenger Exp $	
 
 local pgfluamathparser = pgfluamathparser or {}
 
@@ -26,7 +26,8 @@ local match = lpeg.match
 local space_pattern = S(" \n\r\t")^0
 local tex_unit = 
         P('pt') + P('mm') + P('cm') + P('in') + 
-        P('ex') + P('em') + P('bp') + P('pc') + 
+        -- P('ex') + P('em') + 
+		P('bp') + P('pc') + 
         P('dd') + P('cc') + P('sp');
 
 local one_digit_pattern = R("09")
