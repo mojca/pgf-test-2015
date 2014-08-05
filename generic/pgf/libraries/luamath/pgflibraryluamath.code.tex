@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 %
-% $Id: pgflibraryluamath.code.tex,v 1.12 2014/08/04 19:38:45 cfeuersaenger Exp $
+% $Id: pgflibraryluamath.code.tex,v 1.13 2014/08/04 20:39:50 cfeuersaenger Exp $
 %
 % !!! Warning: this library does not work with fpu!!!
 
@@ -54,6 +54,9 @@
 % resulting TeX errors.
 %
 % If LUA fails \pgfmathresult will be empty.
+%
+% This is actually only for debugging; it will be set implicitly when
+% activating/deactivating TeX fallback.
 \newif\ifpgfluamathshowerrormessage
 
 % Defines what happens if LUA failed to evaluate the expression: if
