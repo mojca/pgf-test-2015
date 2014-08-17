@@ -16,6 +16,14 @@
 
 
 \def\pgfversion{3.0.0-cvs}
+
+\begingroup
+\catcode`\"=12
+\pgfutil@IfUndefined{directlua}{}{%
+	\directlua{pgf = {}; pgf.pgfversion = "\pgfversion"}%
+}%
+\endgroup
+
 \def\pgftypesetversion{\oldstylenums{3}.\oldstylenums{0}.\oldstylenums{0}-cvs}
 
 
@@ -87,7 +95,7 @@
   \def\ProvidesFile#1[#2]{\wlog{Loading file #1 version #2.}}
 \fi
 
-\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/utilities/pgfrcs.code.tex,v 1.28 2013/12/20 14:44:47 tantau Exp $
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/utilities/pgfrcs.code.tex,v 1.29 2014/03/19 10:50:48 tantau Exp $
 
 \catcode`\@=\pgfrcsatcode
 
