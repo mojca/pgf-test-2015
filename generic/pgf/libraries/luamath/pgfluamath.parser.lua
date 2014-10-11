@@ -8,7 +8,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more details.
 --
--- $Id: pgfluamath.parser.lua,v 1.20 2014/10/11 19:46:42 cfeuersaenger Exp $	
+-- $Id: pgfluamath.parser.lua,v 1.21 2014/10/11 20:02:28 cfeuersaenger Exp $	
 --
 -- usage:
 --
@@ -336,7 +336,9 @@ end
 -- This is the math parser function in this module.
 --
 -- @param str a string like "1+1" which is accepted by the PGF math language
--- @return either nil if the string is illegal or the resulting number (or string)
+-- @return the result of the expression.
+-- 
+-- Throws an error if the string is no valid expression.
 function pgfluamathparser.pgfmathparse(str)
 	pgfluamathparser.units_declared = false
 
