@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more details.
 --
--- $Id: pgfluamath.functions.lua,v 1.12 2014/08/17 18:15:46 cfeuersaenger Exp $
+-- $Id: pgfluamath.functions.lua,v 1.13 2014/10/11 15:32:46 cfeuersaenger Exp $
 --
 
 local pgfluamathfunctions = pgfluamathfunctions or {}
@@ -288,9 +288,9 @@ end
 
 function pgfluamathfunctions.round(x)
    if x<0 then
-      return -mathceil(mathabs(x)) 
+      return -mathfloor(mathabs(x)+0.5) 
    else 
-      return mathceil(x) 
+      return mathfloor(x + 0.5) 
    end
 end
 
