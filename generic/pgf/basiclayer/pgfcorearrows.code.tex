@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorearrows.code.tex,v 1.40 2013/11/07 15:45:46 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcorearrows.code.tex,v 1.41 2014/11/02 21:38:01 cfeuersaenger Exp $
 
 
 
@@ -884,7 +884,7 @@
 \def\pgf@arrows@color@setup{%
   \ifx\pgf@arrows@stroke@color\pgfutil@empty\else\pgfsetstrokecolor{\pgf@arrows@stroke@color}\fi%
   \ifx\pgf@arrows@fill@color\pgfutil@empty%
-	\ifx\pgf@strokecolor@global\pgf@fillcolor@global
+    \ifx\pgf@strokecolor@global\pgf@fillcolor@global
     \else
       \pgf@arrows@color@setup@restore@std@colors
       \pgfsetfillcolor{pgfstrokecolor}%
