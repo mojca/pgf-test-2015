@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more details.
 --
--- $Id: functions.lua,v 1.1 2014/12/27 14:11:49 cfeuersaenger Exp $
+-- $Id: functions.lua,v 1.2 2015/01/14 20:15:13 cfeuersaenger Exp $
 --
 
 local pgfluamathfunctions = pgfluamathfunctions or {}
@@ -536,6 +536,8 @@ function pgfluamathfunctions.tonumber(x)
             local lower = x:lower()
             if lower == 'nan' then 
                 result = nan
+			elseif lower == "-nan" then
+				result = nan
             elseif lower == 'inf' or lower == 'infty' then 
                 result = infty
             elseif lower == '-inf' or lower == '-infty' then 
