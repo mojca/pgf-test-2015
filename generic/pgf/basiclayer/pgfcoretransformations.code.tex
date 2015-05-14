@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcoretransformations.code.tex,v 1.17 2013/10/10 08:53:09 tantau Exp $
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/basiclayer/pgfcoretransformations.code.tex,v 1.18 2014/03/21 19:52:38 tantau Exp $
 
 
 % Position transformations
@@ -648,11 +648,11 @@
       \pgf@pt@x0pt%
       \pgf@pt@y0pt%
       \pgfpointtransformed{\pgfqpoint{1pt}{0pt}}%
-      \pgfmathveclen@{\pgf@x}{\pgf@y}%
+      \pgfmathveclen@{\pgf@sys@tonumber\pgf@x}{\pgf@sys@tonumber\pgf@y}%
       \pgfmathreciprocal@{\pgfmathresult}%
       \global\let\pgf@temp@hori\pgfmathresult
       \pgfpointtransformed{\pgfqpoint{0pt}{1pt}}%
-      \pgfmathveclen@{\pgf@x}{\pgf@y}%
+      \pgfmathveclen@{\pgf@sys@tonumber\pgf@x}{\pgf@sys@tonumber\pgf@y}%
       \pgfmathreciprocal@{\pgfmathresult}%
       \global\let\pgf@temp@vert\pgfmathresult
       \xdef\pgf@marshal@b{\def\noexpand\pgfverticaltransformationadjustment{\pgfmathresult}}
