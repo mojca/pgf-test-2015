@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/circular/Tantau2012.lua,v 1.7 2013/05/23 20:01:25 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/routing/Hints.lua,v 1.1 2014/02/24 10:40:33 tantau Exp $
 
 
 ---
@@ -15,7 +15,7 @@
 -- communicate certain possibilities concerning the routing of edges
 -- to edge routing algorithms. This partly decouples the choice of the
 -- vertex positioning algorithms from the choice of edge routing
--- algorithm. For instance, the a simple necklace routing, it is
+-- algorithm. For instance, for a simple necklace routing, it is
 -- unclear whether the edges on the necklace should be routing ``along
 -- the necklace'' or not. Thus, necklace routing algoirthms will
 -- ``hint'' that a necklace is present and only when the
