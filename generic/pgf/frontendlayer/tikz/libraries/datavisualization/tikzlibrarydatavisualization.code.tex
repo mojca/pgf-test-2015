@@ -7,7 +7,7 @@
 %
 % See the file doc/generic/pgf/licenses/LICENSE for more details.
 
-\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/datavisualization/tikzlibrarydatavisualization.code.tex,v 1.45 2014/03/21 19:52:38 tantau Exp $
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/datavisualization/tikzlibrarydatavisualization.code.tex,v 1.46 2015/05/14 15:18:48 cfeuersaenger Exp $
 
 \usepgfmodule{datavisualization}
 \usetikzlibrary{backgrounds}
@@ -1453,7 +1453,7 @@
     \tikz@dv@parse@unit@length@#1per1units\pgf@stop%
   \fi%
 }
-\def\tikz@dv@parse@unit@length@#1per#2units{
+\def\tikz@dv@parse@unit@length@#1per#2units\pgf@stop{
   \pgfkeysalso{\tikz@dv@axis/scaling=0 at 0 and #2 at #1}
 }
 
