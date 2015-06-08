@@ -7,7 +7,7 @@
 --
 -- See the file doc/generic/pgf/licenses/LICENSE for more information
 
--- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/bindings/BindingToPGF.lua,v 1.9 2013/07/18 12:26:12 tantau Exp $
+-- @release $Header: /cvsroot/pgf/pgf/generic/pgf/graphdrawing/lua/pgf/gd/bindings/BindingToPGF.lua,v 1.10 2013/12/20 14:44:46 tantau Exp $
 
 
 
@@ -75,7 +75,7 @@ local table_in_pgf_syntax
 
 function BindingToPGF:resumeGraphDrawingCoroutine(text)
   tex.print(text)
-  tex.print("\\directlua{pgf.gd.interface.InterfaceToDisplay.resumeGraphDrawingCoroutine()}")
+  tex.print("\\pgfgdresumecoroutinetrue") 
 end
 
 
